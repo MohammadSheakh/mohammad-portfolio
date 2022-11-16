@@ -36,7 +36,7 @@ export default function Navbar() {
 
     return (
         <>
-            <div class="  h-14 w-full bg-primaryColor grid grid-cols-12">
+            <div class="  h-14 w-full bg-navbarColorGray grid grid-cols-12">
                 {/* bg-slate-600 */}
                 <div class="col-span-4 w-full h-14 rounded-full group flex">
                     <img
@@ -44,7 +44,7 @@ export default function Navbar() {
                         src={mohammadPictureLogo}
                         alt="Logo"
                     />
-                    <div class="block h-8 w-0 rounded-md ml-2 mt-3 pl-2 pr-2 pt-1 pb-1 invisible group-hover:w-36 group-hover:visible transition-all duration-1000 hover:duration-0 delay-0 bg-secondaryColor  ">
+                    <div class="block h-8 w-0 rounded-md ml-2 mt-3 pl-2 pr-2 pt-1 pb-1 invisible group-hover:w-36 group-hover:visible transition-all duration-1000 hover:duration-0 delay-0 bg-PrimaryColorLight  ">
                         <h2 class=" text-orange leading-3 text-sm w-36 invisible group-hover:visible transition-all duration-1000 hover:delay-400 ">
                             Mohammad Sheakh BSc in CSE
                         </h2>
@@ -53,7 +53,7 @@ export default function Navbar() {
                 <div class="col-span-6 w-full flex ml-56 mt-3 h-10 relative">
                     <NavLink
                         to="/home"
-                        styleProps="group-hover:w-10 text-white"
+                        styleProps="group-hover:w-10 text-PureWhite"
                     >
                         Home
                     </NavLink>
@@ -75,13 +75,13 @@ export default function Navbar() {
                 <div class="col-span-2 w-full flex mt-2 h-10 ">
                     <div class="group h-10 w-auto  absolute ">
                         <button
-                            class="bg-secondaryColor h-10 w-10" // bg-slate-100
+                            class="bg-PrimaryColorLight h-10 w-10" // bg-slate-100
                             onClick={handleThemeSwitch}
                         >
-                            <img src={nightIcon} class="  bg-primaryColor" />
+                            <img src={nightIcon} class="  bg-navbarColorGray" />
                             {/* // bg-slate-600 */}
                         </button>
-                        <span class=" relative  top-6 right-16  p-1 rounded-md invisible  group-hover:text-white group-hover:visible bg-tooltip ">
+                        <span class=" relative  top-6 right-16  p-1 rounded-md invisible  group-hover:text-PureWhite group-hover:visible bg-tooltip ">
                             Night mode
                         </span>
                     </div>
@@ -90,7 +90,7 @@ export default function Navbar() {
                             {/* bg-slate-800 */}
                             <img src={loginIcon} class=" h-10 w-auto " />
                         </div>
-                        <span class="relative h-10 w-0 top-1  p-1 rounded-md invisible group-hover:w-36 group-hover:visible bg-tooltip group-hover:text-white">
+                        <span class="relative h-10 w-0 top-1  p-1 rounded-md invisible group-hover:w-36 group-hover:visible bg-tooltip group-hover:text-PureWhite">
                             Author Sign in
                         </span>
                     </div>

@@ -9,10 +9,10 @@ export default function Links() {
     return (
         <>
             <div className="ml-16">
-                <div class="h-1 w-[700px] bg-white"></div>
+                <div class="h-1 w-[700px] bg-PrimaryColorDark dark:bg-PrimaryColorLight"></div>
                 <div>
                     <a href="https://github.com/MohammadSheakh" target="_blank">
-                        <button className="btn mt-4 bg-homePageColor hover:bg-secondaryColor hover:text-orange border-homeColor hover:border-white ">
+                        <button className="btn mt-4 bg-PrimaryColorDark hover:bg-PrimaryColorLight hover:text-orange border-homeColor hover:border-PureWhite ">
                             <i>
                                 <GoMarkGithub class="mr-2" />{" "}
                             </i>
@@ -24,7 +24,7 @@ export default function Links() {
                         href="https://www.linkedin.com/in/mohammad-sheakh/"
                         target="_blank"
                     >
-                        <button className="ml-2 btn mt-4 bg-homePageColor hover:bg-secondaryColor hover:text-orange border-homeColor hover:border-white ">
+                        <button className="ml-2 btn mt-4 bg-PrimaryColorDark hover:bg-PrimaryColorLight hover:text-orange border-homeColor hover:border-PureWhite ">
                             <i>
                                 <BsLinkedin class="mr-2" />{" "}
                             </i>
@@ -34,13 +34,13 @@ export default function Links() {
                 </div>
             </div>
             <div class="ml-[55%]">
-                <button className="ml-2 btn mt-4 bg-homePageColor hover:bg-secondaryColor hover:text-orange border-homeColor hover:border-white ">
+                <button className="ml-2 btn mt-4 bg-PrimaryColorDark hover:bg-PrimaryColorLight hover:text-orange border-homeColor hover:border-PureWhite ">
                     <i>
                         <AiOutlineCloudDownload class="mr-2 " />{" "}
                     </i>
                     Download My CV
                 </button>
-                <button className="ml-2 btn mt-4 bg-homePageColor hover:bg-secondaryColor hover:text-orange border-homeColor hover:border-white ">
+                <button className="ml-2 btn mt-4 bg-PrimaryColorDark hover:bg-PrimaryColorLight hover:text-orange border-homeColor hover:border-PureWhite ">
                     <i>
                         <FcDocument class="mr-2" />{" "}
                     </i>

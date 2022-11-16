@@ -6,9 +6,9 @@ import Links from "./Links";
 export default function Intro() {
     return (
         <>
-            <div class="h-screen w-full flex  bg-homePageColor">
+            <div class="h-screen w-full flex  bg-homeColor dark:bg-PrimaryColorDark ">
                 <div class="relative w-full  flex-1">
-                    {/* bg-white columns-6*/}
+                    {/* bg-PureWhite columns-6*/}
                     <div class="absolute font-extrabold text-5xl  border-2 rounded-lg mr-4 p-3 mt-44 ml-14 ">
                         {/* mt-44 ml-14 */}
                         <Typewriter
