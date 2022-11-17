@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.css";
 import Home from "./pages/home";
 import About from "./pages/about";
@@ -10,30 +9,25 @@ import Navbar from "./components/common/navbar";
 
 import {
     BrowserRouter as Router,
+    Switch,
     Routes,
     Route,
-    Navigate,
 } from "react-router-dom";
 
 function App() {
+    console.log("From App");
     return (
         <>
-            {/* <Navbar />
-            <Home /> */}
             <Navbar />
             <Router>
                 <Routes>
-                    <Route
-                        path="/"
-                        exact
-                        element={<Home replace to="/home" />}
-                    />
-                    <Route path="/home" exact element={<Home />} />
-                    <Route path="/about" exact element={<About />} />
-                    <Route path="/dashboard" exact element={<Dashboard />} />
-                    <Route path="/projects" exact element={<Projects />} />
-                    <Route path="/story" exact element={<Story />} />
-                    <Route path="/timeline" exact element={<Timeline />} />
+                    <Route path="/" element={<Home replace to="/home" />} />
+                    <Route path="/home" element={<Home />} />
+                    <Route path="/about" element={<About />} />
+                    <Route path="/dashboard" element={<Dashboard />} />
+                    <Route path="/projects" element={<Projects />} />
+                    <Route path="/story" element={<Story />} />
+                    <Route path="/timeline" element={<Timeline />} />
                 </Routes>
             </Router>
         </>

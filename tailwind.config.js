@@ -5,6 +5,7 @@ module.exports = {
         extend: {},
         colors: {
             PrimaryColorDark: "#01263f",
+            PrimaryColorDarkHover: "#01383f",
             PrimaryColorLight: "#F1F5F9", // bg-slate-100
             navbarColorGray: "#64748B", // bg-slate-600
             homeColor: "#cbd5e1", // bg-slate-300
