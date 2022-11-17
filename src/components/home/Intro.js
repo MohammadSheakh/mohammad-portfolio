@@ -14,7 +14,7 @@ export default function Intro() {
                         <Typewriter
                             onInit={(typewriter) => {
                                 typewriter
-                                    .typeString("Assalamu Alaikum Everyone !")
+                                    .typeString("Assalamu Alaikum ! ")
                                     .callFunction(() => {
                                         console.log("String typed out!");
                                     })
@@ -25,13 +25,16 @@ export default function Intro() {
                                     )
                                     .pauseFor(700)
                                     .typeString(
-                                        "Front-end and Back-end Developer."
+                                        "Front-end and Back-end Developer... "
                                     )
                                     .callFunction(() => {
                                         console.log("All strings were deleted");
                                     })
-                                    .deleteChars(2)
-                                    .typeString("I work with MERN Stack")
+                                    .pauseFor(700)
+                                    .deleteChars(3)
+                                    .typeString(
+                                        " Currently working on MERN Stack"
+                                    )
                                     .start();
                             }}
                         />

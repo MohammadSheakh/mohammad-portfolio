@@ -1,9 +1,10 @@
 import React from "react";
 import { GoMarkGithub } from "react-icons/go";
 import { BsLinkedin } from "react-icons/bs";
-import { AiOutlineCloudDownload } from "react-icons/ai";
+import { AiFillFacebook, AiOutlineCloudDownload } from "react-icons/ai";
 
 import { FcDocument } from "react-icons/fc";
+import { MdEmail } from "react-icons/md";
 
 export default function Links() {
     return (
@@ -31,9 +32,31 @@ export default function Links() {
                             Linked In
                         </button>
                     </a>
+                    <a
+                        href="https://www.linkedin.com/in/mohammad-sheakh/"
+                        target="_blank"
+                    >
+                        <button className="ml-2 btn mt-4 bg-PrimaryColorDark hover:bg-PrimaryColorLight hover:text-orange border-homeColor hover:border-PureWhite ">
+                            <i>
+                                <MdEmail class="mr-2" />{" "}
+                            </i>
+                            Email
+                        </button>
+                    </a>
+                    <a
+                        href="https://www.facebook.com/mohammadsheakh101/"
+                        target="_blank"
+                    >
+                        <button className="ml-2 btn mt-4 bg-PrimaryColorDark hover:bg-PrimaryColorLight hover:text-orange border-homeColor hover:border-PureWhite ">
+                            <i>
+                                <AiFillFacebook class="mr-2" />{" "}
+                            </i>
+                            Facebook
+                        </button>
+                    </a>
                 </div>
             </div>
-            <div class="ml-[55%]">
+            <div class="ml-[55%] mt-16">
                 <button className="ml-2 btn mt-4 bg-PrimaryColorDark hover:bg-PrimaryColorLight hover:text-orange border-homeColor hover:border-PureWhite ">
                     <i>
                         <AiOutlineCloudDownload class="mr-2 " />{" "}
@@ -47,6 +70,7 @@ export default function Links() {
                     Check My CV
                 </button>
             </div>
+            <h5 class="ml-[500px] mt-10">This Site is Under Development</h5>
         </>
     );
 }
