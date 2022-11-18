@@ -11,6 +11,10 @@ export default function ProjectCard({
     projectDescription,
     authority,
     authorityName,
+    teamMemberProfileLink,
+    teamMemberImage,
+    teamMemberName,
+    instructorName,
 }) {
     const [showFullDetails, setShowFullDetails] = useState(false);
     useEffect(() => {
@@ -18,7 +22,7 @@ export default function ProjectCard({
     }, [showFullDetails]);
 
     return (
-        <div class="border-2 h-[500px] w-[500px] bg-cardBG text-cardTextColor p-1">
+        <div class="border-2 h-[500px] w-[500px] bg-cardBG text-cardTextColor p-1 rounded-xl">
             <div>
                 {/* // carousal div */}
                 <ProjectCardCarrousel />
@@ -59,17 +63,19 @@ export default function ProjectCard({
                         {authority} : {authorityName}
                     </h3>
                     <h3>Members : </h3>
+
                     <CompanyAndTeamInfo
                         teamMemberProfileLink="https://www.linkedin.com/in/mohammad-sheakh/"
                         teamMemberImage={mohammadPictureLogo}
                         teamMemberName="Mohammad Sheakh"
                     />
                     <CompanyAndTeamInfo
-                        teamMemberProfileLink="https://www.facebook.com/sarjataziz.rumi.7"
-                        teamMemberImage={rumiVai}
-                        teamMemberName="Sarjat Aziz"
+                        teamMemberProfileLink={teamMemberProfileLink}
+                        teamMemberImage={teamMemberImage}
+                        teamMemberName={teamMemberName}
                     />
                 </div>
+                <h3>Instructor : {instructorName} </h3>
 
                 <div>
                     {/* // love react ,comment , see documentation button */}
