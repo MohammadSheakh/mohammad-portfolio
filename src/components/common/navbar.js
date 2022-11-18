@@ -52,7 +52,7 @@ export default function Navbar() {
                     </div>
                 </div>
                 <div class="col-span-6 w-full flex ml-56 mt-3 h-10 relative">
-                    {/* <Link to="/">
+                    {/* <Link to="/about">
                         <button class="text-orange group w-auto ml-3 h-7 leading-6 rounded-md pl-2 pr-2 bg-PureWhite hover:shadow hover:shadow-homeColor">
                             Home
                             <span>
@@ -62,10 +62,13 @@ export default function Navbar() {
                         </button>
                     </Link> */}
 
+                    {/* <NavLink to="/about" class="btn">
+                        about
+                    </NavLink> */}
                     {/* <Nav path="/" styleProps="group-hover:w-10 text-PureWhite">
                         Home
-                    </Nav>
-
+                    </Nav> */}
+                    {/*
                     <Nav path="/projects" styleProps="group-hover:w-14">
                         Projects
                     </Nav>

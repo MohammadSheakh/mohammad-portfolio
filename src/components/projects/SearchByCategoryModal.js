@@ -3,15 +3,9 @@ import { BsUiChecksGrid } from "react-icons/bs";
 import { GoMarkGithub } from "react-icons/go";
 import { GrClose } from "react-icons/gr";
 import CategoryCheckbox from "./CategoryCheckbox";
+import NormalCheckbox from "./NormalCheckbox";
 
 export default function SearchByCategoryModal() {
-    const [showManagmentDropdownBtn, setShowManagmentDropdownBtn] =
-        useState(false);
-
-    console.log(
-        "Show and Hide drop down menu project category management : ",
-        showManagmentDropdownBtn
-    );
     return (
         <div>
             <label
@@ -23,7 +17,7 @@ export default function SearchByCategoryModal() {
 
             <input type="checkbox" id="my-modal-3" className="modal-toggle" />
             <div className="modal ">
-                <div className="modal-box relative min-h-[375px] h-[540px]">
+                <div className="modal-box relative min-h-[365px] h-[600px]">
                     <label
                         htmlFor="my-modal-3"
                         className="btn btn-sm btn-circle absolute right-2 top-2 bg-navbarColorGray hover:bg-PrimaryColorLight"
@@ -187,7 +181,7 @@ export default function SearchByCategoryModal() {
                                 />
                             </div>
 
-                            <div className="h-[30px] w-auto ml-[270px] text-center p-1 rounded-md  mt-[6px]  bg-PrimaryColorDark   hover:bg-PrimaryColorDarkHover hover:border-2  box-border">
+                            <div className="h-[30px] w-[205px] ml-[270px] text-center p-1 rounded-md  mt-[6px]  bg-PrimaryColorDark   hover:bg-PrimaryColorDarkHover hover:border-2  box-border">
                                 <label
                                     for="default-checkbox3"
                                     class="mr-2 text-sm font-medium text-gray-900 dark:text-gray-300"
@@ -248,16 +242,77 @@ export default function SearchByCategoryModal() {
                         </div>
                     </form>
 
-                    <p className="py-4 mt-10">
+                    {/* <p className="py-4 mt-10">
                         You've been selected for a chance to get one year of
                         subscription to use Wikipedia for free!
-                    </p>
+                    </p> */}
+                    {/* <div class="mt-10 flex relative">
+                        <h5 className="py-1 mt-3">Price Range</h5>
+                        <div class=" flex relative">
+                            <input
+                                type="text"
+                                placeholder="0.."
+                                class="p-2 w-[90px] mt-3  ml-3"
+                            />
+                            <h1 class="mx-3 mt-4">-</h1>
+                            <input
+                                type="text"
+                                placeholder="4 lakhs"
+                                class="p-2 w-[90px] mt-3 "
+                            />
+                        </div>
+                    </div> */}
+                    <div class=" py-1 mt-12 flex">
+                        <h5>Stack</h5>
+                        <NormalCheckbox
+                            style="ml-[130px]"
+                            checkBoxText="MERN"
+                        />
+                        <NormalCheckbox
+                            style="ml-[220px]"
+                            checkBoxText="PERN"
+                        />
+                        <NormalCheckbox
+                            style="ml-[300px]"
+                            checkBoxText="Serverless"
+                        />
+                        <NormalCheckbox
+                            style="ml-[130px] mt-7"
+                            checkBoxText="React Native"
+                        />
+                    </div>
+
+                    <div class=" py-1 mt-8 flex">
+                        <h5>Technology</h5>
+                        <NormalCheckbox
+                            style="ml-[130px]"
+                            checkBoxText="React Js"
+                        />
+                        <NormalCheckbox
+                            style="ml-[220px]"
+                            checkBoxText="Express Js"
+                        />
+                        <NormalCheckbox
+                            style="ml-[320px]"
+                            checkBoxText="Mongo DB"
+                        />
+                        <NormalCheckbox
+                            style="ml-[130px] mt-7"
+                            checkBoxText="React Native"
+                        />
+
+                        <NormalCheckbox
+                            style="ml-[250px] mt-7"
+                            checkBoxText="Postgre SQL"
+                        />
+                    </div>
 
                     <label
                         htmlFor="my-modal-3"
-                        className="text-center p-2 mt-10 rounded-md  w-14   ml-[390px] bg-PrimaryColorDark hover:bg-PrimaryColorLight hover:text-orange border-homeColor hover:border-PureWhite "
+                        class="btn w-auto h-[25px] ml-[400px] mt-3 box-content"
                     >
-                        Post
+                        {" "}
+                        post
                     </label>
                 </div>
             </div>
