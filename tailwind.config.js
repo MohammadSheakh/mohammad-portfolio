@@ -12,12 +12,23 @@ module.exports = {
             PureWhite: "#ffffff", // bg-PureWhite
             orange: "#7c2d12", // orange-900
             tooltip: "#94a3b8", // slate-400
+            cardBorder: "#353738",
+            cardBG: "#1d1e1f",
+            cardTextColor: "#ddd8d2",
+
+            // #333131 from new post form
+            // #deb887 burly wood
+            // #292b2c best background color
 
             // #271e4b number 1 background color
             // #0c242b awsome color
             //#01263f jush color
         },
     },
-    plugins: [require("daisyui", "flowbite/plugin")],
+    plugins: [
+        require("daisyui", "flowbite/plugin"),
+
+        require("@tailwindcss/line-clamp"),
+    ],
     //require("daisyui", "flowbite/plugin")
 };

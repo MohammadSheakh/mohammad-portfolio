@@ -48,10 +48,18 @@ export default function SearchByCategoryModal() {
 
                     <form action="">
                         <h5 className="mt-4">Project Title</h5>
-                        <input
+                        {/* <input
                             type="text"
                             placeholder="Type here..."
                             class="p-2 w-[450px] mt-3 "
+                        /> */}
+
+                        <input
+                            type="text"
+                            id="simple-search"
+                            class="p-2 mt-2 w-[450px] resize-y bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            placeholder="Type here..."
+                            required
                         />
 
                         <h5 className="py-3">Project Category</h5>

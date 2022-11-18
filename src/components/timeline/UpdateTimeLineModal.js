@@ -68,13 +68,21 @@ export default function UpdateTimeLineModal({ checked }) {
                         <>
                             <form action="">
                                 <h5 className="py-4">Timeline Heading</h5>
+                                {/* <textarea
+                                    type="text"
+                                    placeholder=""
+                                    class="p-2 w-[450px] resize-y"
+                                /> */}
                                 <textarea
                                     type="text"
+                                    id="simple-search"
+                                    class="p-2 w-[450px] resize-y bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                     placeholder="Type short informative heading..."
-                                    class="p-2 w-[450px] resize-y"
+                                    required
                                 />
                                 {/* a checkbox to show details form */}
-                                <div class="absolute top-48 left-80">
+                                <div class="flex justify-end mt-2">
+                                    {/* absolute top-48 left-80 */}
                                     <input
                                         id="default-checkbox"
                                         type="checkbox"
@@ -95,26 +103,45 @@ export default function UpdateTimeLineModal({ checked }) {
                                 </div>
                                 {timelineDetailsvisible && (
                                     <>
-                                        <h5 className="py-4">
-                                            Timeline Details
-                                        </h5>
-                                        <textarea class=" resize-y rounded-md w-[450px]"></textarea>
+                                        <h5 class="mb-1">Timeline Details</h5>
+                                        {/* <textarea class=" resize-y rounded-md w-[450px]"></textarea> */}
+                                        <textarea
+                                            type="text"
+                                            id="simple-search"
+                                            class="py-4 w-[450px] resize-y bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                            placeholder="Details"
+                                            required
+                                        />
                                     </>
                                 )}
 
                                 <h5 className="py-4">Link Title</h5>
+                                {/* <input
+                                    type="text"
+                                    placeholder=""
+                                    class="p-2 w-[450px] "
+                                /> */}
                                 <input
                                     type="text"
+                                    id="simple-search"
+                                    class="p-2 w-[450px] resize-y bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                     placeholder="Give Link Title"
-                                    class="p-2 w-[450px] "
+                                    required
                                 />
-                                <input
+                                {/* <input
                                     type="text"
                                     placeholder="Paste link here..."
                                     class="p-2 w-[450px] mt-3 "
+                                /> */}
+                                <input
+                                    type="text"
+                                    id="simple-search"
+                                    class="p-2 mt-2 w-[450px] resize-y bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                    placeholder="Paste link here..."
+                                    required
                                 />
                                 {/* open link in new page  */}
-                                <div class="absolute top-[330px] left-80">
+                                <div class="flex justify-end mt-4">
                                     <input
                                         id="default-checkbox1"
                                         type="checkbox"
