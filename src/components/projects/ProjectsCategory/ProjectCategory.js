@@ -1,5 +1,8 @@
 import React from "react";
 import ProjectCard from "./ProjectCard";
+import mohammadPictureLogo from "../../../assets/icons/mohammadPictureLogo.jpg";
+import rumiVai from "../../../assets/images/projects/Medi-Care Documentation/teammates/rumiVai.png";
+import SomelAhmed from "../../../assets/images/projects/ABC Hospital Management System/SomelAhmed.png";
 
 export default function ProjectCategory() {
     return (
@@ -13,7 +16,8 @@ export default function ProjectCategory() {
                 md:px-[10%]
                 sm:px-[1%] -> */}
 
-                <div class="flex flex-wrap justify-start sm:justify-center border-2 gap-10  border-box w-auto py-5 px-5 2xl:mx-20 ">
+                <div class="flex flex-wrap justify-start sm:justify-center  gap-10  border-box w-auto py-5 px-5 2xl:mx-20 ">
+                    {/* border-2 */}
                     <ProjectCard
                         projectTitle="Medi-Care Web Application Documentation"
                         projectDescription="A hospital cabin, Diagnostic center booking and doctor appointment
@@ -31,11 +35,25 @@ export default function ProjectCategory() {
                         in their nearby area. "
                         authority="Subject"
                         authorityName="Software Engineering Course"
+                        teamMemberProfileLink="https://www.facebook.com/sarjataziz.rumi.7"
+                        teamMemberImage={rumiVai}
+                        teamMemberName="Sarjat Aziz"
+                        instructorName="Dr. S.M. HASAN Mahmud"
                     />
-                    <ProjectCard />
-                    <ProjectCard />
-                    <ProjectCard />
-                    <ProjectCard />
+                    <ProjectCard
+                        projectTitle="Hospital Management System"
+                        projectDescription="A Hospital Management System desktop application is created to manage
+                        its admin, doctor, patient, employee and pharmacy sector. We tried to implement every
+                        feature a typical hospital has. We, as a team did this project with Windows Forms. 
+                        Which is a free and open-source graphical (GUI) class library included as a part of
+                        Microsoft .NET. This project aims to manage & serve all the features expected."
+                        authority="Subject"
+                        authorityName="C# course"
+                        teamMemberProfileLink="https://www.linkedin.com/in/mohammad-sheakh/"
+                        teamMemberImage={SomelAhmed}
+                        teamMemberName="Somel Ahmed"
+                        instructorName="MD. ISMAIL HOSSEN"
+                    />
                 </div>
             </div>
         </>
