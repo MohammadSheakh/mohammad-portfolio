@@ -52,7 +52,7 @@ export default function Navbar() {
                     </div>
                 </div>
                 <div class="col-span-6 w-full flex ml-56 mt-3 h-10 relative">
-                    {/* <Link to="/about">
+                    {/* <Link class="text-white" href="/about">
                         <button class="text-orange group w-auto ml-3 h-7 leading-6 rounded-md pl-2 pr-2 bg-PureWhite hover:shadow hover:shadow-homeColor">
                             Home
                             <span>
