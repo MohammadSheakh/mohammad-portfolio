@@ -11,9 +11,15 @@ export default function ProjectCard({
     projectDescription,
     authority,
     authorityName,
-    teamMemberProfileLink,
-    teamMemberImage,
-    teamMemberName,
+    teamMember1ProfileLink,
+    teamMember1Image,
+    teamMember1Name,
+    teamMember2ProfileLink,
+    teamMember2Image,
+    teamMember2Name,
+    teamMember3ProfileLink,
+    teamMember3Image,
+    teamMember3Name,
     instructorName,
     carrouselPhoto1,
     carrouselPhoto2,
@@ -77,9 +83,14 @@ export default function ProjectCard({
                         teamMemberName="Mohammad Sheakh"
                     />
                     <CompanyAndTeamInfo
-                        teamMemberProfileLink={teamMemberProfileLink}
-                        teamMemberImage={teamMemberImage}
-                        teamMemberName={teamMemberName}
+                        teamMemberProfileLink={teamMember1ProfileLink}
+                        teamMemberImage={teamMember1Image}
+                        teamMemberName={teamMember1Name}
+                    />
+                    <CompanyAndTeamInfo
+                        teamMemberProfileLink={teamMember2ProfileLink}
+                        teamMemberImage={teamMember2Image}
+                        teamMemberName={teamMember2Name}
                     />
                 </div>
                 <h3>Instructor : {instructorName} </h3>

@@ -3,6 +3,7 @@ import ProjectCard from "./ProjectCard";
 import mohammadPictureLogo from "../../../assets/icons/mohammadPictureLogo.jpg";
 import rumiVai from "../../../assets/images/projects/Medi-Care Documentation/teammates/rumiVai.png";
 import SomelAhmed from "../../../assets/images/projects/ABC Hospital Management System/SomelAhmed.png";
+import borhan from "../../../assets/images/projects/ABC Hospital Management System/borhan.png";
 
 import a from "../../../assets/images/projects/Medi-Care Documentation/a.png";
 import b from "../../../assets/images/projects/Medi-Care Documentation/b.png";
@@ -43,9 +44,9 @@ export default function ProjectCategory() {
                         in their nearby area. "
                         authority="Subject"
                         authorityName="Software Engineering Course"
-                        teamMemberProfileLink="https://www.facebook.com/sarjataziz.rumi.7"
-                        teamMemberImage={rumiVai}
-                        teamMemberName="Sarjat Aziz"
+                        teamMember1ProfileLink="https://www.facebook.com/sarjataziz.rumi.7"
+                        teamMember1Image={rumiVai}
+                        teamMember1Name="Sarjat Aziz"
                         instructorName="Dr. S.M. HASAN Mahmud"
                         carrouselPhoto1={a}
                         carrouselPhoto2={b}
@@ -60,9 +61,12 @@ export default function ProjectCategory() {
                         Microsoft .NET. This project aims to manage & serve all the features expected."
                         authority="Subject"
                         authorityName="C# course"
-                        teamMemberProfileLink="https://www.linkedin.com/in/somel-ahmed-a078a9219/"
-                        teamMemberImage={SomelAhmed}
-                        teamMemberName="Somel Ahmed"
+                        teamMember1ProfileLink="https://www.linkedin.com/in/somel-ahmed-a078a9219/"
+                        teamMember1Image={SomelAhmed}
+                        teamMember1Name="Somel Ahmed"
+                        teamMember2ProfileLink="https://www.facebook.com/borhan.711"
+                        teamMember2Image={borhan}
+                        teamMember2Name="Borhan Uddin"
                         instructorName="MD. ISMAIL HOSSEN"
                         carrouselPhoto1={hm1}
                         carrouselPhoto2={hm2}

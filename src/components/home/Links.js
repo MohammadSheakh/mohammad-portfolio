@@ -33,10 +33,8 @@ export default function Links() {
                             Linked In
                         </button>
                     </a>
-                    <a
-                        href="https://www.linkedin.com/in/mohammad-sheakh/"
-                        target="_blank"
-                    >
+                    {/* href="tel:015184198001" */}
+                    <a href="mail-to:mohammad.sheakh@gmail.com" target="_blank">
                         <button className="ml-2 btn mt-4 bg-PrimaryColorDark hover:bg-PrimaryColorLight hover:text-orange border-homeColor hover:border-PureWhite ">
                             <i>
                                 <MdEmail class="mr-2" />{" "}
