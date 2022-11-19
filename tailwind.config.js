@@ -32,3 +32,9 @@ module.exports = {
     ],
     //require("daisyui", "flowbite/plugin")
 };
+
+// 2xl:px-[30%] -> normal -> 100%
+// xl:px-[25%] -> 120% - 150%
+// lg:px-[20%] ->  160px - 180% - 230%
+// md:px-[10%]
+// sm:px-[1%] ->

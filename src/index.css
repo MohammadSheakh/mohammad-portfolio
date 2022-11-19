@@ -14,10 +14,10 @@
   .icon-color{
     color: #61dafb;
   }
-  /* .mohammadImageSize{
-    /* height: 500px !important; */
-    /* width: 500px; 
-  } */
+  .mohammadImageSize{
+     height: 540px !important;
+    width: 251px; 
+  }
 }
 
 @layer components {

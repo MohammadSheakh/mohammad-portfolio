@@ -4,6 +4,14 @@ import mohammadPictureLogo from "../../../assets/icons/mohammadPictureLogo.jpg";
 import rumiVai from "../../../assets/images/projects/Medi-Care Documentation/teammates/rumiVai.png";
 import SomelAhmed from "../../../assets/images/projects/ABC Hospital Management System/SomelAhmed.png";
 
+import a from "../../../assets/images/projects/Medi-Care Documentation/a.png";
+import b from "../../../assets/images/projects/Medi-Care Documentation/b.png";
+import c from "../../../assets/images/projects/Medi-Care Documentation/c.png";
+
+import hm1 from "../../../assets/images/projects/ABC Hospital Management System/hm1.png";
+import hm2 from "../../../assets/images/projects/ABC Hospital Management System/hm2.png";
+import hm3 from "../../../assets/images/projects/ABC Hospital Management System/hm3.png";
+
 export default function ProjectCategory() {
     return (
         <>
@@ -39,6 +47,9 @@ export default function ProjectCategory() {
                         teamMemberImage={rumiVai}
                         teamMemberName="Sarjat Aziz"
                         instructorName="Dr. S.M. HASAN Mahmud"
+                        carrouselPhoto1={a}
+                        carrouselPhoto2={b}
+                        carrouselPhoto3={c}
                     />
                     <ProjectCard
                         projectTitle="Hospital Management System"
@@ -49,10 +60,13 @@ export default function ProjectCategory() {
                         Microsoft .NET. This project aims to manage & serve all the features expected."
                         authority="Subject"
                         authorityName="C# course"
-                        teamMemberProfileLink="https://www.linkedin.com/in/mohammad-sheakh/"
+                        teamMemberProfileLink="https://www.linkedin.com/in/somel-ahmed-a078a9219/"
                         teamMemberImage={SomelAhmed}
                         teamMemberName="Somel Ahmed"
                         instructorName="MD. ISMAIL HOSSEN"
+                        carrouselPhoto1={hm1}
+                        carrouselPhoto2={hm2}
+                        carrouselPhoto3={hm3}
                     />
                 </div>
             </div>

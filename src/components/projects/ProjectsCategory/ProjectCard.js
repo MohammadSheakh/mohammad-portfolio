@@ -15,6 +15,9 @@ export default function ProjectCard({
     teamMemberImage,
     teamMemberName,
     instructorName,
+    carrouselPhoto1,
+    carrouselPhoto2,
+    carrouselPhoto3,
 }) {
     const [showFullDetails, setShowFullDetails] = useState(false);
     useEffect(() => {
@@ -25,7 +28,11 @@ export default function ProjectCard({
         <div class="border-2 h-[500px] w-[500px] bg-cardBG text-cardTextColor p-1 rounded-xl">
             <div>
                 {/* // carousal div */}
-                <ProjectCardCarrousel />
+                <ProjectCardCarrousel
+                    carrouselPhoto1={carrouselPhoto1}
+                    carrouselPhoto2={carrouselPhoto2}
+                    carrouselPhoto3={carrouselPhoto3}
+                />
             </div>
             {/* // title and button */}
             <div class="p-2">
