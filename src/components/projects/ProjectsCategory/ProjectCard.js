@@ -11,10 +11,19 @@ export default function ProjectCard({
     projectDescription,
     authority,
     authorityName,
-    teamMemberProfileLink,
-    teamMemberImage,
-    teamMemberName,
+    teamMember1ProfileLink,
+    teamMember1Image,
+    teamMember1Name,
+    teamMember2ProfileLink,
+    teamMember2Image,
+    teamMember2Name,
+    teamMember3ProfileLink,
+    teamMember3Image,
+    teamMember3Name,
     instructorName,
+    carrouselPhoto1,
+    carrouselPhoto2,
+    carrouselPhoto3,
 }) {
     const [showFullDetails, setShowFullDetails] = useState(false);
     useEffect(() => {
@@ -25,7 +34,11 @@ export default function ProjectCard({
         <div class="border-2 h-[500px] w-[500px] bg-cardBG text-cardTextColor p-1 rounded-xl">
             <div>
                 {/* // carousal div */}
-                <ProjectCardCarrousel />
+                <ProjectCardCarrousel
+                    carrouselPhoto1={carrouselPhoto1}
+                    carrouselPhoto2={carrouselPhoto2}
+                    carrouselPhoto3={carrouselPhoto3}
+                />
             </div>
             {/* // title and button */}
             <div class="p-2">
@@ -70,9 +83,14 @@ export default function ProjectCard({
                         teamMemberName="Mohammad Sheakh"
                     />
                     <CompanyAndTeamInfo
-                        teamMemberProfileLink={teamMemberProfileLink}
-                        teamMemberImage={teamMemberImage}
-                        teamMemberName={teamMemberName}
+                        teamMemberProfileLink={teamMember1ProfileLink}
+                        teamMemberImage={teamMember1Image}
+                        teamMemberName={teamMember1Name}
+                    />
+                    <CompanyAndTeamInfo
+                        teamMemberProfileLink={teamMember2ProfileLink}
+                        teamMemberImage={teamMember2Image}
+                        teamMemberName={teamMember2Name}
                     />
                 </div>
                 <h3>Instructor : {instructorName} </h3>

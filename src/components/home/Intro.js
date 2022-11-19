@@ -6,11 +6,17 @@ import Links from "./Links";
 export default function Intro() {
     return (
         <>
-            <div class="h-screen w-full flex  bg-homeColor dark:bg-PrimaryColorDark ">
-                <div class="relative w-full  flex-1">
-                    {/* bg-PureWhite columns-6*/}
-                    <div class="absolute font-extrabold text-5xl  border-2 rounded-lg mr-4 p-3 mt-44 ml-14 ">
-                        {/* mt-44 ml-14 */}
+            <div class=" min-h-[70vh] max-h-auto w-full flex flex-row xs:flex-col flex-wrap bg-homeColor dark:bg-PrimaryColorDark ">
+                <div class="relative w-auto  flex-1">
+                    {/* bg-PureWhite columns-6 w-full place-items-center*/}
+                    <div
+                        class="absolute font-normal text-3xl sm:font-semibold sm:text-3xl   md:font-bold md:text-2xl lg:font-medium lg:text-4xl xl:font-bold xl:text-3xl 2xl:font-extrabold 2xl:text-5xl       border-2 rounded-lg mt-44 2xl:mx-[7%] 2xl:px-[2%] xl:mx-[9%] xl:px-[2%] lg:mx-[9%] lg:px-[2%] md:mx-[8%] md:px-[2%] sm:ml-[2%] sm:mr-[20%] sm:px-[2%] 
+                        "
+
+                        //     2xl:font-[7%] 2xl:text-[2%] xl:font-[9%] xl:text-[2%] lg:font-[9%] lg:text-[2%] md:font-[8%] md:text-[2%]
+                        // sm:font-[8%] sm:text-[2%]
+                    >
+                        {/* mr-4  ml-14 p-3  2xl:px-[2%]  */}
                         <Typewriter
                             onInit={(typewriter) => {
                                 typewriter
@@ -43,10 +49,25 @@ export default function Intro() {
                         <Links />
                     </div>
                 </div>
-                <div class="relative flex-1">
-                    {/* columns-6 */}
+                <div class="relative flex-1 ">
+                    {/* 2xl:px-[30%] 2xl:mx-[30%] xl:px-[25%] xl:mx-[25%]
+                    lg:px-[20%] lg:mx-[20%] md:px-[10%] md:mx-[10%] sm:px-[1%]
+                    sm:mx-[1%] */}
+
+                    {/*
+                    2xl:mx-[7%] 2xl:px-[2%] xl:mx-[9%] xl:px-[2%] lg:mx-[9%] lg:px-[2%] md:mx-[8%] md:px-[2%]
+                    sm:mx-[8%] sm:px-[2%]
+                    */}
+
+                    {/* // 2xl:px-[30%] -> normal -> 100%
+                        // xl:px-[25%] -> 120% - 150%
+                        // lg:px-[20%] ->  160px - 180% - 230%
+                        // md:px-[10%]
+                        // sm:px-[1%] -> */}
                     <img
-                        class="absolute mohammadImageSize mt-[120px] h-[540px] w-auto ml-[320px] rounded-xl"
+                        // h-[540px] w-[251px] .. ei value gula mohammadImageSize er moddhe define kora ase ..
+                        // class="lg:ml-[320px] md:ml-[340px]  md:ml-[270px] sm:ml-[10%] "
+                        class="mohammadImageSize mt-[120px] lg:ml-[320px] md:mx-[270px] rounded-xl  "
                         src={mohammad}
                         alt=""
                     />

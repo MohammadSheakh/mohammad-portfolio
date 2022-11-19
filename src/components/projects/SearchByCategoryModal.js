@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import { BsUiChecksGrid } from "react-icons/bs";
 import { GoMarkGithub } from "react-icons/go";
 import { GrClose } from "react-icons/gr";
-import CategoryCheckbox from "./CategoryCheckbox";
-import NormalCheckbox from "./NormalCheckbox";
+import CategoryCheckbox from "../common/checkbox/CategoryCheckbox";
+import NormalCheckbox from "../common/checkbox/NormalCheckbox";
 
 export default function SearchByCategoryModal() {
     return (

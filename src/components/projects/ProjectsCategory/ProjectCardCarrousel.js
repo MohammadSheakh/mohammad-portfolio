@@ -1,9 +1,10 @@
 import React from "react";
-import a from "../../../assets/images/projects/Medi-Care Documentation/a.png";
-import b from "../../../assets/images/projects/Medi-Care Documentation/b.png";
-import c from "../../../assets/images/projects/Medi-Care Documentation/c.png";
 
-export default function ProjectCardCarrousel() {
+export default function ProjectCardCarrousel({
+    carrouselPhoto1,
+    carrouselPhoto2,
+    carrouselPhoto3,
+}) {
     return (
         <div id="default-carousel " class="relative" data-carousel="static">
             {/* <!-- Carousel wrapper --> */}
@@ -17,7 +18,7 @@ export default function ProjectCardCarrousel() {
                         First Slide
                     </span>
                     <img
-                        src={a}
+                        src={carrouselPhoto1}
                         class=" absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
                         alt="..."
                     />
@@ -25,7 +26,15 @@ export default function ProjectCardCarrousel() {
                 {/* <!-- Item 2 --> */}
                 <div class="hidden duration-700 ease-in-out" data-carousel-item>
                     <img
-                        src={b}
+                        src={carrouselPhoto2}
+                        class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                        alt="..."
+                    />
+                </div>
+                {/* <!-- Item 2 --> */}
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                    <img
+                        src={carrouselPhoto3}
                         class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
                         alt="..."
                     />
@@ -46,6 +55,13 @@ export default function ProjectCardCarrousel() {
                     aria-current="false"
                     aria-label="Slide 2"
                     data-carousel-slide-to="1"
+                ></button>
+                <button
+                    type="button"
+                    class="w-3 h-3 rounded-full"
+                    aria-current="false"
+                    aria-label="Slide 3"
+                    data-carousel-slide-to="2"
                 ></button>
             </div>
             {/* <!-- Slider controls --> */}

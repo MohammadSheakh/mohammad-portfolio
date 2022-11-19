@@ -10,8 +10,9 @@ export default function Links() {
     return (
         <>
             <div className="ml-16">
-                <div class="h-1 w-[700px] bg-PrimaryColorDark dark:bg-PrimaryColorLight"></div>
+                <div class="h-1 w-[700px]  bg-PrimaryColorDark dark:bg-PrimaryColorLight"></div>
                 <div>
+                    {/* flex flex-row flex-wrap */}
                     <a href="https://github.com/MohammadSheakh" target="_blank">
                         <button className="btn mt-4 bg-PrimaryColorDark hover:bg-PrimaryColorLight hover:text-orange border-homeColor hover:border-PureWhite ">
                             <i>
@@ -32,10 +33,8 @@ export default function Links() {
                             Linked In
                         </button>
                     </a>
-                    <a
-                        href="https://www.linkedin.com/in/mohammad-sheakh/"
-                        target="_blank"
-                    >
+                    {/* href="tel:015184198001" */}
+                    <a href="mail-to:mohammad.sheakh@gmail.com" target="_blank">
                         <button className="ml-2 btn mt-4 bg-PrimaryColorDark hover:bg-PrimaryColorLight hover:text-orange border-homeColor hover:border-PureWhite ">
                             <i>
                                 <MdEmail class="mr-2" />{" "}
@@ -56,7 +55,7 @@ export default function Links() {
                     </a>
                 </div>
             </div>
-            <div class="ml-[55%] mt-16">
+            <div class="ml-[55%] mt-6">
                 <button className="ml-2 btn mt-4 bg-PrimaryColorDark hover:bg-PrimaryColorLight hover:text-orange border-homeColor hover:border-PureWhite ">
                     <i>
                         <AiOutlineCloudDownload class="mr-2 " />{" "}
