@@ -19,20 +19,19 @@ function App() {
     return (
         <>
             <Navbar />
-            <Router>
-                <Routes>
-                    <Route path="/" element={<Home replace to="/home" />} />
 
-                    <Route path="/home" element={<Home />} />
+            <Routes>
+                <Route path="/" element={<Home replace to="/home" />} />
 
-                    <Route path="/about" element={<About />} />
+                <Route path="/home" element={<Home />} />
 
-                    <Route path="/dashboard" element={<Dashboard />} />
-                    <Route path="/projects" element={<Projects />} />
-                    <Route path="/story" element={<Story />} />
-                    <Route path="/timeline" element={<Timeline />} />
-                </Routes>
-            </Router>
+                <Route path="/about" element={<About />} />
+
+                <Route path="/dashboard" element={<Dashboard />} />
+                <Route path="/projects" element={<Projects />} />
+                <Route path="/story" element={<Story />} />
+                <Route path="/timeline" element={<Timeline />} />
+            </Routes>
         </>
     );
 }

@@ -41,7 +41,7 @@ export default function ProjectCardCarrousel({
                 </div>
             </div>
             {/* <!-- Slider indicators --> */}
-            <div class="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2">
+            <div class="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2 ">
                 <button
                     type="button"
                     class="w-3 h-3 rounded-full"

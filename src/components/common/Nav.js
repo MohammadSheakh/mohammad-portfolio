@@ -6,7 +6,7 @@ export default function Nav({ children, styleProps, path }) {
     console.log("boom2");
     return (
         <>
-            {/* <Link to={path}>
+            <Link to={path}>
                 <button class="text-orange group w-auto ml-3 h-7 leading-6 rounded-md pl-2 pr-2 bg-PureWhite hover:shadow hover:shadow-homeColor">
                     {children}
                     <span>
@@ -16,10 +16,10 @@ export default function Nav({ children, styleProps, path }) {
                         ></div>
                     </span>
                 </button>
-            </Link> */}
-            <Link to={path} class="btn">
-                {children}
             </Link>
+            {/* <Link to={path} class="btn">
+                {children}
+            </Link> */}
         </>
     );
 }
