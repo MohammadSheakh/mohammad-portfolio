@@ -21,9 +21,9 @@ export default function Intro() {
                             onInit={(typewriter) => {
                                 typewriter
                                     .typeString("Assalamu Alaikum ! ")
-                                    .callFunction(() => {
-                                        console.log("String typed out!");
-                                    })
+                                    // .callFunction(() => {
+                                    //     // console.log("String typed out!");
+                                    // })
                                     .pauseFor(700) // 2500
                                     .deleteAll()
                                     .typeString(
@@ -33,9 +33,7 @@ export default function Intro() {
                                     .typeString(
                                         "Front-end and Back-end Developer... "
                                     )
-                                    .callFunction(() => {
-                                        console.log("All strings were deleted");
-                                    })
+
                                     .pauseFor(700)
                                     .deleteChars(3)
                                     .typeString(
