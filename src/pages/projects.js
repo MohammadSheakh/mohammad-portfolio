@@ -16,7 +16,7 @@ export default function Projects() {
                 <div class="lg:container sm:px-[1%] md:px-[10%] lg:px-[20%] xl:px-[25%] 2xl:px-[30%] py-10">
                     <SearchProject />
                 </div>
-                <div class="w-auto">
+                <div class="w-auto ">
                     <ProjectCategory />
                 </div>
             </div>
