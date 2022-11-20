@@ -65,9 +65,9 @@ export default function Navbar() {
                     {/* <NavLink to="/about" class="btn">
                         about
                     </NavLink> */}
-                    {/* <Nav path="/" styleProps="group-hover:w-10 text-PureWhite">
+                    <Nav path="/" styleProps="group-hover:w-10 text-PureWhite">
                         Home
-                    </Nav> */}
+                    </Nav>
 
                     <Nav path="/projects" styleProps="group-hover:w-14">
                         Projects
