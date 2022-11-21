@@ -19,7 +19,8 @@ export default function UpdateTimeLineModal({ checked }) {
         <div>
             <label
                 htmlFor="my-modal-3"
-                className="ml-64 h-[55px] w-[190px] btn mt-4 p-2 bg-PrimaryColorDark hover:bg-PrimaryColorLight hover:text-orange border-homeColor hover:border-PureWhite "
+                className="btn h-[55px] w-[190px] mt-[60px] flex mx-auto bg-PrimaryColorDark hover:bg-PrimaryColorLight hover:text-orange border-homeColor hover:border-PureWhite "
+                // ml-64   btn  p-2
             >
                 Update Your Timeline
             </label>
@@ -44,12 +45,14 @@ export default function UpdateTimeLineModal({ checked }) {
                             id="default-checkbox3"
                             type="checkbox"
                             value=""
-                            class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                            class="w-4 h-4 text-blue-600 bg-gray-700 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                            // light -> bg-gray-100
                             onChange={() => setRichTextEditor(!richTextEditor)}
                         />
                         <label
                             for="default-checkbox"
-                            class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                            class="ml-2 text-sm font-medium text-gray-300 dark:text-gray-300"
+                            // light ->  text-gray-900
                         >
                             Open Rich Text Editor
                         </label>
@@ -76,7 +79,7 @@ export default function UpdateTimeLineModal({ checked }) {
                                 <textarea
                                     type="text"
                                     id="simple-search"
-                                    class="p-2 w-[450px] resize-y bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                    class=" p-2   w-[450px] resize-y bg-gray-700 border border-gray-600 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                     placeholder="Type short informative heading..."
                                     required
                                 />
@@ -87,7 +90,7 @@ export default function UpdateTimeLineModal({ checked }) {
                                         id="default-checkbox"
                                         type="checkbox"
                                         value=""
-                                        class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                                        class="w-4 h-4 text-blue-600 bg-gray-700 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                                         onChange={() =>
                                             setTimelineDetailsVisible(
                                                 !timelineDetailsvisible
@@ -96,7 +99,7 @@ export default function UpdateTimeLineModal({ checked }) {
                                     />
                                     <label
                                         for="default-checkbox"
-                                        class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                                        class="ml-2 text-sm font-medium text-gray-300 dark:text-gray-300"
                                     >
                                         Show details form
                                     </label>
@@ -108,7 +111,9 @@ export default function UpdateTimeLineModal({ checked }) {
                                         <textarea
                                             type="text"
                                             id="simple-search"
-                                            class="py-4 w-[450px] resize-y bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                            class=" p-2   w-[450px] resize-y bg-gray-700 border border-gray-600 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                            // py-4 w-[450px] resize-y bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500
+                                            // p-2  h-10 w-[450px] resize-y bg-gray-700 border border-gray-600 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500
                                             placeholder="Details"
                                             required
                                         />
@@ -124,7 +129,7 @@ export default function UpdateTimeLineModal({ checked }) {
                                 <input
                                     type="text"
                                     id="simple-search"
-                                    class="p-2 w-[450px] resize-y bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                    class=" p-2   w-[450px] resize-y bg-gray-700 border border-gray-600 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                     placeholder="Give Link Title"
                                     required
                                 />
@@ -136,7 +141,7 @@ export default function UpdateTimeLineModal({ checked }) {
                                 <input
                                     type="text"
                                     id="simple-search"
-                                    class="p-2 mt-2 w-[450px] resize-y bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                    class=" p-2 mt-3  w-[450px] resize-y bg-gray-700 border border-gray-600 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                     placeholder="Paste link here..."
                                     required
                                 />
@@ -146,7 +151,7 @@ export default function UpdateTimeLineModal({ checked }) {
                                         id="default-checkbox1"
                                         type="checkbox"
                                         value=""
-                                        class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                                        class="w-4 h-4 text-blue-600 bg-gray-700 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                                         onChange={() =>
                                             setLinkOpenInNewPage(
                                                 !linkOpenInNewPage
@@ -155,7 +160,7 @@ export default function UpdateTimeLineModal({ checked }) {
                                     />
                                     <label
                                         for="default-checkbox1"
-                                        class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                                        class="ml-2 text-sm font-medium text-gray-300 dark:text-gray-300"
                                     >
                                         Open link in new tab
                                     </label>

@@ -10,7 +10,7 @@ export default function Links() {
     return (
         <>
             <div className="ml-16">
-                <div class="h-1 w-[700px]  bg-PrimaryColorDark dark:bg-PrimaryColorLight"></div>
+                <div class="h-1 w-[700px]  bg-PrimaryColorLight dark:bg-PrimaryColorLight"></div>
                 <div>
                     {/* flex flex-row flex-wrap */}
                     <a href="https://github.com/MohammadSheakh" target="_blank">

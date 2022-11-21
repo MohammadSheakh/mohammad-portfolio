@@ -7,7 +7,8 @@ export default function FeedbackStatus() {
                 <h1 class="mx-1">status </h1>
                 <label
                     for="default-checkbox3"
-                    class=" mr-2 ml-2 my-1 text-sm font-medium text-gray-900 dark:text-gray-300 "
+                    class=" mr-2 ml-2 my-1 text-sm font-medium text-gray-300 dark:text-gray-300 "
+                    // light -> text-gray-900
                 >
                     General
                 </label>
@@ -22,7 +23,7 @@ export default function FeedbackStatus() {
 
                 <label
                     for="default-checkbox3"
-                    class=" mr-2 ml-2 my-1 text-sm font-medium text-gray-900 dark:text-gray-300 "
+                    class=" mr-2 ml-2 my-1 text-sm font-medium text-gray-300 dark:text-gray-300 "
                 >
                     Wish
                 </label>
@@ -38,7 +39,7 @@ export default function FeedbackStatus() {
 
                 <label
                     for="default-checkbox3"
-                    class=" mr-2 ml-2 my-1 text-sm font-medium text-gray-900 dark:text-gray-300 "
+                    class=" mr-2 ml-2 my-1 text-sm font-medium text-gray-300 dark:text-gray-300 "
                 >
                     Important
                 </label>
@@ -53,7 +54,7 @@ export default function FeedbackStatus() {
 
                 <label
                     for="default-checkbox3"
-                    class=" mr-2 ml-2 my-1 text-sm font-medium text-gray-900 dark:text-gray-300 "
+                    class=" mr-2 ml-2 my-1 text-sm font-medium text-gray-300 dark:text-gray-300 "
                 >
                     Suggestion
                 </label>

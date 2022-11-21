@@ -15,13 +15,13 @@ export default function Feedback() {
 
                 <form class="form">
                     <div
-                        className={` w-[420px] flex ml-[40%] mb-5  w-auto text-center  mt-[6px]     bg-PrimaryColorDark  `}
+                        className={` w-[420px] flex ml-[40%] mb-5  w-auto text-center  mt-[6px]     bg-PrimaryColorDark   `}
                     >
                         {/* ml-[425px] */}
                         <div class="hover:bg-PrimaryColorDarkHover hover:border-2 rounded-md p-1 px-2">
                             <label
                                 for="default-checkbox3"
-                                class=" mr-2  text-sm font-medium text-gray-900 dark:text-gray-300 "
+                                class=" mr-2  text-sm font-medium text-gray-300 dark:text-gray-300 "
                             >
                                 act as anonymous
                             </label>
@@ -39,7 +39,7 @@ export default function Feedback() {
                         <div class="hover:bg-PrimaryColorDarkHover hover:border-2 rounded-md p-1 px-2">
                             <label
                                 for="default-checkbox3"
-                                class=" mr-2 ml-3  text-sm font-medium text-gray-900 dark:text-gray-300"
+                                class=" mr-2 ml-3  text-sm font-medium text-gray-300 dark:text-gray-300"
                             >
                                 give more information
                             </label>
@@ -70,7 +70,8 @@ export default function Feedback() {
                                         type="text"
                                         id="simple-search"
                                         placeholder="Type your name here..."
-                                        class="p-2  h-10 w-[450px] resize-y bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                        class="p-2  h-10 w-[450px] resize-y bg-gray-700 border border-gray-600 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                        // bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500
                                         required
                                     />
                                 </div>
@@ -84,7 +85,7 @@ export default function Feedback() {
                                                 type="text"
                                                 id="simple-search"
                                                 placeholder="Paste facebook id link here... "
-                                                class="p-2  h-10 w-[450px] resize-y bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                                class="p-2  h-10 w-[450px] resize-y bg-gray-700 border border-gray-600 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                                 required
                                             />
                                         </div>
@@ -96,7 +97,7 @@ export default function Feedback() {
                                                 type="text"
                                                 id="simple-search"
                                                 placeholder="Give Country code correctly.. "
-                                                class="p-2  h-10 w-[450px] resize-y bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                                class="p-2  h-10 w-[450px] resize-y bg-gray-700 border border-gray-600 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                                 required
                                             />
                                         </div>
@@ -108,7 +109,7 @@ export default function Feedback() {
                                                 type="text"
                                                 id="simple-search"
                                                 placeholder="Type Email ID here... "
-                                                class="p-2  h-10 w-[450px] resize-y bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                                class="p-2  h-10 w-[450px] resize-y bg-gray-700 border border-gray-600 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                                 required
                                             />
                                         </div>
@@ -120,7 +121,7 @@ export default function Feedback() {
                                                 type="text"
                                                 id="simple-search"
                                                 placeholder="Present Address... "
-                                                class="p-2  h-10 w-[450px]  resize-y bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                                class="p-2  h-10 w-[450px] resize-y bg-gray-700 border border-gray-600 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                                 required
                                             />
                                         </div>
@@ -132,7 +133,7 @@ export default function Feedback() {
                                                 type="text"
                                                 id="simple-search"
                                                 placeholder="Permanent Address... "
-                                                class="p-2  h-10 w-[450px] resize-y bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                                class="p-2  h-10 w-[450px] resize-y bg-gray-700 border border-gray-600 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                                 required
                                             />
                                         </div>
@@ -145,7 +146,7 @@ export default function Feedback() {
                                                 type="text"
                                                 id="simple-search"
                                                 placeholder="How do i know you..."
-                                                class="p-2  h-10 w-[450px] resize-y bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                                class="p-2  h-10 w-[450px] resize-y bg-gray-700 border border-gray-600 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                                 required
                                             />
                                         </div>
@@ -162,7 +163,9 @@ export default function Feedback() {
                                         type="text"
                                         id="simple-search"
                                         placeholder="Write feedback here... "
-                                        class="p-2 mb-14 w-[450px] resize-y bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                        class="p-2 mb-14  w-[450px] resize-y bg-gray-700 border border-gray-600 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                        //
+                                        // p-2 mb-14 w-[450px] resize-y bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500
                                         required
                                     />
                                     <div class="flex justify-between ">
@@ -189,7 +192,7 @@ export default function Feedback() {
                                         type="text"
                                         id="simple-search"
                                         placeholder="Write feedback here... "
-                                        class="p-2 mb-14 w-[450px] resize-y bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                        class="p-2 mb-14  w-[450px] resize-y bg-gray-700 border border-gray-600 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                         required
                                     />
 

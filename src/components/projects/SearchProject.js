@@ -5,7 +5,7 @@ import SearchByCategoryModal from "./SearchByCategoryModal";
 export default function SearchProject() {
     return (
         <>
-            <form class="flex items-center w-[700px]">
+            <form class="flex items-center w-[700px] mt-[100px]">
                 <label for="simple-search" class="sr-only">
                     Search
                 </label>
