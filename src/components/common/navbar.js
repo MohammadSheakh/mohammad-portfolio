@@ -55,7 +55,12 @@ export default function Navbar() {
                     <Nav path="/" styleProps="group-hover:w-10 text-PureWhite">
                         Home
                     </Nav>
-
+                    <Nav
+                        path="/about"
+                        styleProps="group-hover:w-[71px] text-PureWhite"
+                    >
+                        About Me
+                    </Nav>
                     <Nav path="/projects" styleProps="group-hover:w-14">
                         Projects
                     </Nav>
@@ -64,6 +69,9 @@ export default function Navbar() {
                     </Nav>
                     <Nav path="/story" styleProps="group-hover:w-10">
                         Story
+                    </Nav>
+                    <Nav path="/achievements" styleProps="group-hover:w-24">
+                        Achievements
                     </Nav>
                     <Nav path="/dashboard" styleProps="group-hover:w-20">
                         DashBoard

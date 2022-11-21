@@ -5,8 +5,8 @@ export default function Feedback() {
     const [showInputBox, setShowInputBox] = useState(false);
 
     return (
-        <div class="min-h-screen max-h-auto w-full bg-PrimaryColorDark">
-            <div class="h-[700px] w-auto mx-auto mt-[30px] ">
+        <div class="min-h-screen max-h-auto flex w-full bg-PrimaryColorDark">
+            <div class="h-auto w-auto mx-auto mt-[30px] ">
                 <h1 class="text-center p-5 font-bold text-xl">
                     Share Your thoughts and creative idea with me
                 </h1>
@@ -121,7 +121,8 @@ export default function Feedback() {
                                         required
                                     />
                                 </div>
-                                <div class="ml-[180px]">
+                                <div>
+                                    {/* class="ml-[180px]" */}
                                     {/* // feedback box------------------- */}
 
                                     <textarea
@@ -141,7 +142,8 @@ export default function Feedback() {
                             </>
                         ) : (
                             <>
-                                <div class="ml-[180px]">
+                                <div>
+                                    {/* class="ml-[180px]" */}
                                     {/* // feedback box------------------- */}
 
                                     <textarea

@@ -28,6 +28,7 @@ export default function ProjectCard({
     teamMember3Image,
     teamMember3Name,
     instructorName,
+    instructorProfileLink,
     carrouselPhoto1,
     carrouselPhoto2,
     carrouselPhoto3,
@@ -135,7 +136,15 @@ export default function ProjectCard({
                         teamMemberName={teamMember2Name}
                     />
                 </div>
-                <h3 class="mb-1">Instructor : {instructorName} </h3>
+                <a href={instructorProfileLink} target="_blank">
+                    <h3 class="mb-1 ">
+                        Instructor :{" "}
+                        <span class="mb-1 hover:bg-tooltip hover:text-gray-900 px-1 rounded-md">
+                            {" "}
+                            {instructorName}
+                        </span>
+                    </h3>
+                </a>
 
                 <div class="relative ">
                     {/* // love react ,comment , see documentation button */}
