@@ -59,7 +59,7 @@ export default function Navbar() {
                         path="/about"
                         styleProps="group-hover:w-[71px] text-PureWhite"
                     >
-                        About Me
+                        About
                     </Nav>
                     <Nav path="/projects" styleProps="group-hover:w-14">
                         Projects
