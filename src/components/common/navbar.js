@@ -7,37 +7,41 @@ import nightIcon from "../../assets/icons/nightIcon.png";
 import { Link, NavLink } from "react-router-dom";
 
 export default function Navbar() {
-    console.log("boom3");
-    const [theme, setTheme] = useState("light");
-    // useEffect(() => {
-    //     if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-    //         setTheme("dark");
-    //     } else {
-    //         setTheme("light");
-    //     }
-    // }, []);
+    // const [theme, setTheme] = useState("dark");
+    const [theme, setTheme] = useState(null);
+
+    useEffect(() => {
+        // to check prefered theme
+        if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+            setTheme("dark");
+            console.log("dark theme added from system : ", theme);
+        } else {
+            setTheme("light");
+            console.log("light theme added from system");
+        }
+    }, []);
+
     useEffect(() => {
         if (theme === "dark") {
             document.documentElement.classList.add("dark");
-            console.log("added");
-            console.log(
-                "---------------------------------------------------------"
-            );
+            console.log("classlist.add : ::: dark");
         } else {
             document.documentElement.classList.remove("dark");
-            console.log("removed");
+            console.log("classlist.remove : ::: dark");
         }
+        // jokhon e theme er value change hobe .. tokhon e eita ghotbe ..
     }, [theme]);
 
     const handleThemeSwitch = () => {
-        console.log("clicked");
-        console.log(theme);
+        console.log(
+            "-------------------------------------------------- btn clicked "
+        );
         setTheme(theme === "dark" ? "Light" : "dark");
     };
 
     return (
         <>
-            <div class="  h-14 w-full bg-navbarColorGray grid grid-cols-12">
+            <div class="  h-14 w-full bg-navbarColorGray grid grid-cols-12 fixed z-50">
                 {/* bg-slate-600 */}
                 <div class="col-span-4 w-full h-14 rounded-full group flex">
                     <Link to="/">

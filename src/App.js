@@ -15,7 +15,6 @@ import {
 } from "react-router-dom";
 
 function App() {
-    console.log("From App");
     return (
         <>
             <Navbar />

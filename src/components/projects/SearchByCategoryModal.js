@@ -57,7 +57,9 @@ export default function SearchByCategoryModal() {
                         <input
                             type="text"
                             id="simple-search"
-                            class="p-2 mt-2 w-[450px] resize-y bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            class=" p-2  mt-3  w-[450px] resize-y bg-gray-700 border border-gray-600 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            //
+                            // p-2 mt-2 w-[450px] resize-y bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500
                             placeholder="Type here..."
                             required
                         />
@@ -68,7 +70,8 @@ export default function SearchByCategoryModal() {
                                 id="default-checkbox1"
                                 type="checkbox"
                                 value=""
-                                class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                                class="w-4 h-4 text-blue-600 bg-gray-700 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                                // light -> bg-gray-100
                                 // onChange={() =>
                                 //     setTimelineDetailsVisible(
                                 //         !timelineDetailsvisible
@@ -77,7 +80,8 @@ export default function SearchByCategoryModal() {
                             />
                             <label
                                 for="default-checkbox"
-                                class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                                class="ml-2 text-sm font-medium text-gray-300 dark:text-gray-300"
+                                // light -> text-gray-900
                             >
                                 Small
                             </label>
@@ -87,7 +91,7 @@ export default function SearchByCategoryModal() {
                                 id="default-checkbox2"
                                 type="checkbox"
                                 value=""
-                                class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                                class="w-4 h-4 text-blue-600 bg-gray-700 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                                 // onChange={() =>
                                 //     setTimelineDetailsVisible(
                                 //         !timelineDetailsvisible
@@ -96,7 +100,7 @@ export default function SearchByCategoryModal() {
                             />
                             <label
                                 for="default-checkbox3"
-                                class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                                class="ml-2 text-sm font-medium text-gray-300 dark:text-gray-300"
                             >
                                 Medium
                             </label>
@@ -106,7 +110,7 @@ export default function SearchByCategoryModal() {
                                 id="default-checkbox2"
                                 type="checkbox"
                                 value=""
-                                class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                                class="w-4 h-4 text-blue-600 bg-gray-700 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                                 // onChange={() =>
                                 //     setTimelineDetailsVisible(
                                 //         !timelineDetailsvisible
@@ -115,7 +119,7 @@ export default function SearchByCategoryModal() {
                             />
                             <label
                                 for="default-checkbox3"
-                                class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                                class="ml-2 text-sm font-medium text-gray-300 dark:text-gray-300"
                             >
                                 Large
                             </label>
@@ -133,7 +137,7 @@ export default function SearchByCategoryModal() {
                             </label> */}
                                 <label
                                     for="default-checkbox3"
-                                    class="mr-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                                    class="mr-2 text-sm font-medium text-gray-300 dark:text-gray-300"
                                 >
                                     E Commerce
                                 </label>
@@ -141,7 +145,7 @@ export default function SearchByCategoryModal() {
                                     id="default-checkbox2"
                                     type="checkbox"
                                     value=""
-                                    class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                                    class="w-4 h-4 text-blue-600 bg-gray-700 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                                     // onChange={() =>
                                     //     setTimelineDetailsVisible(
                                     //         !timelineDetailsvisible
@@ -152,7 +156,7 @@ export default function SearchByCategoryModal() {
                             <div className="h-[30px] w-32 ml-[270px] text-center p-1 rounded-md mt-4   absolute mt-[-30px]  bg-PrimaryColorDark  hover:bg-PrimaryColorDarkHover hover:border-2  box-border ">
                                 <label
                                     for="default-checkbox3"
-                                    class="mr-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                                    class="mr-2 text-sm font-medium text-gray-300 dark:text-gray-300"
                                 >
                                     Management
                                 </label>
@@ -160,7 +164,7 @@ export default function SearchByCategoryModal() {
                                     id="default-checkbox2"
                                     type="checkbox"
                                     value=""
-                                    class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                                    class="w-4 h-4 text-blue-600 bg-gray-700 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                                     // onChange={() =>
                                     //     setTimelineDetailsVisible(
                                     //         !timelineDetailsvisible
@@ -172,7 +176,7 @@ export default function SearchByCategoryModal() {
                             <div className="h-[30px] w-auto ml-[270px] text-center p-1 rounded-md  mt-[6px]  bg-PrimaryColorDark   hover:bg-PrimaryColorDarkHover hover:border-2  box-border ">
                                 <label
                                     for="default-checkbox3"
-                                    class="mr-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                                    class="mr-2 text-sm font-medium text-gray-300 dark:text-gray-300"
                                 >
                                     Hospital Management
                                 </label>
@@ -180,7 +184,7 @@ export default function SearchByCategoryModal() {
                                     id="default-checkbox2"
                                     type="checkbox"
                                     value=""
-                                    class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                                    class="w-4 h-4 text-blue-600 bg-gray-700 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                                     // onChange={() =>
                                     //     setTimelineDetailsVisible(
                                     //         !timelineDetailsvisible
@@ -192,7 +196,7 @@ export default function SearchByCategoryModal() {
                             <div className="h-[30px] w-[205px] ml-[270px] text-center p-1 rounded-md  mt-[6px]  bg-PrimaryColorDark   hover:bg-PrimaryColorDarkHover hover:border-2  box-border">
                                 <label
                                     for="default-checkbox3"
-                                    class="mr-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                                    class="mr-2 text-sm font-medium text-gray-300 dark:text-gray-300"
                                 >
                                     Apartment Management
                                 </label>
@@ -200,7 +204,7 @@ export default function SearchByCategoryModal() {
                                     id="default-checkbox2"
                                     type="checkbox"
                                     value=""
-                                    class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                                    class="w-4 h-4 text-blue-600 bg-gray-700 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                                     // onChange={() =>
                                     //     setTimelineDetailsVisible(
                                     //         !timelineDetailsvisible

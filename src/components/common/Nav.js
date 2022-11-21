@@ -3,7 +3,6 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { Link } from "react-router-dom";
 export default function Nav({ children, styleProps, path }) {
-    console.log("boom2");
     return (
         <>
             <Link to={path}>

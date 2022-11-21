@@ -13,7 +13,7 @@ export default function Projects() {
                 lg:px-[20%] ->  160px - 180% - 230% 
                 md:px-[10%]
                 sm:px-[1%] -> */}
-                <div class="lg:container sm:px-[1%] md:px-[10%] lg:px-[20%] xl:px-[25%] 2xl:px-[30%] py-10">
+                <div class="lg:container  sm:px-[1%] md:px-[10%] lg:px-[20%] xl:px-[25%] 2xl:px-[30%] py-10">
                     <SearchProject />
                 </div>
                 <div class="w-auto ">
