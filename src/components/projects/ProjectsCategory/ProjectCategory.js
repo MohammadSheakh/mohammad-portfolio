@@ -28,7 +28,7 @@ export default function ProjectCategory() {
                 <div class="flex flex-wrap justify-start sm:justify-center  gap-10  border-box w-auto py-5 px-5 2xl:mx-20 ">
                     {/* border-2 */}
                     <ProjectCard
-                        projectTitle="Medi-Care Web Application Documentation"
+                        projectTitle="Medi-Care Web Application Documentation "
                         projectDescription="A hospital cabin, Diagnostic center booking and doctor appointment
                         taking web application . Moderns days healthcare facilities get so many improvements.
                         But in our county, many people can’t take proper treatment for their health problems, 
@@ -48,11 +48,8 @@ export default function ProjectCategory() {
                         teamMember1Image={rumiVai}
                         teamMember1Name="Sarjat Aziz"
                         instructorName="Dr. S.M. HASAN Mahmud"
-                        // carrouselPhoto1="https://res.cloudinary.com/deg4frre7/image/upload/v1668921269/Mohammad%20Portfolio/projects/Medi-Care%20Web%20Application%20Documentation%20%28SE%29/c_n0wl9n.png"
-                        // carrouselPhoto2="https://res.cloudinary.com/deg4frre7/image/upload/v1668921269/Mohammad%20Portfolio/projects/Medi-Care%20Web%20Application%20Documentation%20%28SE%29/b_pxj6uz.png"
-                        // carrouselPhoto3="https://res.cloudinary.com/deg4frre7/image/upload/v1668921266/Mohammad%20Portfolio/projects/Medi-Care%20Web%20Application%20Documentation%20%28SE%29/a_tladul.png"
-
-                        carrouselPhoto1={a}
+                        instructorProfileLink="https://www.linkedin.com/in/dr-s-m-hasan-mahmud-63450b53/"
+                        carrouselPhoto1="https://res.cloudinary.com/deg4frre7/image/upload/v1668921269/Mohammad%20Portfolio/projects/Medi-Care%20Web%20Application%20Documentation%20%28SE%29/c_n0wl9n.png"
                         carrouselPhoto2="https://res.cloudinary.com/deg4frre7/image/upload/v1668921269/Mohammad%20Portfolio/projects/Medi-Care%20Web%20Application%20Documentation%20%28SE%29/b_pxj6uz.png"
                         carrouselPhoto3="https://res.cloudinary.com/deg4frre7/image/upload/v1668921266/Mohammad%20Portfolio/projects/Medi-Care%20Web%20Application%20Documentation%20%28SE%29/a_tladul.png"
                     />
@@ -72,6 +69,7 @@ export default function ProjectCategory() {
                         teamMember2Image={borhan}
                         teamMember2Name="Borhan Uddin"
                         instructorName="MD. ISMAIL HOSSEN"
+                        instructorProfileLink="https://www.linkedin.com/in/md-ismail-hossen-a5b144ba/"
                         carrouselPhoto1="https://res.cloudinary.com/deg4frre7/image/upload/v1668921059/Mohammad%20Portfolio/projects/Hospital%20Management%20Software/hm3_sqcu7z.png"
                         carrouselPhoto2="https://res.cloudinary.com/deg4frre7/image/upload/v1668921059/Mohammad%20Portfolio/projects/Hospital%20Management%20Software/hm2_winrhb.png"
                         carrouselPhoto3="https://res.cloudinary.com/deg4frre7/image/upload/v1668921059/Mohammad%20Portfolio/projects/Hospital%20Management%20Software/hm1_uv3jip.png"
