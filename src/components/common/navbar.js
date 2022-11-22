@@ -43,16 +43,18 @@ export default function Navbar() {
         <>
             <div class="  h-14 w-full bg-navbarColorGray grid grid-cols-12 fixed z-50">
                 {/* bg-slate-600 */}
-                <div class="col-span-4 w-full h-14 rounded-full group flex">
+                <div class="col-span-4 w-[210px] h-14 rounded-full group flex">
                     <Link to="/">
                         <img
-                            class=" h-12 w-10 rounded-full ml-4 mt-1 hover:ring-4 focus:ring-green-800  "
+                            class=" h-12 w-10 rounded-full ml-4 mt-1   hover:ring-4"
+                            // hover:ring-4 hover:ring-green-800
+                            // ring-2 ring-pink-500 ring-inset
                             src={mohammadPictureLogo}
                             alt="Logo"
                         />
                     </Link>
 
-                    <div class="block h-8 w-0 rounded-md ml-2 mt-3 pl-2 pr-2 pt-1 pb-1 invisible group-hover:w-36 group-hover:visible transition-all duration-1000 hover:duration-0 delay-0 bg-PrimaryColorLight  ">
+                    <div class="block h-8 w-[0px] rounded-md ml-2 mt-3 pl-2 pr-2 pt-1 pb-1 invisible group-hover:w-36 group-hover:visible transition-all duration-1000 hover:duration-0 delay-0 bg-PrimaryColorLight  ">
                         <h2 class=" text-orange leading-3 text-sm w-36 invisible group-hover:visible transition-all duration-1000 hover:delay-400 ">
                             Mohammad Sheakh BSc in CSE
                         </h2>
