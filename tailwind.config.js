@@ -16,14 +16,17 @@ module.exports = {
             cardBorder: "#353738",
             cardBG: "#1d1e1f",
             cardTextColor: "#ddd8d2",
+            footerColor: " #01484f",
 
             // #333131 from new post form
             // #deb887 burly wood
+            // #dec197 burly wood awsome version
             // #292b2c best background color
 
             // #271e4b number 1 background color
             // #0c242b awsome color
             //#01263f jush color
+            // #01384f jush color 2 -> for navbar
         },
     },
     plugins: [

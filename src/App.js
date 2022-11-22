@@ -13,6 +13,7 @@ import {
     Routes,
     Route,
 } from "react-router-dom";
+import Footer from "./components/common/footer";
 
 function App() {
     return (
@@ -31,6 +32,7 @@ function App() {
                 <Route path="/story" element={<Story />} />
                 <Route path="/timeline" element={<Timeline />} />
             </Routes>
+            <Footer />
         </>
     );
 }
