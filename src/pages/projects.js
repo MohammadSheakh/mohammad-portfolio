@@ -5,7 +5,7 @@ import SearchProject from "../components/projects/SearchProject";
 export default function Projects() {
     return (
         <>
-            <div class="  h-screen w-full  ">
+            <div class="  h-auto w-full bg-PrimaryColorDark ">
                 {/* mt-10 mr-10 */}
                 {/*
                 2xl:px-[30%] -> normal -> 100% 

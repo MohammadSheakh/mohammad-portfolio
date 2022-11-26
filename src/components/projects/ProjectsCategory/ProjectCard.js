@@ -40,7 +40,7 @@ export default function ProjectCard({
     }, [showFullDetails]);
 
     return (
-        <div class=" border-2 h-[500px] w-[500px] bg-cardBG text-cardTextColor p-1 rounded-xl">
+        <div class=" border-2 h-[500px]  w-[500px]  bg-cardBG text-cardTextColor p-1 rounded-xl mb-10">
             <div>
                 {/* // carousal div */}
                 <ProjectCardCarrousel

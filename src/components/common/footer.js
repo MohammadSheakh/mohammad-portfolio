@@ -3,7 +3,7 @@ import FooterList from "./FooterList";
 
 export default function Footer() {
     return (
-        <div class="h-[300px] w-full bg-footerColor flex gap-x-10 justify-center pt-20">
+        <div class="h-[300px] w-full bg-footerColor text-gray-200 dark:text-gray-300  flex flex-wrap gap-x-10 justify-center pt-20">
             <div>
                 <ul>
                     <FooterList listTitle="Mohammad Sheakh Profile" />

@@ -9,7 +9,7 @@ export default function Feedback() {
     return (
         <div class="min-h-screen max-h-auto flex w-full bg-PrimaryColorDark">
             <div class="h-auto w-auto mx-auto mt-[30px] mb-16">
-                <h1 class="text-center p-5 font-bold text-xl">
+                <h1 class="text-gray-200 dark:text-gray-300 text-center p-5 font-bold text-xl">
                     Share Your thoughts and creative idea with me
                 </h1>
 
@@ -47,7 +47,7 @@ export default function Feedback() {
                                 id="default-checkbox2"
                                 type="checkbox"
                                 value=""
-                                class="  w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                                class="  w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300  focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                                 onChange={() => {
                                     setShowMoreForm(!showMoreForm);
                                     if (showMoreForm && showInputBox) {
@@ -59,11 +59,11 @@ export default function Feedback() {
                             />
                         </div>
                     </div>
-                    <div class="flex flex-col gap-y-6 border-2  rounded-xl p-4  ml-9 min-w-[200px] max-w-[500px]">
+                    <div class="flex flex-col gap-y-6 border-2  rounded-xl p-4  ml-9 min-w-[200px] max-w-[500px] border-gray-200">
                         {!showInputBox ? (
                             <>
                                 <div class="flex flex-wrap">
-                                    <h1 class="h-[30px] w-[180px]  mb-2 mt-1 w-auto px-3">
+                                    <h1 class="h-[30px] w-[180px]  mb-2 mt-1 w-auto px-3 text-gray-200 dark:text-gray-400 ">
                                         Your Name :{" "}
                                     </h1>
                                     <input
@@ -173,7 +173,7 @@ export default function Feedback() {
                                         <div>
                                             <button
                                                 htmlFor="my-modal-3"
-                                                className="border-2 ml-[-60px] bg-cardBorder text-center p-2 rounded-md w-14  absolute  bg-PrimaryColorDark hover:bg-PrimaryColorLight hover:text-orange border-homeColor hover:border-PureWhite "
+                                                className="text-white dark:text-white border-2 ml-[-60px] bg-cardBorder text-center p-2 rounded-md w-14  absolute  bg-PrimaryColorDark hover:bg-PrimaryColorLight hover:text-orange border-homeColor hover:border-PureWhite "
                                                 // mt-[-35px]
                                             >
                                                 Post
@@ -201,7 +201,7 @@ export default function Feedback() {
                                         <div>
                                             <button
                                                 htmlFor="my-modal-3"
-                                                className="border-2 ml-[-60px] bg-cardBorder text-center p-2 rounded-md w-14  absolute  bg-PrimaryColorDark hover:bg-PrimaryColorLight hover:text-orange border-homeColor hover:border-PureWhite "
+                                                className="text-white dark:text-white border-2 ml-[-60px] bg-cardBorder text-center p-2 rounded-md w-14  absolute  bg-PrimaryColorDark hover:bg-PrimaryColorLight hover:text-orange border-homeColor hover:border-PureWhite "
                                                 // mt-[-35px]
                                             >
                                                 Post
