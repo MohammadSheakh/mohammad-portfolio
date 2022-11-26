@@ -6,7 +6,7 @@ import Links from "./Links";
 export default function Intro() {
     return (
         <>
-            <div class=" min-h-[70vh] max-h-auto pb-[40px] w-full flex flex-row xs:flex-col flex-wrap bg-PrimaryColorDark dark:bg-PrimaryColorDark ">
+            <div class="text-gray-200 dark:text-gray-300 min-h-[70vh] max-h-auto pb-[40px] w-full flex flex-row xs:flex-col flex-wrap bg-PrimaryColorDark dark:bg-PrimaryColorDark ">
                 <div class="relative w-auto  flex-1">
                     {/* bg-PureWhite columns-6 w-full place-items-center*/}
                     <div

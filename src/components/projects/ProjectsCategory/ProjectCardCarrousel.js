@@ -23,7 +23,7 @@ export default function ProjectCardCarrousel({
             }}
             navigation={true}
             modules={[Pagination, Navigation]}
-            className="mySwiper h-52 overflow-hidden rounded-lg md:h-52"
+            className="mySwiper overflow-hidden rounded-lg lg:h-52 md:h-52 sm:h-52 xl:h-52 h-40 w-auto"
         >
             <SwiperSlide>
                 <img src={carrouselPhoto1} class=" " alt="..." />

@@ -46,8 +46,8 @@
 
   .swiper-slide img {
     display: block;
-    width: 100%;
-    height: 100%;
+    width: auto; /*100% */ 
+    height: auto; /*100% */ 
     object-fit: cover;
   }
 
@@ -58,11 +58,11 @@
 
   .mainCustom {
     width: 90% !important;
-    height: 465px !important;
+    /* height: 465px !important; */
 }
 .custom {
     width: 352px !important;
-    height: 400px;
+    /* height: 400px; */
     position: relative;
     top: 10px;
     border-radius: 6px;
