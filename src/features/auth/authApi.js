@@ -8,7 +8,7 @@ export const authApi = apiSlice.injectEndpoints({
         register: builder.mutation({
             query: (data) => ({
                 // data receive kore .. jeta amra form er body te pathabo ..
-                url: "api/register",
+                url: "/api/admin/register",
                 method: "POST",
                 body: data,
             }),
@@ -44,15 +44,20 @@ export const authApi = apiSlice.injectEndpoints({
 
         // login endpoints //////////////////////////////////////////////////////////////////////////////
         login: builder.mutation({
+            // https://www.youtube.com/watch?v=-JJFQ9bkUbo ei video er jei ta credentials . amader sheita data
             query: (data) => ({
-                url: "/api/login",
+                url: "/api/admin/login",
                 method: "POST",
-                body: data,
+                body: data, // {...data} // evabe pathaise .. Dave Gray yt channel
             }),
 
             async onQueryStarted(arg, { queryFulfilled, dispatch }) {
                 try {
                     const result = await queryFulfilled;
+                    console.log(
+                        "authApi -> login endpoint -> try block 🎯🎯",
+                        result
+                    );
 
                     localStorage.setItem(
                         "auth",
@@ -69,6 +74,10 @@ export const authApi = apiSlice.injectEndpoints({
                         })
                     );
                 } catch (err) {
+                    console.log(
+                        "authApi -> login endpoint -> catch block 🤐🤐",
+                        err
+                    );
                     // do nothing
                 }
             },

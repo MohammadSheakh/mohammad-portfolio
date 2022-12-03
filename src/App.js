@@ -14,6 +14,7 @@ import {
     Route,
 } from "react-router-dom";
 import Footer from "./components/common/footer";
+import Login from "./pages/login";
 
 function App() {
     return (
@@ -31,6 +32,7 @@ function App() {
                 <Route path="/projects" element={<Projects />} />
                 <Route path="/story" element={<Story />} />
                 <Route path="/timeline" element={<Timeline />} />
+                <Route path="/login" element={<Login />} />
             </Routes>
             <Footer />
         </>

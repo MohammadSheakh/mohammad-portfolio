@@ -14,20 +14,16 @@ export default function Navbar() {
         // to check prefered theme
         if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
             setTheme("dark");
-            console.log("dark theme added from system : ", theme);
         } else {
             setTheme("light");
-            console.log("light theme added from system");
         }
     }, []);
 
     useEffect(() => {
         if (theme === "dark") {
             document.documentElement.classList.add("dark");
-            console.log("classlist.add : ::: dark");
         } else {
             document.documentElement.classList.remove("dark");
-            console.log("classlist.remove : ::: dark");
         }
         // jokhon e theme er value change hobe .. tokhon e eita ghotbe ..
     }, [theme]);
@@ -100,10 +96,13 @@ export default function Navbar() {
                         </span>
                     </div>
                     <div class="group h-10 rounded-full w-auto ml-14 absolute ">
-                        <div class=" bg-slate-800 h-10 w-10 rounded-full">
+                        <Link
+                            to="/login"
+                            class=" bg-slate-800 h-10 w-10 rounded-full"
+                        >
                             {/* bg-slate-800 */}
                             <img src={loginIcon} class=" h-10 w-auto " />
-                        </div>
+                        </Link>
                         <span class="relative h-10 w-0 top-1  p-1 rounded-md invisible group-hover:w-36 group-hover:visible bg-tooltip group-hover:text-PureWhite">
                             Author Sign in
                         </span>
