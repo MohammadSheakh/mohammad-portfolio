@@ -46,9 +46,9 @@ export default function Navbar() {
                 <div class="col-span-4 w-[210px] h-14 rounded-full group flex">
                     <Link to="/">
                         <img
-                            class=" h-12 w-10 rounded-full ml-4 mt-1   hover:ring-4"
-                            // hover:ring-4 hover:ring-green-800
-                            // ring-2 ring-pink-500 ring-inset
+                            class=" h-12 w-10 rounded-full ml-4 mt-1   hover:ring-4 hover:ring-PrimaryColorDark"
+                            //  //ring color change here
+
                             src={mohammadPictureLogo}
                             alt="Logo"
                         />
