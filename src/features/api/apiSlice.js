@@ -14,10 +14,10 @@ const baseQuery = fetchBaseQuery({
     prepareHeaders: async (headers, { getState, endpoint }) => {
         ///console.log("getState() from apiSlice.js : ", getState());
         const token = getState()?.auth?.accessToken;
-        console.log(
-            "features -> api -> apiSlice.js -> baseQuery -> prepareHeaders -> token",
-            token
-        );
+        // 🔺 console.log(
+        //     "features -> api -> apiSlice.js -> baseQuery -> prepareHeaders -> token",
+        //     token
+        // );
         if (token) {
             headers.set("Authorization", `Bearer ${token}`); // authorization ta small letter e likha
         }
@@ -34,10 +34,10 @@ export const apiSlice = createApi({
         // kore call hoy.. and she dekhbe amar user eta ke customize kore diyeche kina
         let result = await baseQuery(args, api, extraOptions);
 
-        console.log(
-            "features -> api -> apiSlice.js -> apiSlice -> baseQuery -> result ->",
-            result
-        );
+        // 🔺 console.log(
+        //     "features -> api -> apiSlice.js -> apiSlice -> baseQuery -> result ->",
+        //     result
+        // );
 
         if (result?.error?.status === 401) {
             api.dispatch(userLoggedOut()); // userLoggedOut() action dispatch kora lagbe ekhane .. authSlice theke ashbe

@@ -2,13 +2,18 @@ import React, { useEffect, useState } from "react";
 import mohammadPictureLogo from "../../assets/icons/mohammadPictureLogo.jpg";
 import Nav from "./Nav";
 import loginIcon from "../../assets/icons/loginIcon.png";
-import dayIcon from "../../assets/icons/dayIcon.png";
+import logoutIcon from "../../assets/icons/logoutIcon.png";
 import nightIcon from "../../assets/icons/nightIcon.png";
 import { Link, NavLink } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { userLoggedOut } from "../../features/auth/authSlice";
 
 export default function Navbar() {
     // const [theme, setTheme] = useState("dark");
     const [theme, setTheme] = useState(null);
+
+    const { user } = useSelector((state) => state.auth) || {};
+    console.log("user  from projects.js 4️⃣ ", user?._id); // user?. ekta komailam
 
     useEffect(() => {
         // to check prefered theme
@@ -33,6 +38,13 @@ export default function Navbar() {
             "-------------------------------------------------- btn clicked "
         );
         setTheme(theme === "dark" ? "Light" : "dark");
+    };
+
+    const dispatch = useDispatch();
+    const logout = () => {
+        dispatch(userLoggedOut()); // AuthSlice er userLoggedOut Action ta dispatch kore dilam ..
+        localStorage.clear(); // localStorage tao clear kore dite hobe ..
+        console.log("userLoggedOut is dispatched and localstorage is cleared");
     };
 
     return (
@@ -107,6 +119,29 @@ export default function Navbar() {
                             Author Sign in
                         </span>
                     </div>
+                    {/* // logout icon  */}
+                    {user ? (
+                        // user?. ekta komailam
+                        <>
+                            <div class="group h-10 rounded-full w-auto ml-28 absolute ">
+                                <span
+                                    onClick={logout}
+                                    class=" bg-slate-800 h-10 w-10 rounded-full"
+                                >
+                                    {/* bg-slate-800 */}
+                                    <img
+                                        src={logoutIcon}
+                                        class=" h-10 w-auto "
+                                    />
+                                </span>
+                                <span class="relative h-10 w-0 top-1  p-1 rounded-md invisible group-hover:w-36 group-hover:visible bg-tooltip group-hover:text-PureWhite">
+                                    Logout
+                                </span>
+                            </div>
+                        </>
+                    ) : (
+                        <></>
+                    )}
                 </div>
             </div>
         </>

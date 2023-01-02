@@ -14,9 +14,20 @@ const authSlice = createSlice({
     reducers: {
         // ei reducer gulai amar action ..
         userLoggedIn: (state, action) => {
+            console.log("Action.payload from authSlice ->  3️⃣", action.payload);
+            // const userObject = action.payload;
+            // console.log(
+            //     "Action.payload.accesstoken from authSlice ->  ",
+            //     action.payload.accessToken
+            // );
+            // console.log(
+            //     "Action.payload.user userObject from authSlice ->  ",
+            //     userObject
+            // );
             // reducer state ar action parameter hishebe receive kore ..
             state.accessToken = action.payload.accessToken;
-            state.user = action.payload.user;
+            //🔵🔴 state.user = action.payload.user;
+            state.user = action.payload.user; // age just action.payload chilo
         },
         userLoggedOut: (state) => {
             state.accessToken = undefined; // null o kore dite pari ..

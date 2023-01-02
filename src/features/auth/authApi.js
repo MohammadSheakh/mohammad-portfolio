@@ -54,14 +54,15 @@ export const authApi = apiSlice.injectEndpoints({
             async onQueryStarted(arg, { queryFulfilled, dispatch }) {
                 try {
                     const result = await queryFulfilled;
-                    const loggedInUser = {
+                    const user = {
                         name: result.data.name,
                         email: result.data.email,
                         isAdmin: result.data.isAdmin,
                         _id: result.data._id,
                     };
+                    //🔺
                     console.log(
-                        "authApi -> login endpoint -> try block 🎯🎯 -> result variable ->",
+                        "authApi -> login endpoint -> try block 🎯2️⃣ -> result variable ->",
                         result
                     );
 
@@ -69,8 +70,9 @@ export const authApi = apiSlice.injectEndpoints({
                         "auth",
                         JSON.stringify({
                             accessToken: result.data.accessToken,
-                            user: loggedInUser,
-                            //user: result.data.user,
+                            //user: loggedInUser,
+                            user: result.data._id,
+
                             // user: {
                             //     name: result.data.name,
                             //     email: result.data.email,
@@ -83,15 +85,22 @@ export const authApi = apiSlice.injectEndpoints({
                     dispatch(
                         userLoggedIn({
                             accessToken: result.data.accessToken,
-                            // user: result.data.user,
-                            user: loggedInUser,
+                            //user: result.data,
+                            user: user,
+
+                            // user: {
+                            //     name: result.data.name,
+                            //     email: result.data.email,
+                            //     isAdmin: result.data.isAdmin,
+                            //     _id: result.data._id,
+                            // },
                         })
                     );
                 } catch (err) {
-                    console.log(
-                        "authApi -> login endpoint -> catch block  query fulfilled er response ashe nai .. result e kichu ashe nai .. 🤐🤐",
-                        err
-                    );
+                    // 🔺 console.log(
+                    //     "authApi -> login endpoint -> catch block  query fulfilled er response ashe nai .. result e kichu ashe nai .. 🤐🤐",
+                    //     err
+                    // );
                     // do nothing
                 }
             },

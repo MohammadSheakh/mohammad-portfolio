@@ -13,7 +13,21 @@ import hm1 from "../../../assets/images/projects/ABC Hospital Management System/
 import hm2 from "../../../assets/images/projects/ABC Hospital Management System/hm2.png";
 import hm3 from "../../../assets/images/projects/ABC Hospital Management System/hm3.png";
 
+import addButton from "../../../assets/icons/projects/addButton.png";
+
+import { useSelector } from "react-redux";
+import useAdminCheck from "../../../hooks/useAdminCheck";
+
 export default function ProjectCategory() {
+    const { user } = useSelector((state) => state.auth) || {};
+    console.log("user  from projects.js 4️⃣ ", user?.user?._id);
+
+    const isAdmin = useAdminCheck(); // true ba false return korbe ..
+    console.log(
+        "isAdmin from useAdminCheck hook from ProjectCategory..5️⃣",
+        isAdmin
+    );
+
     return (
         <>
             <div class="flex justify-center">
@@ -27,7 +41,20 @@ export default function ProjectCategory() {
 
                 <div class="flex flex-wrap justify-start sm:justify-center  gap-10  border-box w-auto py-5 px-5 2xl:mx-20 ">
                     {/* border-2 */}
-
+                    {/* {user?.user?.id} */}
+                    {isAdmin ? (
+                        <>
+                            {/* 😎 add Product API create korte hobe .. endpoint
+                            banate hobe front-end e */}
+                            <a href="">
+                                <div class="h-16 w-16 border-2 border-rose-500 ">
+                                    <img src={addButton} alt="" />
+                                </div>
+                            </a>
+                        </>
+                    ) : (
+                        <></>
+                    )}
                     <ProjectCard
                         projectTitle="Mohammad Sheakh's Portfolio"
                         projectDescription="A hospital cabin, Diagnostic center booking and doctor appointment
@@ -46,6 +73,7 @@ export default function ProjectCategory() {
                         carrouselPhoto1="https://res.cloudinary.com/deg4frre7/image/upload/v1668921269/Mohammad%20Portfolio/projects/Medi-Care%20Web%20Application%20Documentation%20%28SE%29/c_n0wl9n.png"
                         carrouselPhoto2="https://res.cloudinary.com/deg4frre7/image/upload/v1668921269/Mohammad%20Portfolio/projects/Medi-Care%20Web%20Application%20Documentation%20%28SE%29/b_pxj6uz.png"
                         carrouselPhoto3="https://res.cloudinary.com/deg4frre7/image/upload/v1668921266/Mohammad%20Portfolio/projects/Medi-Care%20Web%20Application%20Documentation%20%28SE%29/a_tladul.png"
+                        // project Owner : Mohammad ..
                     />
 
                     <ProjectCard
