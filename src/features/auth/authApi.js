@@ -8,7 +8,7 @@ export const authApi = apiSlice.injectEndpoints({
         register: builder.mutation({
             query: (data) => ({
                 // data receive kore .. jeta amra form er body te pathabo ..
-                url: "api/register",
+                url: "/api/admin/register",
                 method: "POST",
                 body: data,
             }),
@@ -44,31 +44,63 @@ export const authApi = apiSlice.injectEndpoints({
 
         // login endpoints //////////////////////////////////////////////////////////////////////////////
         login: builder.mutation({
+            // https://www.youtube.com/watch?v=-JJFQ9bkUbo ei video er jei ta credentials . amader sheita data
             query: (data) => ({
-                url: "/api/login",
+                url: "/api/admin/login",
                 method: "POST",
-                body: data,
+                body: data, // {...data} // evabe pathaise .. Dave Gray yt channel
             }),
 
             async onQueryStarted(arg, { queryFulfilled, dispatch }) {
                 try {
                     const result = await queryFulfilled;
+                    const user = {
+                        name: result.data.name,
+                        email: result.data.email,
+                        isAdmin: result.data.isAdmin,
+                        _id: result.data._id,
+                    };
+                    //🔺
+                    console.log(
+                        "authApi -> login endpoint -> try block 🎯2️⃣ -> result variable ->",
+                        result
+                    );
 
                     localStorage.setItem(
                         "auth",
                         JSON.stringify({
                             accessToken: result.data.accessToken,
-                            user: result.data.user,
+                            //user: loggedInUser,
+                            user: result.data._id,
+
+                            // user: {
+                            //     name: result.data.name,
+                            //     email: result.data.email,
+                            //     isAdmin: result.data.isAdmin,
+                            //     _id: result.data._id,
+                            // },
                         })
                     );
 
                     dispatch(
                         userLoggedIn({
                             accessToken: result.data.accessToken,
-                            user: result.data.user,
+                            //user: result.data,
+                            user: user,
+
+                            // user: {
+                            //     name: result.data.name,
+                            //     email: result.data.email,
+                            //     isAdmin: result.data.isAdmin,
+                            //     _id: result.data._id,
+                            // },
                         })
                     );
                 } catch (err) {
+                    // 🔺 console.log(
+                    //     "authApi -> login endpoint -> catch block  query fulfilled er response ashe nai .. result e kichu ashe nai .. 🤐🤐",
+                    //     err
+                    // );
                     // do nothing
                 }
             },

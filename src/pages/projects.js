@@ -1,4 +1,5 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import ProjectCategory from "../components/projects/ProjectsCategory/ProjectCategory";
 import SearchProject from "../components/projects/SearchProject";
 
