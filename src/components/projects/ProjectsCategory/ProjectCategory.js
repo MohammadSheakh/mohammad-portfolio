@@ -27,6 +27,27 @@ export default function ProjectCategory() {
 
                 <div class="flex flex-wrap justify-start sm:justify-center  gap-10  border-box w-auto py-5 px-5 2xl:mx-20 ">
                     {/* border-2 */}
+
+                    <ProjectCard
+                        projectTitle="Mohammad Sheakh's Portfolio"
+                        projectDescription="A hospital cabin, Diagnostic center booking and doctor appointment
+                        taking web application . Moderns days healthcare facilities get so many improvements.
+                        But in our county, many people can’t take proper treatment for their health problems, 
+                        especially in rural areas, people don’t know how to get treatment from hospitals and 
+                        don’t know which would take better health care in their nearby hospital. Sometimes 
+                        they get financial problems after the appointment at the hospital without properly 
+                        knowing the total cost. Many people don’t know the diagnostic cost and where would 
+                        be best for their nearest area. Sometimes they don’t know which doctor would be best 
+                        for them and their prover appointment time and doctor’s fee in their nearest area. 
+                        Using our software, they will know which hospital is better at curing diseases they 
+                        will know the cost and the number of cabins available, and also, they know the 
+                        location of the hospital. They will get the best Doctor and Diagnostic Centres 
+                        in their nearby area. "
+                        carrouselPhoto1="https://res.cloudinary.com/deg4frre7/image/upload/v1668921269/Mohammad%20Portfolio/projects/Medi-Care%20Web%20Application%20Documentation%20%28SE%29/c_n0wl9n.png"
+                        carrouselPhoto2="https://res.cloudinary.com/deg4frre7/image/upload/v1668921269/Mohammad%20Portfolio/projects/Medi-Care%20Web%20Application%20Documentation%20%28SE%29/b_pxj6uz.png"
+                        carrouselPhoto3="https://res.cloudinary.com/deg4frre7/image/upload/v1668921266/Mohammad%20Portfolio/projects/Medi-Care%20Web%20Application%20Documentation%20%28SE%29/a_tladul.png"
+                    />
+
                     <ProjectCard
                         projectTitle="Medi-Care Web Application Documentation "
                         projectDescription="A hospital cabin, Diagnostic center booking and doctor appointment

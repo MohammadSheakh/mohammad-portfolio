@@ -12,8 +12,8 @@ const baseQuery = fetchBaseQuery({
     // credentials: "include", // new things 🎯 // it will send back our http only secure cookie
     // so you want the cookie to send with every query..
     prepareHeaders: async (headers, { getState, endpoint }) => {
-        console.log("getState() from apiSlice.js : ", getState());
-        const token = getState()?.auth.accessToken;
+        ///console.log("getState() from apiSlice.js : ", getState());
+        const token = getState()?.auth?.accessToken;
         console.log(
             "features -> api -> apiSlice.js -> baseQuery -> prepareHeaders -> token",
             token
@@ -21,6 +21,7 @@ const baseQuery = fetchBaseQuery({
         if (token) {
             headers.set("Authorization", `Bearer ${token}`); // authorization ta small letter e likha
         }
+        // headers.set("Access-Control-Allow-Origin", "http://localhost:3000/");
         return headers;
     },
 });

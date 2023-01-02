@@ -4,6 +4,8 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useLoginMutation } from "../features/auth/authApi";
 import { userLoggedIn } from "../features/auth/authSlice.js"; // action creator niye ashlam ..
+// userLoggedIn 🔴 etar to kono kaj nai .. shumit vai eta niye kono kaj kore nai
+// Link ta o niye ashte hobe .. // ekta Error page design korte hobe .. shetao niye ashte hobe ..
 
 function Login() {
     // component load hoile jeno user field e focus kore .. shejonno amra useRef use korte pari ..
@@ -22,12 +24,14 @@ function Login() {
     // endpoints ta return kore amader ke ..
     const [login, { data, isLoading, error: responseError }] =
         useLoginMutation();
+    console.log("data from login.js 📓", data);
 
     // useEffect er moddhe hoy new page e navigate korte hobe .. othoba kono .. error hoile .. sheta dekhaite
     // hobe
     useEffect(() => {
         // er moddhe amra chaile form focus korar o kaj korte pari .. userRef er maddhome..
         if (responseError?.data) {
+            console.log("Response Error found .. from login.js ");
             setError(responseError.data);
         }
         if (data?.accessToken && data?.user) {
@@ -115,6 +119,7 @@ function Login() {
                             {" "}
                             post
                         </button>
+                        <p> {error}</p>
 
                         {/* a checkbox to show details form */}
                         {/* <div class="flex justify-end mt-2">
