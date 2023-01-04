@@ -66,12 +66,17 @@ export const authApi = apiSlice.injectEndpoints({
                         result
                     );
 
+                    console.log(
+                        "authApi -> login endpoint -> try block 🎯2️⃣2️⃣2️⃣ -> user variable ->",
+                        user
+                    );
+
                     localStorage.setItem(
                         "auth",
                         JSON.stringify({
                             accessToken: result.data.accessToken,
                             //user: loggedInUser,
-                            user: result.data._id,
+                            user: user._id,
 
                             // user: {
                             //     name: result.data.name,
