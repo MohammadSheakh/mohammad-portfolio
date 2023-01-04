@@ -3,7 +3,7 @@ import React from "react";
 export default function FeedbackStatus() {
     return (
         <div class=" p-1 ">
-            <div class="flex border-2 rounded-md pr-2 border-gray-300">
+            <div class="flex flex-wrap border-2 rounded-md pr-2 border-gray-300">
                 <h1 class="mx-1 text-gray-300 dark:text-gray-300 ">status </h1>
                 <label
                     for="default-checkbox3"
