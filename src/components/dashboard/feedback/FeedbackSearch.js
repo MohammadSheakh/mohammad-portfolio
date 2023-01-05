@@ -8,13 +8,13 @@ import {
 
 export default function FeedbackSearch() {
     const [searchData, setSearchData] = useState({
-        name: "Sheakh",
-        email: "cdcd",
+        name: "",
+        email: "",
         phoneNumber: 0,
-        reference: "cdcd",
-        facebookId: "cdc",
+        reference: "",
+        facebookId: "",
     });
-    const { name, email, phoneNumber, reference, facebookId } = searchData; // destructure kore nilam
+    let { name, email, phoneNumber, reference, facebookId } = searchData; // destructure kore nilam
     const [formData, setFormData] = useState({ search: "" });
     const { search } = formData;
     const navigate = useNavigate(); // home page e navigate korbo form submiit er pore
@@ -66,8 +66,25 @@ export default function FeedbackSearch() {
 
         setError("");
 
+        // console.log(
+        //     "from FeedbackSearch.js => before ",
+        //     name,
+        //     email,
+        //     phoneNumber,
+        //     reference,
+        //     facebookId
+        // );
+
+        //////////////////////////////😎aro better way te korte hobe .. setSearchData()  er maddhome korar try korte hobe
+        name = search;
+        email = search;
+        //////////////////////////////////😎 search er value jodi number hoy .. tailei shudhu matro phoneNumber e assign hobe
+        phoneNumber = 0;
+        reference = search;
+        facebookId = search;
+
         console.log(
-            "from FeedbackSearch.js => ",
+            "from FeedbackSearch.js => after 🤗",
             name,
             email,
             phoneNumber,
@@ -100,7 +117,13 @@ export default function FeedbackSearch() {
         // });
 
         // clear it up after search
-        // formData.search = "";
+        formData.search = "";
+
+        // searchData.name = "";
+        // searchData.email = "";
+        // searchData.phoneNumber = 0;
+        // searchData.reference = "";
+        // searchData.facebookId = "";
     };
 
     return (

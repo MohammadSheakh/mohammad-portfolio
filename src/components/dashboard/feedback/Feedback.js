@@ -1,15 +1,42 @@
-import React from "react";
-import { useGetAllFeedbacksQuery } from "../../../features/feedbacks/feedbacksApi";
+import React, { useEffect } from "react";
+import {
+    useGetAFeedbackQuery,
+    useGetAllFeedbacksQuery,
+} from "../../../features/feedbacks/feedbacksApi";
 
 import FeedbackSearch from "./FeedbackSearch";
 
 export default function Feedback() {
+    /********************************************************
+     *
+     *  May be Store theke data niye eshe dekhate hobe .................
+     *
+     */
+
     const {
         data, // data pabo .. ager moto messages diye rename kore fellam
         isLoading,
         isError,
         error,
     } = useGetAllFeedbacksQuery();
+
+    const {
+        data1, // data pabo .. ager moto messages diye rename kore fellam
+        isLoading1,
+        isError1,
+        error1,
+    } = useGetAFeedbackQuery();
+    let feedbackData = [];
+    useEffect(() => {
+        console.log("useEffect calling from Feedback.js");
+        if (data1)
+            if (data?.length > 0) {
+                feedbackData = data;
+            }
+        if (data1?.length > 0) {
+            feedbackData = data1;
+        }
+    }, [data, data1]);
 
     // console.log("data from dashboard -> feedback.js 😀: ", data);
 
@@ -62,7 +89,7 @@ export default function Feedback() {
                             </tr>
                         </thead>
                         <tbody>
-                            {data?.map((feedback) => (
+                            {feedbackData?.map((feedback) => (
                                 <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                                     <td class="px-6 py-4">{feedback.name}</td>
                                     <td class="px-6 py-4">
