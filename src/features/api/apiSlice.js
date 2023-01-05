@@ -8,7 +8,9 @@ import { userLoggedOut } from "../auth/authSlice";
 // kore call hoy.. and she dekhbe amar user eta ke customize kore diyeche kina
 // fetchBaseQuery ta axios er moto ..
 const baseQuery = fetchBaseQuery({
-    baseUrl: process.env.REACT_APP_API_URL,
+    baseUrl:
+        process.env.REACT_APP_API_URL ||
+        "https://mohammadsheakh.up.railway.app/",
     // credentials: "include", // new things 🎯 // it will send back our http only secure cookie
     // so you want the cookie to send with every query..
     prepareHeaders: async (headers, { getState, endpoint }) => {
