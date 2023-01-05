@@ -103,19 +103,6 @@ export default function FeedbackSearch() {
             })
         );
 
-        //getAFeedback({
-        // addFeedback mutation theke function ta ashbe .. mane endpoint
-        // name,
-        // feedback,
-        // status,
-        // facebookId,
-        // phoneNumber,
-        // email,
-        // presentAddress,
-        // permanentAddress,
-        // reference,
-        // });
-
         // clear it up after search
         formData.search = "";
 
