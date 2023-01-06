@@ -3,6 +3,9 @@ import { BiDetail } from "react-icons/bi";
 import { SlOptions } from "react-icons/sl";
 import { GrCode, GrStatusInfo } from "react-icons/gr";
 import { FaHeart } from "react-icons/fa";
+
+import { AiOutlineAlignLeft } from "react-icons/ai";
+import { BsGlobe } from "react-icons/bs";
 import { BsChatLeftTextFill } from "react-icons/bs";
 import { AiOutlineFileText } from "react-icons/ai";
 
@@ -67,19 +70,49 @@ export default function ProjectCard({
                             </i>
                         </button>
                         {/* for github code */}
-                        <button class="absolute top-[42px] right-[90px] bg-PrimaryColorLight hover:bg-tooltip p-1 rounded-md">
+                        <button class="group absolute top-[42px] right-[120px] bg-PrimaryColorLight hover:bg-tooltip p-1 rounded-md">
                             <i>
                                 <GrCode />
                             </i>
+                            <div class="hidden absolute group-hover:inline-flex w-[30px] h-auto w-[100px]  top-[-25px] rounded-sm bg-navbarColorGray ">
+                                Source Code
+                            </div>
                         </button>
                         {/* project status -> on going , finish  */}
 
-                        <div class="group absolute top-[42px] right-[40px] w-auto p-1 h-auto bg-PrimaryColorLight hover:bg-tooltip  rounded-md">
+                        <div class="group absolute top-[42px] right-[90px] w-auto p-1 h-auto bg-PrimaryColorLight hover:bg-tooltip  rounded-md">
                             <GrStatusInfo />
-                            <div class="hidden absolute group-hover:inline-flex w-[30px] h-auto top-[-30px] ">
+                            <div class="hidden absolute group-hover:inline-flex w-[30px] h-auto w-[100px]  top-[-30px] rounded-sm bg-navbarColorGray ">
                                 On Going
                             </div>
                         </div>
+
+                        <div class="group absolute top-[42px] right-[60px] w-auto p-1 h-auto bg-PrimaryColorLight hover:bg-tooltip  rounded-md">
+                            <BsGlobe color="DarkBlue" />
+
+                            {/* BsGlobe
+                            FcGlobe */}
+                            <div class="hidden absolute group-hover:inline-flex w-[30px] h-auto w-[100px]  top-[-45px] rounded-sm bg-navbarColorGray ">
+                                {/*😎 eita ekta customized button  */}
+                                {/* ami jeta chai .. shei title dibo .. ar iccha moto link dibo */}
+                                Live Demo Link
+                                {/* CgWebsite */}
+                            </div>
+                        </div>
+
+                        <div class="group absolute top-[42px] right-[30px] w-auto p-1 h-auto bg-PrimaryColorLight hover:bg-tooltip  rounded-md">
+                            <AiOutlineAlignLeft color="DarkBlue" size="16px" />
+
+                            {/* BsGlobe
+                            FcGlobe */}
+                            <div class="hidden absolute group-hover:inline-flex w-[30px] h-auto w-[100px]  top-[-45px] rounded-sm bg-navbarColorGray ">
+                                {/*😎 eita ekta customized button  */}
+                                {/* ami jeta chai .. shei title dibo .. ar iccha moto link dibo */}
+                                Project Details
+                                {/* CgWebsite */}
+                            </div>
+                        </div>
+
                         <div class="absolute top-[30px] left-[29px]">
                             <>
                                 {showOptions ? (
@@ -136,15 +169,21 @@ export default function ProjectCard({
                         teamMemberName={teamMember2Name}
                     />
                 </div>
-                <a href={instructorProfileLink} target="_blank">
-                    <h3 class="mb-1 ">
-                        Instructor :{" "}
-                        <span class="mb-1 hover:bg-tooltip hover:text-gray-900 px-1 rounded-md">
-                            {" "}
-                            {instructorName}
-                        </span>
-                    </h3>
-                </a>
+                <div class="flex justify-between">
+                    <a href={instructorProfileLink} target="_blank">
+                        <h3 class="mb-1 ">
+                            Instructor :{" "}
+                            <span class="mb-1 hover:bg-tooltip hover:text-gray-900 px-1 rounded-md">
+                                {" "}
+                                {instructorName}
+                            </span>
+                        </h3>
+                    </a>
+                    <div>
+                        {/* 😎 dynamically value ashbe  */}
+                        <h1>Technology : MERN Stack</h1>
+                    </div>
+                </div>
 
                 <div class="relative ">
                     {/* // love react ,comment , see documentation button */}

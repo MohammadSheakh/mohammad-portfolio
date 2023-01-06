@@ -57,12 +57,12 @@ export default function Feedback() {
         if (showHideControl === "Show") {
             setShowHideStatus("Hide");
             variable = "Hide";
-            console.log("if block Write Hide", id, showHideStatus, variable);
+            console.log("if block Write Hide", id, variable);
         } else {
             console.log(
                 "else block Default Show",
                 id,
-                showHideStatus,
+                //showHideStatus,
                 variable
             );
         }
