@@ -49,21 +49,34 @@ export default function Feedback() {
     // console.log("data from dashboard -> feedback.js 😀: ", data);
 
     //const feedbackData = data;
-    const [showHideStatus, setShowHideStatus] = useState("");
-
+    const [showHideStatus, setShowHideStatus] = useState("Show");
+    let variable = "Show";
     const handleEditClick = async (id, showHideControl) => {
         console.log("Edit button click🎫", id, showHideControl);
-        if (showHideControl === "Show") {
-            await setShowHideStatus("Hide");
-            console.log("if block");
-        } else {
-            await setShowHideStatus("Show");
-            console.log("else block");
-        }
-        setShowHideStatus("Show");
-        console.log("showHideStatus ", id, showHideStatus);
 
-        await updateShowHideControlInFeedback({ id, showHideStatus });
+        if (showHideControl === "Show") {
+            setShowHideStatus("Hide");
+            variable = "Hide";
+            console.log("if block Write Hide", id, showHideStatus, variable);
+        } else {
+            console.log(
+                "else block Default Show",
+                id,
+                showHideStatus,
+                variable
+            );
+        }
+
+        // setShowHideStatus("Show");
+
+        const response = await updateShowHideControlInFeedback({
+            id,
+            //showHideStatus,
+            variable,
+        });
+        if (response) {
+            setShowHideStatus("");
+        }
     };
     const handleDeleteClick = async (id) => {
         console.log("delete button click", id);

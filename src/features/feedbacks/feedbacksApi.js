@@ -49,10 +49,12 @@ export const feedbacksApi = apiSlice.injectEndpoints({
 
         //📈
         updateShowHideControlInFeedback: builder.mutation({
-            query: ({ id, ...showHideControl }) => ({
+            query: ({ id, ...variable }) => ({
+                // variable
+                // showHideControl
                 url: `/api/feedback/${id}`,
                 method: "PATCH", // single data change kore // put e replace kore ..
-                body: { showHideControl },
+                body: { variable },
             }),
             invalidatesTags: ["Feedback"],
         }),
