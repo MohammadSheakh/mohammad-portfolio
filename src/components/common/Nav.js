@@ -16,9 +16,6 @@ export default function Nav({ children, styleProps, path }) {
                     </span>
                 </button>
             </Link>
-            {/* <Link to={path} class="btn">
-                {children}
-            </Link> */}
         </>
     );
 }
