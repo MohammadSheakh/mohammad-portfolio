@@ -1,7 +1,9 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import {
     useGetAFeedbackQuery,
     useGetAllFeedbacksQuery,
+    useDeleteFeedbackMutation,
+    useUpdateShowHideControlInFeedbackMutation,
 } from "../../../features/feedbacks/feedbacksApi";
 
 import FeedbackSearch from "./FeedbackSearch";
@@ -13,6 +15,10 @@ export default function Feedback() {
      *
      */
 
+    const [deleteFeedback] = useDeleteFeedbackMutation();
+    const [updateShowHideControlInFeedback] =
+        useUpdateShowHideControlInFeedbackMutation();
+
     const {
         data, // data pabo .. ager moto messages diye rename kore fellam
         isLoading,
@@ -20,7 +26,7 @@ export default function Feedback() {
         error,
     } = useGetAllFeedbacksQuery();
 
-    console.log("data", data);
+    console.log("data from dashboard/Feedback.js", data);
 
     // const {
     //     data1, // data pabo .. ager moto messages diye rename kore fellam
@@ -38,11 +44,44 @@ export default function Feedback() {
         // if (data1?.length > 0) {
         //     feedbackData = data1;
         // }
-    }, [data]);
+    }, []);
 
     // console.log("data from dashboard -> feedback.js 😀: ", data);
 
     //const feedbackData = data;
+    const [showHideStatus, setShowHideStatus] = useState("Show");
+    let variable = "Show";
+    const handleEditClick = async (id, showHideControl) => {
+        console.log("Edit button click🎫", id, showHideControl);
+
+        if (showHideControl === "Show") {
+            setShowHideStatus("Hide");
+            variable = "Hide";
+            console.log("if block Write Hide", id, showHideStatus, variable);
+        } else {
+            console.log(
+                "else block Default Show",
+                id,
+                showHideStatus,
+                variable
+            );
+        }
+
+        // setShowHideStatus("Show");
+
+        const response = await updateShowHideControlInFeedback({
+            id,
+            //showHideStatus,
+            variable,
+        });
+        if (response) {
+            setShowHideStatus("");
+        }
+    };
+    const handleDeleteClick = async (id) => {
+        console.log("delete button click", id);
+        await deleteFeedback(id);
+    };
 
     return (
         <>
@@ -110,12 +149,29 @@ export default function Feedback() {
                                             {/* ******************************* 😎 
                                             ei button e press korle Status Show theke Hide hoye jabe ..
                                          * */}
-                                            <a
-                                                href="#"
+                                            <button
+                                                // href="#"
                                                 class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                                                onClick={() =>
+                                                    handleEditClick(
+                                                        feedback._id,
+                                                        feedback.showHideControl
+                                                    )
+                                                }
                                             >
                                                 Edit
-                                            </a>
+                                            </button>
+                                            <button
+                                                // href="#"
+                                                class="ml-3 font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                                                onClick={() =>
+                                                    handleDeleteClick(
+                                                        feedback._id
+                                                    )
+                                                }
+                                            >
+                                                Delete
+                                            </button>
                                         </td>
                                         <td class="px-6 py-4">
                                             {feedback.reference}

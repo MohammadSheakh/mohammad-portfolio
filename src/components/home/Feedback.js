@@ -84,6 +84,16 @@ export default function Feedback() {
             permanentAddress,
             reference
         );
+        /************************************************************************************************
+         *                                name , feedback ei duita field jodi baje kono text contain
+         *          kore .. tahole amra take feedback post korte dibo na ..............
+         *          like pornography related word / bad language / obscenities
+         *
+         *      egula filter kore felte hobe ...
+         *
+         *
+         *  post successfull houar pore .. ekta confirmation dite hobe ..😎
+         */
 
         setError("");
 

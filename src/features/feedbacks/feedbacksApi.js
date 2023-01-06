@@ -27,6 +27,7 @@ export const feedbacksApi = apiSlice.injectEndpoints({
                 body: data,
             }),
             // may be kaj shesh 🙄 🧐🤔
+            invalidatesTags: ["Feedback"], // auto refetching will work ..
         }),
         //done ✅📈
         getAllFeedbacks: builder.query({
@@ -34,6 +35,28 @@ export const feedbacksApi = apiSlice.injectEndpoints({
             query: () => "/api/feedback", //🔺 feedbacks node e hit kore shob data dekhabo
             // 😎 page parameter niye sumit vai er moto kaj korte hobe .. first e olpo
             // content dekhiye .. pore aro content dekhate hobe ..
+            providesTags: ["Feedback"], // jeno refetch kore...
+        }),
+
+        //📈
+        deleteFeedback: builder.mutation({
+            query: (id) => ({
+                url: `/api/feedback/${id}`,
+                method: "DELETE",
+            }),
+            invalidatesTags: ["Feedback"],
+        }),
+
+        //📈
+        updateShowHideControlInFeedback: builder.mutation({
+            query: ({ id, ...variable }) => ({
+                // variable
+                // showHideControl
+                url: `/api/feedback/${id}`,
+                method: "PATCH", // single data change kore // put e replace kore ..
+                body: { variable },
+            }),
+            invalidatesTags: ["Feedback"],
         }),
 
         /// getMoreFeedbacks : builder.query({})
@@ -126,5 +149,7 @@ export const {
     useAddFeedbackMutation,
     useGetAllFeedbacksQuery,
     useGetAFeedbackQuery,
+    useDeleteFeedbackMutation,
+    useUpdateShowHideControlInFeedbackMutation,
 } = feedbacksApi;
 // ekhan theke amra kichu hook pai .. API er EndPoints theke amra kichu hook pai ..

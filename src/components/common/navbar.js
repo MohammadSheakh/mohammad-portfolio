@@ -4,7 +4,7 @@ import Nav from "./Nav";
 import loginIcon from "../../assets/icons/loginIcon.png";
 import logoutIcon from "../../assets/icons/logoutIcon.png";
 import nightIcon from "../../assets/icons/nightIcon.png";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { userLoggedOut } from "../../features/auth/authSlice";
 
@@ -49,9 +49,16 @@ export default function Navbar() {
 
     return (
         <>
+            {/*
+                2xl:px-[30%] -> normal -> 100% 
+                xl:px-[25%] -> 120% - 150% 
+                lg:px-[20%] ->  160px - 180% - 230% 
+                md:px-[10%]
+                sm:px-[1%] -> */}
+
             <div class="  h-14 w-full bg-navbarColorGray grid grid-cols-12 fixed z-50">
                 {/* bg-slate-600 */}
-                <div class="col-span-4 w-[210px] h-14 rounded-full group flex">
+                <div class="col-span-3 xl:col-span-3 w-[210px] h-14 rounded-full group flex">
                     <Link to="/">
                         <img
                             class=" h-12 w-10 rounded-full ml-4 mt-1   hover:ring-4 hover:ring-PrimaryColorDark"
@@ -62,13 +69,26 @@ export default function Navbar() {
                         />
                     </Link>
 
-                    <div class="block h-8 w-[0px] rounded-md ml-2 mt-3 pl-2 pr-2 pt-1 pb-1 invisible group-hover:w-36 group-hover:visible transition-all duration-1000 hover:duration-0 delay-0 bg-PrimaryColorLight  ">
+                    {/*
+                2xl:px-[30%] -> normal -> 100% 
+                xl:px-[25%] -> 120% - 150% 
+                lg:px-[20%] ->  160px - 180% - 230% 
+                md:px-[10%]
+                sm:px-[1%] -> */}
+
+                    <div class="hidden md:block h-8 w-[0px] rounded-md ml-2 mt-3 pl-2 pr-2 pt-1 pb-1 invisible group-hover:w-36 group-hover:visible transition-all duration-1000 hover:duration-0 delay-0 bg-PrimaryColorLight  ">
                         <h2 class=" text-orange leading-3 text-sm w-36 invisible group-hover:visible transition-all duration-1000 hover:delay-400 ">
                             Mohammad Sheakh BSc in CSE
                         </h2>
                     </div>
                 </div>
-                <div class="col-span-6 w-full flex ml-56 mt-3 h-10 relative">
+                {/*
+                2xl:px-[30%] -> normal -> 100% 
+                xl:px-[25%] -> 120% - 150% 
+                lg:px-[20%] ->  160px - 180% - 230% 
+                md:px-[10%]
+                sm:px-[1%] -> */}
+                <div class=" col-span-7 xl:col-span-8 w-full flex flex-nowrap xl:ml-56 lg:ml-[-20px] md:ml-[-120px] sm:ml-[-100px] mt-3 h-10 relative">
                     <Nav path="/" styleProps="group-hover:w-10 text-PureWhite">
                         Home
                     </Nav>
@@ -94,7 +114,15 @@ export default function Navbar() {
                         DashBoard
                     </Nav>
                 </div>
-                <div class="col-span-2 w-full flex mt-2 h-10 ">
+                {/*
+                2xl:px-[30%] -> normal -> 100% 
+                xl:px-[25%] -> 120% - 150% 
+                lg:px-[20%] ->  160px - 180% - 230% 
+                md:px-[10%]
+                sm:px-[1%] -> */}
+
+                <div class="hidden md:block xl:col-span-1  col-span-2 sm:col-span-1 md:col-span-1 w-full flex mt-2 h-10 ">
+                    {/* hidden */}
                     <div class="group h-10 w-auto  absolute ">
                         <button
                             class="bg-PrimaryColorLight h-10 w-10" // bg-slate-100
