@@ -47,6 +47,11 @@ export const apiSlice = createApi({
         }
         return result;
     },
-    tagTypes: [],
+    tagTypes: ["Feedback", "Timeline", "Projects"], // auto refetching er jonno tagTypes provide korte hobe ...
+    /**
+     * Feedback change hoile auto refetch hobe .. ete kore page refresh kora lagbe na ..
+     *
+     *
+     */
     endpoints: (builder) => ({}), // extended api slices ..
 });
