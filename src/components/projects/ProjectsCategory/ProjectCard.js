@@ -47,6 +47,7 @@ export default function ProjectCard({
             <div>
                 {/* // carousal div */}
                 <ProjectCardCarrousel
+                    // imageLink from database
                     carrouselPhoto1={carrouselPhoto1}
                     carrouselPhoto2={carrouselPhoto2}
                     carrouselPhoto3={carrouselPhoto3}
@@ -70,48 +71,45 @@ export default function ProjectCard({
                             </i>
                         </button>
                         {/* for github code */}
-                        <button class="group absolute top-[42px] right-[120px] bg-PrimaryColorLight hover:bg-tooltip p-1 rounded-md">
-                            <i>
-                                <GrCode />
-                            </i>
-                            <div class="hidden absolute group-hover:inline-flex w-[30px] h-auto w-[100px]  top-[-25px] rounded-sm bg-navbarColorGray ">
-                                Source Code
-                            </div>
-                        </button>
+                        <a href={githubLink} target="_blank">
+                            <button class="group absolute top-[42px] right-[120px] bg-PrimaryColorLight hover:bg-tooltip p-1 rounded-md">
+                                <i>
+                                    <GrCode />
+                                </i>
+                                <div class="hidden absolute group-hover:inline-flex w-[30px] h-auto w-[100px]  top-[-25px] rounded-sm bg-navbarColorGray ">
+                                    Source Code
+                                </div>
+                            </button>
+                        </a>
                         {/* project status -> on going , finish  */}
 
-                        <div class="group absolute top-[42px] right-[90px] w-auto p-1 h-auto bg-PrimaryColorLight hover:bg-tooltip  rounded-md">
+                        <button class="group absolute top-[42px] right-[90px] w-auto p-1 h-auto bg-PrimaryColorLight hover:bg-tooltip  rounded-md">
                             <GrStatusInfo />
                             <div class="hidden absolute group-hover:inline-flex w-[30px] h-auto w-[100px]  top-[-30px] rounded-sm bg-navbarColorGray ">
-                                On Going
+                                {projectStatus}
                             </div>
-                        </div>
+                        </button>
+                        <a href={liveDemoLink} target="_blank">
+                            <button class="group absolute top-[42px] right-[60px] w-auto p-1 h-auto bg-PrimaryColorLight hover:bg-tooltip  rounded-md">
+                                <BsGlobe color="DarkBlue" />
+                                <div class="hidden absolute group-hover:inline-flex w-[30px] h-auto w-[100px]  top-[-45px] rounded-sm bg-navbarColorGray ">
+                                    {/*😎 eita ekta customized button  */}
+                                    {/* ami jeta chai .. shei title dibo .. ar iccha moto link dibo */}
+                                    Live Demo Link
+                                    {/* CgWebsite */}
+                                </div>
+                            </button>
+                        </a>
 
-                        <div class="group absolute top-[42px] right-[60px] w-auto p-1 h-auto bg-PrimaryColorLight hover:bg-tooltip  rounded-md">
-                            <BsGlobe color="DarkBlue" />
-
-                            {/* BsGlobe
-                            FcGlobe */}
-                            <div class="hidden absolute group-hover:inline-flex w-[30px] h-auto w-[100px]  top-[-45px] rounded-sm bg-navbarColorGray ">
-                                {/*😎 eita ekta customized button  */}
-                                {/* ami jeta chai .. shei title dibo .. ar iccha moto link dibo */}
-                                Live Demo Link
-                                {/* CgWebsite */}
-                            </div>
-                        </div>
-
-                        <div class="group absolute top-[42px] right-[30px] w-auto p-1 h-auto bg-PrimaryColorLight hover:bg-tooltip  rounded-md">
+                        <button class="group absolute top-[42px] right-[30px] w-auto p-1 h-auto bg-PrimaryColorLight hover:bg-tooltip  rounded-md">
                             <AiOutlineAlignLeft color="DarkBlue" size="16px" />
-
-                            {/* BsGlobe
-                            FcGlobe */}
                             <div class="hidden absolute group-hover:inline-flex w-[30px] h-auto w-[100px]  top-[-45px] rounded-sm bg-navbarColorGray ">
                                 {/*😎 eita ekta customized button  */}
                                 {/* ami jeta chai .. shei title dibo .. ar iccha moto link dibo */}
                                 Project Details
                                 {/* CgWebsite */}
                             </div>
-                        </div>
+                        </button>
 
                         <div class="absolute top-[30px] left-[29px]">
                             <>
@@ -149,7 +147,8 @@ export default function ProjectCard({
                 {/* // team name, member , Instructor name  */}
                 <div class="flex gap-x-3 ">
                     <h3 class="bg-PrimaryColorDarkHover px-1 ">
-                        {authority} : {authorityName}
+                        {/* {authority} : {authorityName} */}
+                        {projectBelongType} : {projectBelongName}
                     </h3>
                     <h3>Members : </h3>
 
@@ -159,9 +158,9 @@ export default function ProjectCard({
                         teamMemberName="Mohammad Sheakh"
                     />
                     <CompanyAndTeamInfo
-                        teamMemberProfileLink={teamMember1ProfileLink}
-                        teamMemberImage={teamMember1Image}
-                        teamMemberName={teamMember1Name}
+                        teamMemberProfileLink={memberLink}
+                        teamMemberImage={memberImage}
+                        teamMemberName={memberName}
                     />
                     <CompanyAndTeamInfo
                         teamMemberProfileLink={teamMember2ProfileLink}
@@ -169,7 +168,7 @@ export default function ProjectCard({
                         teamMemberName={teamMember2Name}
                     />
                 </div>
-                <div class="flex justify-between">
+                <div class="flex justify-between mt-1">
                     <a href={instructorProfileLink} target="_blank">
                         <h3 class="mb-1 ">
                             Instructor :{" "}
@@ -181,7 +180,14 @@ export default function ProjectCard({
                     </a>
                     <div>
                         {/* 😎 dynamically value ashbe  */}
-                        <h1>Technology : MERN Stack</h1>
+                        <h1>
+                            Technology :{" "}
+                            <span class="bg-PrimaryColorDarkHover px-1 rounded-sm">
+                                {" "}
+                                {/* MERN Stack */}
+                                {technology}
+                            </span>
+                        </h1>
                     </div>
                 </div>
 
@@ -190,13 +196,19 @@ export default function ProjectCard({
                     <div class="flex w-[480px]  left-[-3px] absolute  bg-PrimaryColorDarkHover rounded-b-lg">
                         <button class="btn bg-PrimaryColorDarkHover w-24 flex-3 border-none">
                             <i class="flex ">
-                                <FaHeart class="mr-2" /> 32
+                                <FaHeart class="mr-2" />
+                                {/* 32 */}
+                                {loveReacts}
                             </i>
                         </button>
                         <button class="btn bg-PrimaryColorDarkHover w-24 flex-1 border-none">
                             <i class="flex ">
                                 <BsChatLeftTextFill class="mr-2" />
-                                Comments
+                                {/* Comments */}
+                                {comments}
+                                {/* total number show korte hobe .. */}
+                                {/* comments e click korle name, name e hover korle profile e jaowa jabe .. 
+                                ar comment  thakbe ..  */}
                             </i>
                         </button>
                         <button class="btn bg-PrimaryColorDarkHover w-24 flex-1 border-none">
