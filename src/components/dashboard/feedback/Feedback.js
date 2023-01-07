@@ -7,8 +7,18 @@ import {
 } from "../../../features/feedbacks/feedbacksApi";
 
 import FeedbackSearch from "./FeedbackSearch";
+import { useSelector } from "react-redux";
+import useAdminCheck from "../../../hooks/useAdminCheck";
 
 export default function Feedback() {
+    const { user } = useSelector((state) => state.auth) || {};
+    console.log("user  from Feedback.js 4️⃣ ", user?.user?._id);
+
+    const isAdmin = useAdminCheck(); // true ba false return korbe ..
+    console.log(
+        "isAdmin from useAdminCheck hook from ProjectCategory..5️⃣",
+        isAdmin
+    );
     /********************************************************
      *
      *  May be Store theke data niye eshe dekhate hobe .................
@@ -146,32 +156,40 @@ export default function Feedback() {
                                             {feedback.showHideControl}
                                         </td>
                                         <td class="px-6 py-4 text-right">
-                                            {/* ******************************* 😎 
+                                             {/* ******************************* 😎 
                                             ei button e press korle Status Show theke Hide hoye jabe ..
                                          * */}
-                                            <button
-                                                // href="#"
-                                                class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
-                                                onClick={() =>
-                                                    handleEditClick(
-                                                        feedback._id,
-                                                        feedback.showHideControl
-                                                    )
-                                                }
-                                            >
-                                                Edit
-                                            </button>
-                                             <button
-                                                // href="#"
-                                                class="ml-3 font-medium text-blue-600 dark:text-blue-500 hover:underline"
-                                                onClick={() =>
-                                                    handleDeleteClick(
-                                                        feedback._id
-                                                    )
-                                                }
-                                            >
-                                                Delete
-                                            </button>
+
+                                            {/* admin delete button dekhte parbe  */}
+                                            {isAdmin ? (
+                                                <>
+                                                    <button
+                                                        // href="#"
+                                                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                                                        onClick={() =>
+                                                            handleEditClick(
+                                                                feedback._id,
+                                                                feedback.showHideControl
+                                                            )
+                                                        }
+                                                    >
+                                                        Edit
+                                                    </button>
+                                                    <button
+                                                        // href="#"
+                                                        class="ml-3 font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                                                        onClick={() =>
+                                                            handleDeleteClick(
+                                                                feedback._id
+                                                            )
+                                                        }
+                                                    >
+                                                        Delete
+                                                    </button>
+                                                </>
+                                            ) : (
+                                                <></>
+                                            )}
                                         </td>
                                         <td class="px-6 py-4">
                                             {feedback.reference}
