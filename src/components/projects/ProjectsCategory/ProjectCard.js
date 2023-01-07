@@ -24,9 +24,9 @@ export default function ProjectCard({
     teamMember1ProfileLink,
     teamMember1Image,
     teamMember1Name,
-    teamMember2ProfileLink,
-    teamMember2Image,
-    teamMember2Name,
+    teamMember2ProfileLink, ///
+    teamMember2Image, ///
+    teamMember2Name, ///
     teamMember3ProfileLink,
     teamMember3Image,
     teamMember3Name,
@@ -35,6 +35,24 @@ export default function ProjectCard({
     carrouselPhoto1,
     carrouselPhoto2,
     carrouselPhoto3,
+
+    // imageLink,
+    // projectTitle,
+    githubLinkForFrontEnd,
+    // githubLinkForBackEnd,
+    liveDemoLink,
+    // backEndServerLink,
+    projectStatus,
+    // projectDescription,
+    projectBelongType,
+    projectBelongName,
+    members,
+    // instructorName,
+    // instructorProfileLink,
+    technology,
+    loveReactNumber,
+    comments,
+    // showHideControl,
 }) {
     const [showFullDetails, setShowFullDetails] = useState(false);
     const [showOptions, setShowOptions] = useState(false);
@@ -71,7 +89,8 @@ export default function ProjectCard({
                             </i>
                         </button>
                         {/* for github code */}
-                        <a href={githubLink} target="_blank">
+                        {/* -------------- backEndServerLink 😎 githubLinkForBackEnd */}
+                        <a href={githubLinkForFrontEnd} target="_blank">
                             <button class="group absolute top-[42px] right-[120px] bg-PrimaryColorLight hover:bg-tooltip p-1 rounded-md">
                                 <i>
                                     <GrCode />
@@ -157,11 +176,11 @@ export default function ProjectCard({
                         teamMemberImage={mohammadPictureLogo}
                         teamMemberName="Mohammad Sheakh"
                     />
-                    <CompanyAndTeamInfo
-                        teamMemberProfileLink={memberLink}
-                        teamMemberImage={memberImage}
-                        teamMemberName={memberName}
-                    />
+                    {/* <CompanyAndTeamInfo
+                        teamMemberProfileLink={members.memberLink}
+                        teamMemberImage={members.memberImage}
+                        teamMemberName={members.memberName}
+                    /> */}
                     <CompanyAndTeamInfo
                         teamMemberProfileLink={teamMember2ProfileLink}
                         teamMemberImage={teamMember2Image}
@@ -198,7 +217,7 @@ export default function ProjectCard({
                             <i class="flex ">
                                 <FaHeart class="mr-2" />
                                 {/* 32 */}
-                                {loveReacts}
+                                {loveReactNumber}
                             </i>
                         </button>
                         <button class="btn bg-PrimaryColorDarkHover w-24 flex-1 border-none">
