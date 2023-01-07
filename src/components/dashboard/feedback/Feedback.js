@@ -161,7 +161,7 @@ export default function Feedback() {
                                             >
                                                 Edit
                                             </button>
-                                            {/* <button
+                                             <button
                                                 // href="#"
                                                 class="ml-3 font-medium text-blue-600 dark:text-blue-500 hover:underline"
                                                 onClick={() =>
@@ -171,7 +171,7 @@ export default function Feedback() {
                                                 }
                                             >
                                                 Delete
-                                            </button> */}
+                                            </button>
                                         </td>
                                         <td class="px-6 py-4">
                                             {feedback.reference}
