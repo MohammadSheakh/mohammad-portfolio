@@ -3,7 +3,7 @@ import { userLoggedIn } from "./authSlice";
 
 export const authApi = apiSlice.injectEndpoints({
     endpoints: (builder) => ({
-        //////////////////////////////////////////////////////////////////////////////
+        /////////////////////////////////////////////////////////////////////////////
         // register nam er ekta endpoint likhbo ekhane
         register: builder.mutation({
             query: (data) => ({
