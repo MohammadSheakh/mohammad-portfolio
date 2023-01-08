@@ -12,6 +12,7 @@ import mohammadPictureLogo from "../../../assets/icons/mohammadPictureLogo.jpg";
 import rumiVai from "../../../assets/images/projects/Medi-Care Documentation/teammates/rumiVai.png";
 import CompanyAndTeamInfo from "./CompanyAndTeamInfo";
 import CardOption from "./ProjectCardOption/CardOption";
+import { Link } from "react-router-dom";
 
 export default function ProjectCard({
     projectTitle,
@@ -184,9 +185,9 @@ export default function ProjectCard({
                     <div>
                         <h3>
                             Technology :
-                            <span class="bg-tooltip text-gray-900 px-1 rounded-md ml-1">
+                            <Link class="bg-tooltip text-gray-900 px-1 rounded-md ml-1">
                                 MERN Stack
-                            </span>
+                            </Link>
                         </h3>
                     </div>
                 </div>

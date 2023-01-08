@@ -28,6 +28,8 @@ export default function ProjectCategory() {
     const { data, isLoading, isError, error } = useGetAllProjectsQuery();
     console.log("data from components-> projects -> projectsCategory 😶", data);
 
+    console.log();
+
     return (
         <>
             <div class="flex justify-center">
@@ -52,6 +54,30 @@ export default function ProjectCategory() {
                     ) : (
                         <></>
                     )}
+
+                    {data?.map((project) => {
+                        <ProjectCard
+                            projectTitle={project.projectTitle}
+                            projectDescription={project.projectDescription}
+                            {...project.hasProjectBelong? 
+                                authority={...project.projectBelongType}//"Subject"
+                                //authorityName={...project.projectBelongName}//"Software Engineering Course"
+                            }
+                            {...project.hasMembers? 
+                                authority={...project.projectBelongType}//"Subject"
+                                //authorityName={...project.projectBelongName}//"Software Engineering Course"
+                            }
+                            teamMember1ProfileLink={project.memberLink}//"https://www.facebook.com/sarjataziz.rumi.7"
+                            teamMember1Image={project.memberImage}//{rumiVai}
+                            teamMember1Name={project.memberName}//"Sarjat Aziz"
+
+                            instructorName={project.instructorName}//"Dr. S.M. HASAN Mahmud"
+                            instructorProfileLink={project.instructorProfileLink}//"https://www.linkedin.com/in/dr-s-m-hasan-mahmud-63450b53/"
+                            carrouselPhoto1={project.imageLink}//"https://res.cloudinary.com/deg4frre7/image/upload/v1668921269/Mohammad%20Portfolio/projects/Medi-Care%20Web%20Application%20Documentation%20%28SE%29/c_n0wl9n.png"
+                            //carrouselPhoto2={project.}//"https://res.cloudinary.com/deg4frre7/image/upload/v1668921269/Mohammad%20Portfolio/projects/Medi-Care%20Web%20Application%20Documentation%20%28SE%29/b_pxj6uz.png"
+                            //carrouselPhoto3={project.}//"https://res.cloudinary.com/deg4frre7/image/upload/v1668921266/Mohammad%20Portfolio/projects/Medi-Care%20Web%20Application%20Documentation%20%28SE%29/a_tladul.png"
+                        />;
+                    })}
                     <ProjectCard
                         projectTitle="Medi-Care Web Application Documentation "
                         projectDescription="A hospital cabin, Diagnostic center booking and doctor appointment
@@ -99,7 +125,7 @@ export default function ProjectCategory() {
                         // project Owner : Mohammad ..
                     />
 
-                    <ProjectCard
+                    {/* <ProjectCard
                         projectTitle="Hospital Management System"
                         projectDescription="A Hospital Management System desktop application is created to manage
                         its admin, doctor, patient, employee and pharmacy sector. We tried to implement every
@@ -119,7 +145,7 @@ export default function ProjectCategory() {
                         carrouselPhoto1="https://res.cloudinary.com/deg4frre7/image/upload/v1668921059/Mohammad%20Portfolio/projects/Hospital%20Management%20Software/hm3_sqcu7z.png"
                         carrouselPhoto2="https://res.cloudinary.com/deg4frre7/image/upload/v1668921059/Mohammad%20Portfolio/projects/Hospital%20Management%20Software/hm2_winrhb.png"
                         carrouselPhoto3="https://res.cloudinary.com/deg4frre7/image/upload/v1668921059/Mohammad%20Portfolio/projects/Hospital%20Management%20Software/hm1_uv3jip.png"
-                    />
+                    /> */}
                 </div>
             </div>
         </>

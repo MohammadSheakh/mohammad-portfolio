@@ -35,6 +35,7 @@ function Login() {
         if (responseError?.data) {
             console.log("Response Error found .. from login.js ");
             setError(responseError.data);
+            navigate("/"); //😎 error handle kora hoy nai password vul hoile .. login er por
         }
         if (data?.accessToken && data) {
             //🔴🔵 && data?.user
