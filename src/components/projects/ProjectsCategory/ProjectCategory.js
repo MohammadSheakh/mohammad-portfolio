@@ -13,20 +13,20 @@ import hm1 from "../../../assets/images/projects/ABC Hospital Management System/
 import hm2 from "../../../assets/images/projects/ABC Hospital Management System/hm2.png";
 import hm3 from "../../../assets/images/projects/ABC Hospital Management System/hm3.png";
 
-import addButton from "../../../assets/icons/projects/addButton.png";
-
+/////////////////////////////////////////////////////////////////////////////// For Admin
 import { useSelector } from "react-redux";
 import useAdminCheck from "../../../hooks/useAdminCheck";
+////////////////////////////////////////////////////////////////////////////// For Redux Toolkit query
+import { useGetAllProjectsQuery } from "../../../features/projects/projectsApi";
+import AddProjectForm from "../AddProjectForm";
 
 export default function ProjectCategory() {
     const { user } = useSelector((state) => state.auth) || {};
     console.log("user  from projects.js 4️⃣ ", user?.user?._id);
-
     const isAdmin = useAdminCheck(); // true ba false return korbe ..
-    console.log(
-        "isAdmin from useAdminCheck hook from ProjectCategory..5️⃣",
-        isAdmin
-    );
+
+    const { data, isLoading, isError, error } = useGetAllProjectsQuery();
+    console.log("data from components-> projects -> projectsCategory 😶", data);
 
     return (
         <>
@@ -46,36 +46,12 @@ export default function ProjectCategory() {
                         <>
                             {/* 😎 add Product API create korte hobe .. endpoint
                             banate hobe front-end e */}
-                            <a href="">
-                                <div class="h-16 w-16 border-2 border-rose-500 ">
-                                    <img src={addButton} alt="" />
-                                </div>
-                            </a>
+
+                            <AddProjectForm />
                         </>
                     ) : (
                         <></>
                     )}
-                    <ProjectCard
-                        projectTitle="Mohammad Sheakh's Portfolio"
-                        projectDescription="A hospital cabin, Diagnostic center booking and doctor appointment
-                        taking web application . Moderns days healthcare facilities get so many improvements.
-                        But in our county, many people can’t take proper treatment for their health problems, 
-                        especially in rural areas, people don’t know how to get treatment from hospitals and 
-                        don’t know which would take better health care in their nearby hospital. Sometimes 
-                        they get financial problems after the appointment at the hospital without properly 
-                        knowing the total cost. Many people don’t know the diagnostic cost and where would 
-                        be best for their nearest area. Sometimes they don’t know which doctor would be best 
-                        for them and their prover appointment time and doctor’s fee in their nearest area. 
-                        Using our software, they will know which hospital is better at curing diseases they 
-                        will know the cost and the number of cabins available, and also, they know the 
-                        location of the hospital. They will get the best Doctor and Diagnostic Centres 
-                        in their nearby area. "
-                        carrouselPhoto1="https://res.cloudinary.com/deg4frre7/image/upload/v1668921269/Mohammad%20Portfolio/projects/Medi-Care%20Web%20Application%20Documentation%20%28SE%29/c_n0wl9n.png"
-                        carrouselPhoto2="https://res.cloudinary.com/deg4frre7/image/upload/v1668921269/Mohammad%20Portfolio/projects/Medi-Care%20Web%20Application%20Documentation%20%28SE%29/b_pxj6uz.png"
-                        carrouselPhoto3="https://res.cloudinary.com/deg4frre7/image/upload/v1668921266/Mohammad%20Portfolio/projects/Medi-Care%20Web%20Application%20Documentation%20%28SE%29/a_tladul.png"
-                        // project Owner : Mohammad ..
-                    />
-
                     <ProjectCard
                         projectTitle="Medi-Care Web Application Documentation "
                         projectDescription="A hospital cabin, Diagnostic center booking and doctor appointment
@@ -102,6 +78,27 @@ export default function ProjectCategory() {
                         carrouselPhoto2="https://res.cloudinary.com/deg4frre7/image/upload/v1668921269/Mohammad%20Portfolio/projects/Medi-Care%20Web%20Application%20Documentation%20%28SE%29/b_pxj6uz.png"
                         carrouselPhoto3="https://res.cloudinary.com/deg4frre7/image/upload/v1668921266/Mohammad%20Portfolio/projects/Medi-Care%20Web%20Application%20Documentation%20%28SE%29/a_tladul.png"
                     />
+                    <ProjectCard
+                        projectTitle="Mohammad Sheakh's Portfolio"
+                        projectDescription="A hospital cabin, Diagnostic center booking and doctor appointment
+                        taking web application . Moderns days healthcare facilities get so many improvements.
+                        But in our county, many people can’t take proper treatment for their health problems, 
+                        especially in rural areas, people don’t know how to get treatment from hospitals and 
+                        don’t know which would take better health care in their nearby hospital. Sometimes 
+                        they get financial problems after the appointment at the hospital without properly 
+                        knowing the total cost. Many people don’t know the diagnostic cost and where would 
+                        be best for their nearest area. Sometimes they don’t know which doctor would be best 
+                        for them and their prover appointment time and doctor’s fee in their nearest area. 
+                        Using our software, they will know which hospital is better at curing diseases they 
+                        will know the cost and the number of cabins available, and also, they know the 
+                        location of the hospital. They will get the best Doctor and Diagnostic Centres 
+                        in their nearby area. "
+                        carrouselPhoto1="https://res.cloudinary.com/deg4frre7/image/upload/v1668921269/Mohammad%20Portfolio/projects/Medi-Care%20Web%20Application%20Documentation%20%28SE%29/c_n0wl9n.png"
+                        carrouselPhoto2="https://res.cloudinary.com/deg4frre7/image/upload/v1668921269/Mohammad%20Portfolio/projects/Medi-Care%20Web%20Application%20Documentation%20%28SE%29/b_pxj6uz.png"
+                        carrouselPhoto3="https://res.cloudinary.com/deg4frre7/image/upload/v1668921266/Mohammad%20Portfolio/projects/Medi-Care%20Web%20Application%20Documentation%20%28SE%29/a_tladul.png"
+                        // project Owner : Mohammad ..
+                    />
+
                     <ProjectCard
                         projectTitle="Hospital Management System"
                         projectDescription="A Hospital Management System desktop application is created to manage
