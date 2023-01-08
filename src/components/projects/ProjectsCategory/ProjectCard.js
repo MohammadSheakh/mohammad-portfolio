@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { BiDetail } from "react-icons/bi";
+import { BsGlobe } from "react-icons/bs";
 import { SlOptions } from "react-icons/sl";
 import { GrCode, GrStatusInfo } from "react-icons/gr";
 import { FaHeart } from "react-icons/fa";
@@ -66,20 +66,53 @@ export default function ProjectCard({
                                 <SlOptions />
                             </i>
                         </button>
-                        {/* for github code */}
-                        <button class="absolute top-[42px] right-[90px] bg-PrimaryColorLight hover:bg-tooltip p-1 rounded-md">
-                            <i>
+                        {/* for github code front-end */}
+                        <a href="https://github.com" target="_blank">
+                            <button class="group absolute top-[42px] right-[120px] w-auto p-1 h-auto bg-PrimaryColorLight hover:bg-tooltip  rounded-md">
+                                {/* absolute top-[42px] right-[120px] bg-PrimaryColorLight hover:bg-tooltip p-1 rounded-md */}
                                 <GrCode />
-                            </i>
-                        </button>
+                                <div class="hidden absolute group-hover:inline-flex w-[140px] h-auto top-[-30px] bg-tooltip ">
+                                    <h1 class="text-lg text-center text-white">
+                                        Front-End Code
+                                    </h1>
+                                </div>
+                            </button>
+                        </a>
+                        {/* for github code back-end */}
+                        <a href="https://github.com" target="_blank">
+                            <button class="group absolute top-[42px] right-[90px] w-auto p-1 h-auto bg-PrimaryColorLight hover:bg-tooltip  rounded-md">
+                                {/* absolute top-[42px] right-[120px] bg-PrimaryColorLight hover:bg-tooltip p-1 rounded-md */}
+                                <GrCode />
+                                <div class="hidden absolute group-hover:inline-flex w-[140px] h-auto top-[-30px] bg-tooltip ">
+                                    <h1 class="text-lg text-center text-white">
+                                        Back-End Code
+                                    </h1>
+                                </div>
+                            </button>
+                        </a>
+
+                        {/* for live link */}
+                        <a href="https://github.com" target="_blank">
+                            <button class="group absolute top-[42px] right-[60px] w-auto p-1 h-auto bg-PrimaryColorLight hover:bg-tooltip  rounded-md">
+                                {/*  bg-PrimaryColorLight  */}
+                                <BsGlobe color="black" />
+                                <div class="hidden absolute group-hover:inline-flex w-[140px] h-auto top-[-30px] bg-tooltip ">
+                                    <h1 class="text-lg text-center text-white">
+                                        Live Demo Link
+                                    </h1>
+                                </div>
+                            </button>
+                        </a>
                         {/* project status -> on going , finish  */}
 
-                        <div class="group absolute top-[42px] right-[40px] w-auto p-1 h-auto bg-PrimaryColorLight hover:bg-tooltip  rounded-md">
+                        <button class="group absolute top-[42px] right-[30px] w-auto p-1 h-auto bg-PrimaryColorLight hover:bg-tooltip  rounded-md">
                             <GrStatusInfo />
-                            <div class="hidden absolute group-hover:inline-flex w-[30px] h-auto top-[-30px] ">
-                                On Going
+                            <div class="hidden absolute group-hover:inline-flex w-[90px] h-auto top-[-30px] bg-tooltip ">
+                                <h1 class="text-lg text-center text-white">
+                                    On Going
+                                </h1>
                             </div>
-                        </div>
+                        </button>
                         <div class="absolute top-[30px] left-[29px]">
                             <>
                                 {showOptions ? (
@@ -136,15 +169,27 @@ export default function ProjectCard({
                         teamMemberName={teamMember2Name}
                     />
                 </div>
-                <a href={instructorProfileLink} target="_blank">
-                    <h3 class="mb-1 ">
-                        Instructor :{" "}
-                        <span class="mb-1 hover:bg-tooltip hover:text-gray-900 px-1 rounded-md">
-                            {" "}
-                            {instructorName}
-                        </span>
-                    </h3>
-                </a>
+                <div class="flex justify-between mt-1">
+                    <div>
+                        <a href={instructorProfileLink} target="_blank">
+                            <h3 class="mb-1 ">
+                                Instructor :{" "}
+                                <span class="mb-1 hover:bg-tooltip hover:text-gray-900 px-1 rounded-md">
+                                    {" "}
+                                    {instructorName}
+                                </span>
+                            </h3>
+                        </a>
+                    </div>
+                    <div>
+                        <h3>
+                            Technology :
+                            <span class="bg-tooltip text-gray-900 px-1 rounded-md ml-1">
+                                MERN Stack
+                            </span>
+                        </h3>
+                    </div>
+                </div>
 
                 <div class="relative ">
                     {/* // love react ,comment , see documentation button */}
