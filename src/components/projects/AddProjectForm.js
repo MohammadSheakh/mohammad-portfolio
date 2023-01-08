@@ -10,40 +10,32 @@ export default function AddProjectForm() {
     return (
         <>
             <div>
-                {/* <label
-                        htmlFor="my-modal-3"
-                        className="ml-64 h-[45px] w-[150px] btn mt-4 p-1 bg-PrimaryColorDark hover:bg-PrimaryColorLight hover:text-orange border-homeColor hover:border-PureWhite "
-                    >
-                        Search By Category
-                    </label> */}
                 <button class="h-36 w-36 relative border-2 border-rose-500 rounded-xl ">
-                    <label htmlFor="my-modal-3" className=" ">
+                    <label htmlFor="my-modal-2" className=" ">
                         <img
                             src={add}
-                            htmlFor="my-modal-3"
+                            htmlFor="my-modal-2"
                             class="h-32 w-32 absolute top-[6px] left-[5px] "
                             alt=""
                         />
                     </label>
                 </button>
+
                 <input
                     type="checkbox"
-                    id="my-modal-3"
+                    id="my-modal-2"
                     className="modal-toggle"
                 />
                 <div className="modal ">
                     <div className="modal-box relative min-h-[365px] h-[600px]">
                         <label
-                            htmlFor="my-modal-3"
+                            htmlFor="my-modal-2"
                             className="btn btn-sm btn-circle absolute right-2 top-2 bg-navbarColorGray hover:bg-PrimaryColorLight"
                         >
-                            {/* ✕ */}
                             <GrClose />
                         </label>
                         {/* --------------------------------------- */}
-                        <h3 className="text-lg font-bold">
-                            Congratulations random Internet user! Search
-                        </h3>
+                        <h3 className="text-lg font-bold">Boom</h3>
                         {/* button for rich text editor open and close */}
                         {/* <div class="absolute top-14 left-[320px]">
                         <input
