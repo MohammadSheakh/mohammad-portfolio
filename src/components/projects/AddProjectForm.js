@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import add from "../../assets/icons/projects/add.png";
 /////////////////////////////////////////////////////////////////////
 import { GrClose } from "react-icons/gr";
@@ -7,6 +7,9 @@ import NormalCheckbox from "../common/checkbox/NormalCheckbox";
 ////////////////////////////////////////////////////////////////////
 
 export default function AddProjectForm() {
+    const [showProjectBelong, setShowProjectBelong] = useState(false);
+    const [showHasMember, setShowHasMember] = useState(false);
+    const [showHasInstructor, setShowHasInstructor] = useState(false);
     return (
         <>
             <div>
@@ -35,7 +38,9 @@ export default function AddProjectForm() {
                             <GrClose />
                         </label>
                         {/* --------------------------------------- */}
-                        <h3 className="text-lg font-bold">Boom</h3>
+                        <h3 className="text-lg font-bold text-center">
+                            New Project Form
+                        </h3>
                         {/* button for rich text editor open and close */}
                         {/* <div class="absolute top-14 left-[320px]">
                         <input
@@ -55,284 +60,317 @@ export default function AddProjectForm() {
 
                         <form action="">
                             <h5 className="mt-4">Project Title</h5>
-                            {/* <input
-                            type="text"
-                            placeholder="Type here..."
-                            class="p-2 w-[450px] mt-3 "
-                        /> */}
-
                             <input
                                 type="text"
                                 id="simple-search"
                                 class=" p-2  mt-3  w-[450px] resize-y bg-gray-700 border border-gray-600 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                //
-                                // p-2 mt-2 w-[450px] resize-y bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500
                                 placeholder="Type here..."
                                 required
                             />
+                            <h5 className="mt-4">Project Description</h5>
+                            <textarea
+                                type="text"
+                                id="simple-search"
+                                class=" p-2  mt-3  w-[450px] resize-y bg-gray-700 border border-gray-600 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                placeholder="Type here..."
+                                required
+                            />
+                            <h5 className="mt-4">Github Link For Front-End</h5>
+                            <input
+                                type="text"
+                                id="simple-search"
+                                class=" p-2  mt-3  w-[450px] resize-y bg-gray-700 border border-gray-600 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                placeholder="Type here..."
+                                required
+                            />
+                            <h5 className="mt-4">Github Link For Back-End</h5>
+                            <input
+                                type="text"
+                                id="simple-search"
+                                class=" p-2  mt-3  w-[450px] resize-y bg-gray-700 border border-gray-600 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                placeholder="Type here..."
+                                required
+                            />
+                            <h5 className="mt-4">Live Demo Link</h5>
+                            <input
+                                type="text"
+                                id="simple-search"
+                                class=" p-2  mt-3  w-[450px] resize-y bg-gray-700 border border-gray-600 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                placeholder="Type here..."
+                                required
+                            />
+                            <h5 className="mt-4">Back-End Server Link</h5>
+                            <input
+                                type="text"
+                                id="simple-search"
+                                class=" p-2  mt-3  w-[450px] resize-y bg-gray-700 border border-gray-600 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                placeholder="Type here..."
+                                required
+                            />
+                            {/* /////////////////////////////////////// */}
+                            <div class="flex mt-4 gap-x-3">
+                                <h5>Project Status : </h5>
+                                <input
+                                    type="radio"
+                                    id="html"
+                                    name="projectStatus" //  eita shob gula te same hoite hobe ...
+                                    value="On Going"
+                                />
+                                <label for="html">On Going</label>
+                                <input
+                                    type="radio"
+                                    id="css"
+                                    name="projectStatus"
+                                    value="Finish"
+                                />
 
-                            <h5 className="py-3">Project Category</h5>
-                            <div class="absolute top-40 left-40">
+                                <label for="css">Finish</label>
+                                <input
+                                    type="radio"
+                                    id="Sold"
+                                    name="projectStatus"
+                                    value="Sold"
+                                />
+
+                                <label for="Sold">Sold</label>
+                            </div>
+                            <input
+                                type="radio"
+                                id="Archive"
+                                name="projectStatus"
+                                value="Archive"
+                                class="ml-[115px]"
+                            />
+                            <label for="Archive" class="ml-4">
+                                Archive
+                            </label>
+                            {/* ////////////////////////////////// */}
+                            <div class="flex mt-4 gap-x-3 ml-[284px]">
+                                <h5>Has Project Belong </h5>
                                 <input
                                     id="default-checkbox1"
                                     type="checkbox"
                                     value=""
-                                    class="w-4 h-4 text-blue-600 bg-gray-700 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-                                    // light -> bg-gray-100
-                                    // onChange={() =>
-                                    //     setTimelineDetailsVisible(
-                                    //         !timelineDetailsvisible
-                                    //     )
-                                    // }
+                                    class="w-4 h-4 mt-2 text-blue-600 bg-gray-700 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                                    onChange={() =>
+                                        setShowProjectBelong(!showProjectBelong)
+                                    }
                                 />
-                                <label
-                                    for="default-checkbox"
-                                    class="ml-2 text-sm font-medium text-gray-300 dark:text-gray-300"
-                                    // light -> text-gray-900
-                                >
-                                    Small
-                                </label>
                             </div>
-                            <div class="absolute top-40 left-[230px]">
+                            {/* ////////////////////////////////// */}
+                            {showProjectBelong ? (
+                                <>
+                                    <div class="flex mt-4 gap-x-3">
+                                        <h5>Project Belong Type : </h5>
+                                        <input
+                                            type="radio"
+                                            id="Course"
+                                            name="projectBelongType" // eita shob gula te same hoite hobe ...
+                                            value="Course"
+                                        />
+                                        <label for="Course">Course</label>
+                                        <input
+                                            type="radio"
+                                            id="Team"
+                                            name="projectBelongType"
+                                            value="Team"
+                                        />
+
+                                        <label for="Team">Team</label>
+                                        <input
+                                            type="radio"
+                                            id="Project"
+                                            name="projectBelongType"
+                                            value="Project"
+                                        />
+
+                                        <label for="Project">Project</label>
+                                    </div>
+
+                                    {/* ////////////////////////////////// */}
+                                    <h5 className="mt-4">
+                                        Project Belong Name
+                                    </h5>
+                                    <input
+                                        type="text"
+                                        id="simple-search"
+                                        class=" p-2  mt-3  w-[450px] resize-y bg-gray-700 border border-gray-600 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                        placeholder="Type here..."
+                                        required
+                                    />
+                                </>
+                            ) : (
+                                <></>
+                            )}
+                            {/* ////////////////////////////////// */}
+                            <div class="flex mt-4 ml-80 gap-x-3">
+                                <h5>Has Members </h5>
                                 <input
-                                    id="default-checkbox2"
+                                    id="default-checkbox1"
                                     type="checkbox"
                                     value=""
-                                    class="w-4 h-4 text-blue-600 bg-gray-700 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-                                    // onChange={() =>
-                                    //     setTimelineDetailsVisible(
-                                    //         !timelineDetailsvisible
-                                    //     )
-                                    // }
+                                    class="w-4 h-4 mt-2 text-blue-600 bg-gray-700 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                                    onChange={() =>
+                                        setShowHasMember(!showHasMember)
+                                    }
                                 />
-                                <label
-                                    for="default-checkbox3"
-                                    class="ml-2 text-sm font-medium text-gray-300 dark:text-gray-300"
-                                >
-                                    Medium
-                                </label>
                             </div>
-                            <div class="absolute top-40 left-[320px]">
+                            {showHasMember ? (
+                                <>
+                                    <h5 className="mt-4">1st Member Name</h5>
+                                    <input
+                                        type="text"
+                                        id="simple-search"
+                                        class=" p-2  mt-3  w-[450px] resize-y bg-gray-700 border border-gray-600 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                        placeholder="Type here..."
+                                        required
+                                    />
+                                    <h5 className="mt-4">1st Member Link</h5>
+                                    <input
+                                        type="text"
+                                        id="simple-search"
+                                        class=" p-2  mt-3  w-[450px] resize-y bg-gray-700 border border-gray-600 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                        placeholder="Type here..."
+                                        required
+                                    />
+
+                                    <h5 className="mt-4">
+                                        1st Member Image Upload
+                                    </h5>
+                                    <input
+                                        type="file"
+                                        id="simple-search"
+                                        class=" p-2  mt-3  w-[450px] resize-y bg-gray-700 border border-gray-600 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                        placeholder="Type here..."
+                                        required
+                                    />
+                                    {/* //////////////////////////////// */}
+                                    <h5 className="mt-4">2nd Member Name</h5>
+                                    <input
+                                        type="text"
+                                        id="simple-search"
+                                        class=" p-2  mt-3  w-[450px] resize-y bg-gray-700 border border-gray-600 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                        placeholder="Type here..."
+                                        required
+                                    />
+                                    <h5 className="mt-4">2nd Member Link</h5>
+                                    <input
+                                        type="text"
+                                        id="simple-search"
+                                        class=" p-2  mt-3  w-[450px] resize-y bg-gray-700 border border-gray-600 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                        placeholder="Type here..."
+                                        required
+                                    />
+
+                                    <h5 className="mt-4">
+                                        2nd Member Image Upload
+                                    </h5>
+                                    <input
+                                        type="file"
+                                        id="simple-search"
+                                        class=" p-2  mt-3  w-[450px] resize-y bg-gray-700 border border-gray-600 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                        placeholder="Type here..."
+                                        required
+                                    />
+                                </>
+                            ) : (
+                                <></>
+                            )}
+
+                            <div class="flex mt-4 gap-x-3 ml-80">
+                                <h5>Has Instructor </h5>
                                 <input
-                                    id="default-checkbox2"
+                                    id="default-checkbox1"
                                     type="checkbox"
                                     value=""
-                                    class="w-4 h-4 text-blue-600 bg-gray-700 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-                                    // onChange={() =>
-                                    //     setTimelineDetailsVisible(
-                                    //         !timelineDetailsvisible
-                                    //     )
-                                    // }
-                                />
-                                <label
-                                    for="default-checkbox3"
-                                    class="ml-2 text-sm font-medium text-gray-300 dark:text-gray-300"
-                                >
-                                    Large
-                                </label>
-                            </div>
-                            <div class="relative">
-                                <h5 className="py-1">Project Category</h5>
-                                <div className="h-[30px] w-32 ml-[130px] text-center p-1 rounded-md mt-4   absolute mt-[-30px]  bg-PrimaryColorDark  hover:bg-PrimaryColorDarkHover hover:border-2  box-border ">
-                                    {/* <label className="label cursor-pointer">
-                                <span className="label-text">Remember me</span>
-                                <input
-                                    type="checkbox"
-                                    //checked
-                                    className="checkbox"
-                                />
-                            </label> */}
-                                    <label
-                                        for="default-checkbox3"
-                                        class="mr-2 text-sm font-medium text-gray-300 dark:text-gray-300"
-                                    >
-                                        E Commerce
-                                    </label>
-                                    <input
-                                        id="default-checkbox2"
-                                        type="checkbox"
-                                        value=""
-                                        class="w-4 h-4 text-blue-600 bg-gray-700 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-                                        // onChange={() =>
-                                        //     setTimelineDetailsVisible(
-                                        //         !timelineDetailsvisible
-                                        //     )
-                                        // }
-                                    />
-                                </div>
-                                <div className="h-[30px] w-32 ml-[270px] text-center p-1 rounded-md mt-4   absolute mt-[-30px]  bg-PrimaryColorDark  hover:bg-PrimaryColorDarkHover hover:border-2  box-border ">
-                                    <label
-                                        for="default-checkbox3"
-                                        class="mr-2 text-sm font-medium text-gray-300 dark:text-gray-300"
-                                    >
-                                        Management
-                                    </label>
-                                    <input
-                                        id="default-checkbox2"
-                                        type="checkbox"
-                                        value=""
-                                        class="w-4 h-4 text-blue-600 bg-gray-700 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-                                        // onChange={() =>
-                                        //     setTimelineDetailsVisible(
-                                        //         !timelineDetailsvisible
-                                        //     )
-                                        // }
-                                    />
-                                </div>
-
-                                <div className="h-[30px] w-auto ml-[270px] text-center p-1 rounded-md  mt-[6px]  bg-PrimaryColorDark   hover:bg-PrimaryColorDarkHover hover:border-2  box-border ">
-                                    <label
-                                        for="default-checkbox3"
-                                        class="mr-2 text-sm font-medium text-gray-300 dark:text-gray-300"
-                                    >
-                                        Hospital Management
-                                    </label>
-                                    <input
-                                        id="default-checkbox2"
-                                        type="checkbox"
-                                        value=""
-                                        class="w-4 h-4 text-blue-600 bg-gray-700 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-                                        // onChange={() =>
-                                        //     setTimelineDetailsVisible(
-                                        //         !timelineDetailsvisible
-                                        //     )
-                                        // }
-                                    />
-                                </div>
-
-                                <div className="h-[30px] w-[205px] ml-[270px] text-center p-1 rounded-md  mt-[6px]  bg-PrimaryColorDark   hover:bg-PrimaryColorDarkHover hover:border-2  box-border">
-                                    <label
-                                        for="default-checkbox3"
-                                        class="mr-2 text-sm font-medium text-gray-300 dark:text-gray-300"
-                                    >
-                                        Apartment Management
-                                    </label>
-                                    <input
-                                        id="default-checkbox2"
-                                        type="checkbox"
-                                        value=""
-                                        class="w-4 h-4 text-blue-600 bg-gray-700 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-                                        // onChange={() =>
-                                        //     setTimelineDetailsVisible(
-                                        //         !timelineDetailsvisible
-                                        //     )
-                                        // }
-                                    />
-                                </div>
-                                {/* <CategoryCheckbox
-                                checkboxTitle="Apartment Management"
-                                style="h-[30px] top-[32px]  ml-[270px]  box-border"
-                            /> */}
-
-                                <CategoryCheckbox
-                                    checkboxTitle="Society Management"
-                                    style="h-[30px] top-[32px]  ml-[270px]  box-border"
-                                />
-
-                                <CategoryCheckbox
-                                    checkboxTitle="Hotel Management"
-                                    style="h-[30px] top-[32px]  ml-[270px]  box-border"
-                                />
-
-                                {/* /////////////////////////////////////////////////////////////////////////////////////////////////////// */}
-
-                                <CategoryCheckbox
-                                    checkboxTitle="Nonprofit Website"
-                                    style=" absolute top-[32px]  ml-[113px] box-content"
-                                />
-
-                                <CategoryCheckbox
-                                    checkboxTitle="Event Website"
-                                    style="  absolute top-[68px]  ml-[113px] box-content"
-                                />
-                                <CategoryCheckbox
-                                    checkboxTitle="Online Portal"
-                                    style="  absolute top-[104px]  ml-[113px] box-content"
-                                />
-
-                                <CategoryCheckbox
-                                    checkboxTitle="Personal website"
-                                    style="  absolute top-[140px]  ml-[113px] box-content"
-                                />
-                                <CategoryCheckbox
-                                    checkboxTitle="Government website"
-                                    style="  absolute top-[180px]  ml-[150px] box-content"
+                                    class="w-4 h-4 mt-2 text-blue-600 bg-gray-700 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                                    onChange={() =>
+                                        setShowHasInstructor(!showHasInstructor)
+                                    }
                                 />
                             </div>
+
+                            {showHasInstructor ? (
+                                <>
+                                    <h5 className="mt-4">Instructor Name</h5>
+                                    <input
+                                        type="text"
+                                        id="simple-search"
+                                        class=" p-2  mt-3  w-[450px] resize-y bg-gray-700 border border-gray-600 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                        placeholder="Type here..."
+                                        required
+                                    />
+                                    <h5 className="mt-4">
+                                        Instructor Profile Link
+                                    </h5>
+                                    <input
+                                        type="text"
+                                        id="simple-search"
+                                        class=" p-2  mt-3  w-[450px] resize-y bg-gray-700 border border-gray-600 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                        placeholder="Type here..."
+                                        required
+                                    />
+                                </>
+                            ) : (
+                                <></>
+                            )}
+                            {/* ////////////////////////////////////////////////////////////////////////////////// */}
+                            {/* <br />
+                            <br /> 
+                            <br />*/}
+
+                            <div class=" py-1 mt-12 flex">
+                                <h5>Stack</h5>
+                                <NormalCheckbox
+                                    style="ml-[130px]"
+                                    checkBoxText="MERN"
+                                />
+                                <NormalCheckbox
+                                    style="ml-[220px]"
+                                    checkBoxText="PERN"
+                                />
+                                <NormalCheckbox
+                                    style="ml-[300px]"
+                                    checkBoxText="Serverless"
+                                />
+                                <NormalCheckbox
+                                    style="ml-[130px] mt-7"
+                                    checkBoxText="React Native"
+                                />
+                            </div>
+
+                            <div class=" py-1 mt-8 flex">
+                                <h5>Technology</h5>
+                                <NormalCheckbox
+                                    style="ml-[130px]"
+                                    checkBoxText="React Js"
+                                />
+                                <NormalCheckbox
+                                    style="ml-[220px]"
+                                    checkBoxText="Express Js"
+                                />
+                                <NormalCheckbox
+                                    style="ml-[320px]"
+                                    checkBoxText="Mongo DB"
+                                />
+                                <NormalCheckbox
+                                    style="ml-[130px] mt-7"
+                                    checkBoxText="React Native"
+                                />
+
+                                <NormalCheckbox
+                                    style="ml-[250px] mt-7"
+                                    checkBoxText="Postgre SQL"
+                                />
+                            </div>
+
+                            <label
+                                htmlFor="my-modal-2"
+                                class="btn w-auto h-[25px] ml-[400px] mt-3 box-content"
+                            >
+                                post
+                            </label>
                         </form>
-
-                        {/* <p className="py-4 mt-10">
-                        You've been selected for a chance to get one year of
-                        subscription to use Wikipedia for free!
-                    </p> */}
-                        {/* <div class="mt-10 flex relative">
-                        <h5 className="py-1 mt-3">Price Range</h5>
-                        <div class=" flex relative">
-                            <input
-                                type="text"
-                                placeholder="0.."
-                                class="p-2 w-[90px] mt-3  ml-3"
-                            />
-                            <h1 class="mx-3 mt-4">-</h1>
-                            <input
-                                type="text"
-                                placeholder="4 lakhs"
-                                class="p-2 w-[90px] mt-3 "
-                            />
-                        </div>
-                    </div> */}
-                        <div class=" py-1 mt-12 flex">
-                            <h5>Stack</h5>
-                            <NormalCheckbox
-                                style="ml-[130px]"
-                                checkBoxText="MERN"
-                            />
-                            <NormalCheckbox
-                                style="ml-[220px]"
-                                checkBoxText="PERN"
-                            />
-                            <NormalCheckbox
-                                style="ml-[300px]"
-                                checkBoxText="Serverless"
-                            />
-                            <NormalCheckbox
-                                style="ml-[130px] mt-7"
-                                checkBoxText="React Native"
-                            />
-                        </div>
-
-                        <div class=" py-1 mt-8 flex">
-                            <h5>Technology</h5>
-                            <NormalCheckbox
-                                style="ml-[130px]"
-                                checkBoxText="React Js"
-                            />
-                            <NormalCheckbox
-                                style="ml-[220px]"
-                                checkBoxText="Express Js"
-                            />
-                            <NormalCheckbox
-                                style="ml-[320px]"
-                                checkBoxText="Mongo DB"
-                            />
-                            <NormalCheckbox
-                                style="ml-[130px] mt-7"
-                                checkBoxText="React Native"
-                            />
-
-                            <NormalCheckbox
-                                style="ml-[250px] mt-7"
-                                checkBoxText="Postgre SQL"
-                            />
-                        </div>
-
-                        <label
-                            htmlFor="my-modal-3"
-                            class="btn w-auto h-[25px] ml-[400px] mt-3 box-content"
-                        >
-                            {" "}
-                            post
-                        </label>
                     </div>
                 </div>
             </div>
