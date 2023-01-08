@@ -10,6 +10,34 @@ export default function AddProjectForm() {
     const [showProjectBelong, setShowProjectBelong] = useState(false);
     const [showHasMember, setShowHasMember] = useState(false);
     const [showHasInstructor, setShowHasInstructor] = useState(false);
+    // 🚧🚦🚧
+    const [formData, setFormData] = useState({
+        imageLink: [],
+        projectTitle: "",
+
+        githubLinkForFrontEnd: "",
+        githubLinkForBackEnd: "",
+        liveDemoLink: "",
+        backEndServerLink: "",
+        projectStatus: "",
+        projectDescription: "",
+        hasProjectBelong: false,
+        projectBelongType: "",
+        projectBelongName: "",
+        hasMembers: false,
+        members: [
+            {
+                memberName: "",
+                memberImage: "",
+                memberLink: "",
+            },
+        ],
+        hasInstructor: false,
+        instructorName: "",
+        instructorProfileLink: "",
+        technology: [],
+        stack: "",
+    });
     return (
         <>
             <div>
@@ -41,22 +69,8 @@ export default function AddProjectForm() {
                         <h3 className="text-lg font-bold text-center">
                             New Project Form
                         </h3>
-                        {/* button for rich text editor open and close */}
-                        {/* <div class="absolute top-14 left-[320px]">
-                        <input
-                            id="default-checkbox3"
-                            type="checkbox"
-                            value=""
-                            class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-                            onChange={() => setRichTextEditor(!richTextEditor)}
-                        />
-                        <label
-                            for="default-checkbox"
-                            class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-                        >
-                            Open Rich Text Editor
-                        </label>
-                    </div> */}
+
+                        {/* 😎 Rich Text Editor Niye kaj korte hobe shamne  */}
 
                         <form action="">
                             <h5 className="mt-4">Project Title</h5>
@@ -70,6 +84,16 @@ export default function AddProjectForm() {
                             <h5 className="mt-4">Project Description</h5>
                             <textarea
                                 type="text"
+                                id="simple-search"
+                                class=" p-2  mt-3  w-[450px] resize-y bg-gray-700 border border-gray-600 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                placeholder="Type here..."
+                                required
+                            />
+                            <h5 className="mt-4">
+                                Multiple Picture Upload For Carousel By Multer
+                            </h5>
+                            <input
+                                type="file"
                                 id="simple-search"
                                 class=" p-2  mt-3  w-[450px] resize-y bg-gray-700 border border-gray-600 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                 placeholder="Type here..."
