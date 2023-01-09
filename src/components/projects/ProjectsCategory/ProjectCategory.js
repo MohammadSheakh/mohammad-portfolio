@@ -30,7 +30,6 @@ import { useGetAllProjectsQuery } from "../../../features/projects/projectsApi";
 import AddProjectForm from "../AddProjectForm";
 import CardOption from "./ProjectCardOption/CardOption";
 import CompanyAndTeamInfo from "./CompanyAndTeamInfo";
-import ProjectCardCopy from "./ProjectCardCopy";
 
 export default function ProjectCategory() {
     const { user } = useSelector((state) => state.auth) || {};

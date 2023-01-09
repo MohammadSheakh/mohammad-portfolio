@@ -9,7 +9,7 @@ import { useDispatch } from "react-redux";
 import { useAddProjectMutation } from "../../features/projects/projectsApi";
 ////////////////////////////////////////////////////////////////////
 
-export default function AddProjectForm() {
+export default function AddProjectFormCopy() {
     const [showProjectBelong, setShowProjectBelong] = useState(false);
     const [showHasMember, setShowHasMember] = useState(false);
     const [showHasInstructor, setShowHasInstructor] = useState(false);
@@ -77,31 +77,8 @@ export default function AddProjectForm() {
 
     // useEffect er moddhe hoy new page e navigate korte hobe .. othoba kono .. error hoile .. sheta dekhaite
     // hobe
-
-    const handleHasProjectBelong = (e) => {
-        // if (showProjectBelong) {
-        //     setShowProjectBelong(!showProjectBelong);
-        // }
-        setShowProjectBelong(!showProjectBelong);
-        // console.log("event of handleHasProjectBelong ", e);
-        // console.log("showProjectBelong", showProjectBelong);
-        e.target.value = !showProjectBelong;
-        onChange(e);
-    };
-    const handleHasMember = (e) => {
-        setShowHasMember(!showHasMember);
-
-        e.target.value = !showHasMember;
-        onChange(e);
-    };
-
     useEffect(() => {
-        // console.log("data from login.js 📓 7️⃣", data);
-        console.log(
-            "showProjectBelong from AddProject Form.js 📓 7️⃣",
-            showProjectBelong
-        );
-
+        console.log("data from login.js 📓 7️⃣", data);
         // er moddhe amra chaile form focus korar o kaj korte pari .. userRef er maddhome..
         if (isError?.data) {
             console.log("Response Error found .. from login.js ");
@@ -119,12 +96,7 @@ export default function AddProjectForm() {
             ...prevState,
             [e.target.name]: e.target.value, // ei ta xoss way to play with form data
         }));
-        console.log(
-            "e.target.name : e.target.value",
-            e.target.name,
-            " : ",
-            e.target.value
-        );
+        console.log(e.target.value);
     };
 
     // Dave Gray eta ke asynchronous function boltese ... ⏳ 28:08
@@ -355,20 +327,18 @@ export default function AddProjectForm() {
                             <label for="Archive" class="ml-4">
                                 Archive
                             </label>
-                            {/* ////////////////////////////////// 🤗🤗🤗🤗🤗🤗🤗🤗🤗🤗🤗🤗*/}
-
+                            {/* ////////////////////////////////// 😥😥😥😥😥😥😥😥😥😥😥😥😥😥😥😥😥😥*/}
                             <div class="flex mt-4 gap-x-3 ml-[284px]">
                                 <h5>Has Project Belong </h5>
                                 <input
                                     id="hasProjectBelong"
                                     name="hasProjectBelong"
                                     type="checkbox"
-                                    checked={showProjectBelong}
-                                    onChange={handleHasProjectBelong}
+                                    value={showProjectBelong}
                                     class="w-4 h-4 mt-2 text-blue-600 bg-gray-700 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-                                    // onChange={() =>
-                                    //     setShowProjectBelong(!showProjectBelong)
-                                    // }
+                                    onChange={() =>
+                                        setShowProjectBelong(!showProjectBelong)
+                                    }
                                 />
                             </div>
                             {/* ////////////////////////////////// */}
@@ -410,10 +380,7 @@ export default function AddProjectForm() {
                                     </h5>
                                     <input
                                         type="text"
-                                        id="projectBelongName"
-                                        name="projectBelongName"
-                                        value={projectBelongName}
-                                        onChange={onChange}
+                                        id="simple-search"
                                         class=" p-2  mt-3  w-[450px] resize-y bg-gray-700 border border-gray-600 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                         placeholder="Type here..."
                                         required
@@ -426,15 +393,13 @@ export default function AddProjectForm() {
                             <div class="flex mt-4 ml-80 gap-x-3">
                                 <h5>Has Members </h5>
                                 <input
-                                    id="hasMembers"
-                                    name="hasMembers"
+                                    id="default-checkbox1"
                                     type="checkbox"
-                                    checked={showHasMember}
-                                    onChange={handleHasMember}
+                                    value=""
                                     class="w-4 h-4 mt-2 text-blue-600 bg-gray-700 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-                                    // onChange={() =>
-                                    //     setShowHasMember(!showHasMember)
-                                    // }
+                                    onChange={() =>
+                                        setShowHasMember(!showHasMember)
+                                    }
                                 />
                             </div>
                             {showHasMember ? (
