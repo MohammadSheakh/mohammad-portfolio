@@ -14,6 +14,7 @@ import CompanyAndTeamInfo from "./CompanyAndTeamInfo";
 import CardOption from "./ProjectCardOption/CardOption";
 import { Link } from "react-router-dom";
 import { useGetAllProjectsQuery } from "../../../features/projects/projectsApi";
+import Spinner from "../../common/Skeleton/Spinner";
 
 export default function ProjectCard({
     projectTitle,
@@ -39,7 +40,7 @@ export default function ProjectCard({
     const [showOptions, setShowOptions] = useState(false);
 
     const { data, isLoading, isError, error } = useGetAllProjectsQuery();
-    console.log("data from components-> projects -> projectsCategory 😶", data);
+    // console.log("data from components-> projects -> projectsCategory 😶", data);
 
     useEffect(() => {
         // load carosel content ... picture
@@ -47,10 +48,18 @@ export default function ProjectCard({
 
     return (
         <>
+            {isLoading ? (
+                <>
+                    <Spinner />{" "}
+                    {/* 😎 Shamne ekhane Skeleton Show korte hobe Flow Bite er  */}
+                </>
+            ) : (
+                <></>
+            )}
             {data?.map((project) => {
                 console.log("single project from ProjectCard 😁😁😁", project);
                 return (
-                    <div class=" border-2 h-[500px]  w-[500px]  bg-cardBG text-cardTextColor p-1 rounded-xl mb-10">
+                    <div class=" border-2 min-h-[230px] max-h-[500px]  w-[500px]  bg-cardBG text-cardTextColor p-1 rounded-xl mb-10">
                         <div>
                             {/* // carousal div */}
                             {/* {data?.imageLink?.map((image) => { */}
@@ -242,12 +251,18 @@ export default function ProjectCard({
                                     )}
                                 </div>
                                 <div>
-                                    <h3>
-                                        Technology :
-                                        <Link class="bg-tooltip text-gray-900 px-1 rounded-md ml-1">
-                                            MERN Stack
-                                        </Link>
-                                    </h3>
+                                    {project?.stack ? (
+                                        <>
+                                            <h3>
+                                                Stack :
+                                                <Link class="bg-tooltip text-gray-900 px-1 rounded-md ml-1">
+                                                    {project?.stack}
+                                                </Link>
+                                            </h3>
+                                        </>
+                                    ) : (
+                                        <></>
+                                    )}
                                 </div>
                             </div>
 

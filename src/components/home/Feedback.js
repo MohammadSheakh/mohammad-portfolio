@@ -43,7 +43,10 @@ export default function Feedback() {
     const [addFeedback, { data, isLoading, isError, isSuccess }] =
         useAddFeedbackMutation();
 
-    console.log("data from Feedback.js 📓 1️⃣😂😂😂", data);
+    console.log(
+        "data from Feedback.js after form Submission 📓 1️⃣😂😂😂",
+        data
+    );
 
     // useEffect er moddhe hoy new page e navigate korte hobe .. othoba kono .. error hoile .. sheta dekhaite
     // hobe

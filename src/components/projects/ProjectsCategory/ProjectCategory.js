@@ -37,7 +37,7 @@ export default function ProjectCategory() {
     const isAdmin = useAdminCheck(); // true ba false return korbe ..
 
     const { data, isLoading, isError, error } = useGetAllProjectsQuery();
-    console.log("data from components-> projects -> projectsCategory 😶", data);
+    // console.log("data from components-> projects -> projectsCategory 😶", data);
 
     console.log();
 
@@ -69,9 +69,7 @@ export default function ProjectCategory() {
                         <></>
                     )}
 
-                    <ProjectCard />
-
-                    {/* <ProjectCardCopy
+                    {/* <ProjectCard
                         projectTitle="Hospital Management System"
                         projectDescription="A Hospital Management System desktop application is created to manage
                         its admin, doctor, patient, employee and pharmacy sector. We tried to implement every
@@ -92,6 +90,8 @@ export default function ProjectCategory() {
                         carrouselPhoto2="https://res.cloudinary.com/deg4frre7/image/upload/v1668921059/Mohammad%20Portfolio/projects/Hospital%20Management%20Software/hm2_winrhb.png"
                         carrouselPhoto3="https://res.cloudinary.com/deg4frre7/image/upload/v1668921059/Mohammad%20Portfolio/projects/Hospital%20Management%20Software/hm1_uv3jip.png"
                     /> */}
+
+                    <ProjectCard />
                 </div>
             </div>
         </>
