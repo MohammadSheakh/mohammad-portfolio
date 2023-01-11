@@ -94,7 +94,7 @@ export default function Navbar() {
                     </Nav>
                     <Nav
                         path="/about"
-                        styleProps="group-hover:w-[71px] text-PureWhite"
+                        styleProps="group-hover:w-[50px] text-PureWhite"
                     >
                         About
                     </Nav>

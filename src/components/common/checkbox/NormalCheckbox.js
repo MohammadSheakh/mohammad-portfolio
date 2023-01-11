@@ -1,13 +1,27 @@
 import React from "react";
 
-export default function NormalCheckbox({ style, checkBoxText }) {
+export default function NormalCheckbox({
+    style,
+    checkBoxText,
+    id,
+    name,
+    type,
+    checked,
+    onChangeFunction,
+}) {
     return (
         <div class={`absolute ${style}  mt-1`}>
             <input
-                id="default-checkbox1"
-                type="checkbox"
-                value=""
+                // id="default-checkbox1"
+                // type="checkbox"
+                // value=""
                 class="w-4 h-4 text-blue-600 bg-gray-700 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                id={id}
+                name={name}
+                type={type}
+                checked={checked}
+                onChange={onChangeFunction}
+
                 // light -> bg-gray-100
                 // onChange={() =>
                 //     setTimelineDetailsVisible(
