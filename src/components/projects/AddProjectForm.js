@@ -356,7 +356,7 @@ export default function AddProjectForm() {
                         <form
                             class="form"
                             method="post"
-                            onSubmit={printSubmit}
+                            onSubmit={handleSubmit}
                             encType="multipart/form-data" // sumit vai
                         >
                             <h5 className="mt-4">Project Title</h5>

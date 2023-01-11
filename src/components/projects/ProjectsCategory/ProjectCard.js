@@ -67,8 +67,9 @@ export default function ProjectCard({
                 return (
                     <div
                         key={index}
-                        class=" border-2 min-h-[230px] max-h-[500px]  w-[500px]  bg-cardBG text-cardTextColor p-1 rounded-xl mb-10"
+                        class=" border-2  max-h-[500px]  w-[500px]  bg-cardBG text-cardTextColor p-1 rounded-xl mb-10"
                     >
+                        {/* min-h-[250px] */}
                         <div>
                             {/* // carousal div */}
                             {/* {data?.imageLink?.map((image) => { */}
@@ -278,7 +279,29 @@ export default function ProjectCard({
                                 </div>
                             </div>
 
-                            <div class="relative ">
+                            <div class="flex justify-end w-auto h-auto flex-wrap">
+                                {/* 😃😃instructor na thakle amra ekhane technology gula dekhabo  */}
+                                {project?.technology ? (
+                                    <>
+                                        <h1>Technologies : </h1>{" "}
+                                        {project?.technology.map(
+                                            (technology) => (
+                                                <>
+                                                    <Link to="">
+                                                        <h1 class="px-1 bg-green-900 rounded-sm ml-1">
+                                                            {technology}
+                                                        </h1>
+                                                    </Link>
+                                                </>
+                                            )
+                                        )}
+                                    </>
+                                ) : (
+                                    <></>
+                                )}
+                            </div>
+
+                            {/* <div class="relative ">
                                 <div class="flex w-[480px]  left-[-3px] absolute  bg-PrimaryColorDarkHover rounded-b-lg">
                                     <button class="btn bg-PrimaryColorDarkHover w-24 flex-3 border-none">
                                         <i class="flex ">
@@ -299,7 +322,7 @@ export default function ProjectCard({
                                         </i>
                                     </button>
                                 </div>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 );
