@@ -1,5 +1,5 @@
 import React from "react";
-import { FaGraduationCap, FaUniversity } from "react-icons/fa";
+import { FaGraduationCap, FaLaptopCode, FaUniversity } from "react-icons/fa";
 import sheakh from "../../assets/images/about/sheakh.png";
 import sheakh1 from "../../assets/images/about/sheakh1.jpg";
 
@@ -20,7 +20,7 @@ export default function Banner() {
                         {/* Text Section  */}
                         <div class="ml-[2%] mt-[30px] sm:mt-[40px] md:mt-[40px] lg:mt-[140px] xl:ml-[14%] md:ml-[20%]  xs-[1px]">
                             <h1 class="text-4xl ">
-                                Mohammad Bin Ab. Jalil Sheakh Sheakh
+                                Mohammad Bin Ab. Jalil Sheakh
                             </h1>
                             <div class="flex gap-x-2 mt-3">
                                 <i>
@@ -41,7 +41,7 @@ export default function Banner() {
                             </div>
                             <div class="flex gap-x-2 mt-3 mb-[10%]">
                                 <i>
-                                    <FaGraduationCap class="text-2xl mt-1" />
+                                    <FaLaptopCode class="text-2xl mt-1" />
                                 </i>{" "}
                                 <h1 class="text-2xl"> Web Developer </h1>
                             </div>
