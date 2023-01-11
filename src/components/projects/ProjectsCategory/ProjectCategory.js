@@ -32,10 +32,6 @@ import CardOption from "./ProjectCardOption/CardOption";
 import CompanyAndTeamInfo from "./CompanyAndTeamInfo";
 
 export default function ProjectCategory() {
-    const { user } = useSelector((state) => state.auth) || {};
-    console.log("user  from projects.js 4️⃣ ", user?.user?._id);
-    const isAdmin = useAdminCheck(); // true ba false return korbe ..
-
     const { data, isLoading, isError, error } = useGetAllProjectsQuery();
     // console.log("data from components-> projects -> projectsCategory 😶", data);
 
@@ -58,16 +54,11 @@ export default function ProjectCategory() {
                 <div class="flex flex-wrap justify-start sm:justify-center  gap-10  border-box w-auto py-5 px-5 2xl:mx-20 ">
                     {/* border-2 */}
                     {/* {user?.user?.id} */}
-                    {isAdmin ? (
-                        <>
-                            {/* 😎 add Product API create korte hobe .. endpoint
+
+                    {/* 😎 add Product API create korte hobe .. endpoint
                             banate hobe front-end e */}
 
-                            <AddProjectForm />
-                        </>
-                    ) : (
-                        <></>
-                    )}
+                    <AddProjectForm />
 
                     {/* <ProjectCard
                         projectTitle="Hospital Management System"

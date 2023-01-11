@@ -8,11 +8,12 @@
     she shei id er binimoy e tar feedback dekhte parbe .. ami ki reply
     disi ..she ta she dekhte parbe
 
--   [1.3][ ] = search e ... Yahya Bin Farid likha lagtese ... Yahya likhlei jeno result ashe... ei kaj korte hobe
+*   [1.3][ ] = search e ... Yahya Bin Farid likha lagtese ... Yahya likhlei jeno result ashe... ei kaj korte hobe
 
 -   [1.4] [ ] = feedback post successfull houar pore .. ekta confirmation dite hobe ..
--   [1.5] [ ] = Lazy Loading Implementation
--   [1.6] [ ] = Reference e ami nije thekei kichu value set kore dibo .. jegula user ke suggest korbe , such as , aiub , kghs,
+
+*   [1.5] [ ] = Lazy Loading Implementation
+*   [1.6] [ ] = Reference e ami nije thekei kichu value set kore dibo .. jegula user ke suggest korbe , such as , aiub , kghs,
     government
 
 # [2]Project Section

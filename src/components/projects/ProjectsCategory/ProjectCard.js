@@ -15,6 +15,8 @@ import CardOption from "./ProjectCardOption/CardOption";
 import { Link } from "react-router-dom";
 import { useGetAllProjectsQuery } from "../../../features/projects/projectsApi";
 import Spinner from "../../common/Skeleton/Spinner";
+import { useSelector } from "react-redux";
+import useAdminCheck from "../../../hooks/useAdminCheck";
 
 export default function ProjectCard({
     projectTitle,
@@ -37,7 +39,11 @@ export default function ProjectCard({
     carrouselPhoto3,
 }) {
     const [showFullDetails, setShowFullDetails] = useState(false);
-    const [showOptions, setShowOptions] = useState(false);
+    //const [showOptions, setShowOptions] = useState(false);
+    const [showOptions, setShowOptions] = useState({
+        show: false,
+        id: null,
+    });
 
     const { data, isLoading, isError, error } = useGetAllProjectsQuery();
     // console.log("data from components-> projects -> projectsCategory 😶", data);
@@ -56,10 +62,13 @@ export default function ProjectCard({
             ) : (
                 <></>
             )}
-            {data?.map((project) => {
+            {data?.map((project, index) => {
                 console.log("single project from ProjectCard 😁😁😁", project);
                 return (
-                    <div class=" border-2 min-h-[230px] max-h-[500px]  w-[500px]  bg-cardBG text-cardTextColor p-1 rounded-xl mb-10">
+                    <div
+                        key={index}
+                        class=" border-2 min-h-[230px] max-h-[500px]  w-[500px]  bg-cardBG text-cardTextColor p-1 rounded-xl mb-10"
+                    >
                         <div>
                             {/* // carousal div */}
                             {/* {data?.imageLink?.map((image) => { */}
@@ -80,10 +89,14 @@ export default function ProjectCard({
                                     </h3>
                                 </div>
                                 {/* option button */}
-                                <div class="relative">
+                                <div key={index} class="relative">
                                     <button
+                                        key={index}
                                         onClick={() => {
-                                            setShowOptions(!showOptions);
+                                            setShowOptions({
+                                                show: !showOptions.show,
+                                                id: index,
+                                            });
                                         }}
                                     >
                                         <i>
@@ -146,11 +159,21 @@ export default function ProjectCard({
                                             </h1>
                                         </div>
                                     </button>
+                                    {/* 😶😶😶😶😶😶😶😶😶😶😶😶😶😶😶😶😶😶😶😶😶😶😶😶😶 */}
                                     <div class="absolute top-[30px] left-[29px]">
                                         <>
-                                            {showOptions ? (
+                                            {showOptions.show &&
+                                            showOptions.id === index ? (
                                                 <>
-                                                    <CardOption />
+                                                    <div
+                                                    // key={index}
+                                                    >
+                                                        <CardOption
+                                                            projectId={
+                                                                project._id
+                                                            }
+                                                        />
+                                                    </div>
                                                 </>
                                             ) : (
                                                 <></>
@@ -213,17 +236,6 @@ export default function ProjectCard({
                                 ) : (
                                     <></>
                                 )}
-
-                                {/* <CompanyAndTeamInfo
-                                teamMemberProfileLink={teamMember1ProfileLink}
-                                teamMemberImage={teamMember1Image}
-                                teamMemberName={teamMember1Name}
-                            />
-                            <CompanyAndTeamInfo
-                                teamMemberProfileLink={teamMember2ProfileLink}
-                                teamMemberImage={teamMember2Image}
-                                teamMemberName={teamMember2Name}
-                            /> */}
                             </div>
                             <div class="flex justify-between mt-1">
                                 <div>
@@ -267,7 +279,6 @@ export default function ProjectCard({
                             </div>
 
                             <div class="relative ">
-                                {/* // love react ,comment , see documentation button */}
                                 <div class="flex w-[480px]  left-[-3px] absolute  bg-PrimaryColorDarkHover rounded-b-lg">
                                     <button class="btn bg-PrimaryColorDarkHover w-24 flex-3 border-none">
                                         <i class="flex ">

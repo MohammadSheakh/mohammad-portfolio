@@ -5,8 +5,9 @@ import { GrClose } from "react-icons/gr";
 import CategoryCheckbox from "../common/checkbox/CategoryCheckbox";
 import NormalCheckbox from "../common/checkbox/NormalCheckbox";
 import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useAddProjectMutation } from "../../features/projects/projectsApi";
+import useAdminCheck from "../../hooks/useAdminCheck";
 ////////////////////////////////////////////////////////////////////
 
 export default function AddProjectForm() {
@@ -84,6 +85,10 @@ export default function AddProjectForm() {
     const [addProject, { data, isLoading, isError, isSuccess }] =
         useAddProjectMutation();
 
+    const { user } = useSelector((state) => state.auth) || {}; //////////////////////////
+    console.log("user  from projects.js 4️⃣ ", user?.user?._id);
+    const isAdmin = useAdminCheck(); //😎😎😎😎 true ba false return korbe ..///////////////////
+
     // console.log(
     //     "data from AddProjectForm.js after form Submission 📓 1️⃣😂😂😂",
     //     data
@@ -103,10 +108,15 @@ export default function AddProjectForm() {
         onChange(e);
     };
     const handleHasMember = (e) => {
-        setShowHasMember(!showHasMember);
-
         e.target.value = !showHasMember;
         onChange(e);
+        setShowHasMember(!showHasMember);
+        if (showHasMember === false) {
+            setFormData((prevState) => ({
+                ...prevState,
+                members: [],
+            }));
+        }
     };
     const handleHasInstructor = (e) => {
         setShowHasInstructor(!showHasInstructor);
@@ -141,21 +151,40 @@ export default function AddProjectForm() {
     }, [data, isError, navigate]);
 
     const handleStack = (e) => {
-        console.log(e.target.checked);
-        let updatedStack = "";
+        /************************    jhamela korle Project Edit er shomoy fix kore dite hobe jinish ta */
         if (e.target.checked === true) {
-            updatedStack = e.target.value;
-        } else {
-            updatedStack = "";
+            if (e.target.value !== " ") {
+                setFormData((prevState) => ({
+                    ...prevState,
+                    [e.target.name]: e.target.value,
+                }));
+            }
+        } else if (e.target.checked === false) {
+            setFormData((prevState) => ({
+                ...prevState,
+                [e.target.name]: "",
+            }));
         }
-        console.log("updated stack : ", updatedStack);
-        setFormData((prevState) => ({
-            ...prevState,
-            [stack]: updatedStack, // ei ta xoss way to play with form data
-        }));
-        console.log("---------------------");
-        console.log(formData);
-        console.log("---------------------");
+    };
+
+    const handleTechnology = (e) => {
+        if (e.target.checked === true) {
+            if (e.target.value !== " ") {
+                setFormData((prevState) => ({
+                    ...prevState,
+                    technology: [...technology, e.target.value],
+                }));
+            }
+        } else if (e.target.checked === false) {
+            let technologyCopy = formData.technology;
+            let updatedTechnology = technologyCopy.filter(
+                (tech) => tech !== e.target.value
+            );
+            setFormData((prevState) => ({
+                ...prevState,
+                technology: updatedTechnology,
+            }));
+        }
     };
 
     // jokhon form e change hobe ..
@@ -165,12 +194,13 @@ export default function AddProjectForm() {
             [e.target.name]: e.target.value, // ei ta xoss way to play with form data
         }));
 
-        console.log(
-            "e.target.name : e.target.value",
-            e.target.name,
-            " : ",
-            e.target.value
-        );
+        // console.log(
+        //     "e.target.name : e.target.value",
+        //     e.target.name,
+        //     " : ",
+        //     e.target.value,
+        //     formData
+        // );
     };
 
     /**
@@ -194,14 +224,23 @@ export default function AddProjectForm() {
      */
 
     const handleMemberChange = (e) => {
-        console.log("handleMember Change");
+        console.log("handleMember Change else block");
         let membersInformation = [...formData.members];
-        membersInformation[e.target.id][e.target.name] = e.target.value;
+        let value = undefined;
+        if (e.target.files) {
+            console.log("handleMember Change if block");
+            console.log("called😆😆😆😆😆😆", e.target.value, e.target.files);
+            value = e.target.files[0]; //  e.target.file[0] hobe 😎
+        }
+        value = e.target.value;
+        membersInformation[e.target.id][e.target.name] = value; // e.target.value
 
         setFormData((prevState) => ({
             ...prevState,
+            hasMembers: true, ///////////////////😎////////////// but eita ei khan theke keno deowa lagbe ... problem 😎😑
             members: membersInformation,
         }));
+        console.log("value : ", value);
     };
 
     // Dave Gray eta ke asynchronous function boltese ... ⏳ 28:08
@@ -269,12 +308,15 @@ export default function AddProjectForm() {
         formData.projectBelongName = "";
         formData.hasMembers = false;
 
-        //formData.members = "";
+        formData.members = [];
         formData.hasInstructor = false;
         formData.instructorName = "";
         formData.instructorProfileLink = "";
         formData.technology = "";
         formData.stack = "";
+    };
+    const printSubmit = () => {
+        console.log(formData);
     };
 
     return (
@@ -314,7 +356,8 @@ export default function AddProjectForm() {
                         <form
                             class="form"
                             method="post"
-                            onSubmit={handleSubmit}
+                            onSubmit={printSubmit}
+                            encType="multipart/form-data" // sumit vai
                         >
                             <h5 className="mt-4">Project Title</h5>
                             <input
@@ -582,6 +625,7 @@ export default function AddProjectForm() {
                                                     </h5>
                                                     <input
                                                         type="file"
+                                                        fileName="memberImage"
                                                         id={index}
                                                         name="memberImage"
                                                         value={
@@ -625,7 +669,8 @@ export default function AddProjectForm() {
                                         <button
                                             onClick={(e) => {
                                                 e.preventDefault();
-                                                setFormData({
+                                                setFormData((prevState) => ({
+                                                    ...prevState,
                                                     members: [
                                                         ...members,
                                                         {
@@ -634,7 +679,7 @@ export default function AddProjectForm() {
                                                             memberLink: "",
                                                         },
                                                     ],
-                                                });
+                                                }));
                                             }}
                                             class=" bg-PrimaryColorDark p-1 my-2 rounded-md"
                                             // ml-72
@@ -730,22 +775,56 @@ export default function AddProjectForm() {
                             <br />*/}
 
                             {/* 😎 MERN PERN React Node .. ei gula may be database theke ashbe  */}
-                            <div class=" py-1 mt-12 flex">
+                            <div class=" py-1 mt-12 flex ">
                                 <h5>Stack</h5>
+                                {/* Serverless */}
+                                {/* <input
+                                    type="radio"
+                                    id="MERN"
+                                    name="stack" // eita shob gula te same hoite hobe ...
+                                    value="MERN"
+                                    onChange={onChange}
+                                    class="ml-24"
+                                />
+                                <label class="ml-3" for="Course">
+                                    MERN
+                                </label>
+                                <input
+                                    type="radio"
+                                    id="PERN"
+                                    name="stack"
+                                    value="PERN"
+                                    onChange={onChange}
+                                    class="ml-3"
+                                />
+
+                                <label for="Team" class="ml-3">
+                                    PERN
+                                </label>
+                                <input
+                                    type="radio"
+                                    id="React Native"
+                                    name="stack"
+                                    value="React Native"
+                                    onChange={onChange}
+                                    class="ml-3"
+                                />
+
+                                <label class="ml-3" for="Project">
+                                    React Native
+                                </label> */}
+
                                 <input
                                     id="stack"
                                     name="stack"
                                     type="checkbox"
                                     value="MERN"
-                                    //checked={}
                                     onChange={handleStack}
-                                    // style="ml-[130px]"
                                     class="ml-3 w-4 h-4 mt-2 text-blue-600 bg-gray-700 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                                 />
                                 <label
                                     for="default-checkbox"
                                     class="ml-2 text-sm font-medium text-gray-300 dark:text-gray-300"
-                                    // light -> text-gray-900
                                 >
                                     MERN
                                 </label>
@@ -793,15 +872,91 @@ export default function AddProjectForm() {
                                 </label>
                             </div>
 
-                            <div class=" py-1 mt-8 flex">
+                            <div class=" py-1 mt-8 flex flex-wrap">
                                 <h5>Technology</h5>
-                                <NormalCheckbox
+
+                                <input
+                                    id="technology"
+                                    name="technology"
+                                    type="checkbox"
+                                    value="React Js"
+                                    onChange={handleTechnology}
+                                    class="ml-3 w-4 h-4 mt-2 text-blue-600 bg-gray-700 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                                />
+                                <label
+                                    for="default-checkbox"
+                                    class="ml-2 text-sm font-medium text-gray-300 dark:text-gray-300"
+                                >
+                                    React Js
+                                </label>
+
+                                <input
+                                    id="technology"
+                                    name="technology"
+                                    type="checkbox"
+                                    value="Express Js"
+                                    onChange={handleTechnology}
+                                    class="ml-3 w-4 h-4 mt-2 text-blue-600 bg-gray-700 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                                />
+                                <label
+                                    for="default-checkbox"
+                                    class="ml-2 text-sm font-medium text-gray-300 dark:text-gray-300"
+                                >
+                                    Express Js
+                                </label>
+
+                                <input
+                                    id="technology"
+                                    name="technology"
+                                    type="checkbox"
+                                    value="Mongo DB"
+                                    onChange={handleTechnology}
+                                    class="ml-3 w-4 h-4 mt-2 text-blue-600 bg-gray-700 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                                />
+                                <label
+                                    for="default-checkbox"
+                                    class="ml-2 text-sm font-medium text-gray-300 dark:text-gray-300"
+                                >
+                                    Mongo DB
+                                </label>
+
+                                <input
+                                    id="technology"
+                                    name="technology"
+                                    type="checkbox"
+                                    value="React Native"
+                                    onChange={handleTechnology}
+                                    class="ml-24 w-4 h-4 mt-2 text-blue-600 bg-gray-700 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                                />
+                                <label
+                                    for="default-checkbox"
+                                    class="ml-2 text-sm font-medium text-gray-300 dark:text-gray-300"
+                                >
+                                    React Native
+                                </label>
+
+                                <input
+                                    id="technology"
+                                    name="technology"
+                                    type="checkbox"
+                                    value="Postgre SQL"
+                                    onChange={handleTechnology}
+                                    class="ml-2 w-4 h-4 mt-2 text-blue-600 bg-gray-700 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                                />
+                                <label
+                                    for="default-checkbox"
+                                    class="ml-2 text-sm font-medium text-gray-300 dark:text-gray-300"
+                                >
+                                    Postgre SQL
+                                </label>
+
+                                {/* <NormalCheckbox
                                     style="ml-[130px]"
                                     checkBoxText="React Js"
                                 />
                                 <NormalCheckbox
                                     style="ml-[220px]"
-                                    checkBoxText="Express Js"
+                                    checkBoxText="Express Js" 
                                 />
                                 <NormalCheckbox
                                     style="ml-[320px]"
@@ -815,17 +970,36 @@ export default function AddProjectForm() {
                                 <NormalCheckbox
                                     style="ml-[250px] mt-7"
                                     checkBoxText="Postgre SQL"
-                                />
+                                /> */}
                             </div>
 
-                            <button
-                                class="btn w-auto h-[25px] ml-[400px] mt-3 box-content"
-                                // htmlFor="my-modal-2"
-                            >
-                                {/* <label htmlFor="my-modal-2"> */}
-                                post
-                                {/* </label> */}
-                            </button>
+                            {isAdmin ? (
+                                <>
+                                    <button
+                                        class="btn w-auto h-[25px] ml-[400px] mt-3 box-content"
+                                        // htmlFor="my-modal-2"
+                                    >
+                                        {/* <label htmlFor="my-modal-2"> */}
+                                        post
+                                        {/* </label> */}
+                                    </button>
+                                </>
+                            ) : (
+                                <>
+                                    <button
+                                        disabled
+                                        class=" btn w-auto h-[25px] ml-[400px] mt-3 box-content"
+                                        // htmlFor="my-modal-2"
+                                    >
+                                        {/* <label htmlFor="my-modal-2"> */}
+                                        post
+                                        {/* </label> */}
+                                    </button>
+                                    <h1 class="text-center bg-yellow-200 text-gray-800 mt-2 rounded-sm">
+                                        You need to be admin to post this
+                                    </h1>
+                                </>
+                            )}
                         </form>
                     </div>
                 </div>
