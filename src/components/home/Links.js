@@ -56,18 +56,24 @@ export default function Links() {
                 </div>
             </div>
             <div class="ml-[55%] mt-6">
+                                <a href="https://flowcv.com/resume/sm0eusv71i" target="_blank">
+                                
                 <button className="ml-2 btn mt-4 bg-PrimaryColorDark hover:bg-PrimaryColorLight hover:text-orange border-homeColor hover:border-PureWhite ">
                     <i>
                         <AiOutlineCloudDownload class="mr-2 " />{" "}
                     </i>
                     Download My CV
                 </button>
+                        </a>
+                        
+                        <a href="https://flowcv.com/resume/sm0eusv71i" target="_blank">
                 <button className="ml-2 btn mt-4 bg-PrimaryColorDark hover:bg-PrimaryColorLight hover:text-orange border-homeColor hover:border-PureWhite ">
                     <i>
                         <FcDocument class="mr-2" />{" "}
                     </i>
                     Check My CV
                 </button>
+                        </a>
             </div>
             <h5 class="ml-[500px] mt-10">This Site is Under Development</h5>
         </>
